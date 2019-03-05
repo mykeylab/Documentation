@@ -37,3 +37,7 @@ The public keys of Admin Key and Operation Keys are used to signup account and s
 
 With those novel design principle, MYKEY can help dApp build their own native dApp without any explicit sign between dApp and 3rd party wallets.
 What's more, users can safely manage their asset, vault account, dApp accounts, data by different operation keys which is in one single account, we call it Self-sovereign Identity.
+
+## Integrate EOS dApps with MYKEY
+
+Coming soon!
