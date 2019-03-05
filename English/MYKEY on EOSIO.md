@@ -11,18 +11,18 @@ Meanwhile, document will demonstrate the simple way to make your code compatible
 
 ## What are the differences on MYKEY?
 
-For improving user experiences and lower the threshold of EOS usage, MYKEY designed to resolve the problem of private key management and resource consumption management base on KEY ID protocol.
+To improve user experiences and lower the threshold of EOS usage, MYKEY designed to resolve the problem of private key management and resource consumption management based on KEY ID protocol.
 
 More details in [MYKEY Whitepaper](../mykey_whitepaper_en.pdf)
 
-MYKEY re-designed the native EOS account by KEY ID Smart Contract which split two parts on EOS mainnet.
+MYKEY has re-designed the native EOS account by KEY ID Smart Contracts that split two parts on EOS mainnet.
 
 - [mykeymanager](https://bloks.io/account/mykeymanager)
 - [mykeylogica1](https://bloks.io/account/mykeylogica1)
 
-In EOS, MYKEY support features on key recovery, privilege level, free account, free usage, authentication, sub account and so on. For easy understanding, MYKEY try to hide technical concept for end users. In MYKEY App, user needn't care about CPU/NET/RAM of their EOS account.
+In EOS, MYKEY supports features like key recovery, privilege level, free account, free usage, authentication, sub account and so on. For easy understanding, MYKEY tries to hide technical concept for end users. In MYKEY App, user do not have to care about CPU/NET/RAM of their EOS account.
 
-But at the same time, user's account still keep self-sovereign, users own their own authority. More details will be disclosed in coming documentation and open-source plan.
+But at the same time, user's account still stays self-sovereign, authority belongs to users. More details will be disclosed in coming documentation and open-source plan.
 
 ## MYKEY account structure
 
