@@ -38,6 +38,59 @@ The public keys of Admin Key and Operation Keys are used to signup account and s
 With those novel design principle, MYKEY can help dApp build their own native dApp without any explicit sign between dApp and 3rd party wallets.
 What's more, users can safely manage their asset, vault account, dApp accounts, data by different operation keys which is in one single account, we call it Self-sovereign Identity.
 
+## Keys in table `keydata`
+
+Every keys of MYKEY account will be stored in table `keydata` of contract `mykeymanager`, we can use `ACCOUNT_NAME` as scope to query all keys in MYKEY account.
+
+Use following account `mykeyhulu521 ` for example,
+
+[https://eosq.app/account/mykeymanager/tables?sope=mykeyhulu521&tableName=keydata](https://eosq.app/account/mykeymanager/tables?sope=mykeyhulu521&tableName=keydata)
+
+MYKEY predefined four keys for every account during sign up. Details shown in the following table
+
+| Index  |    Use | 
+|:---:|---|
+|  0 |   AdminKey: Top privilege, can manage other operation keys    |
+|  1 |   OperationKey 1/Asset key: only use for transfer assets  |
+|  2 |   OperationKey 2/Adding key: For creating more new operation keys |
+|  3 |   OperationKey 3/Reserved key: For other actions without specific operation keys  |
+
 ## Integrate EOS dApps with MYKEY
 
-Coming soon!
+
+### For dApps compatible with Scatter
+
+MYKEY almost compatible with interfaces of Scatter protocol. The only difference from traditional wallet is MYKEY will use one of its Operation Key to sign transactions instead of the EOS owner/active key. 
+
+Any actions of original contacts will be wrapped by MYKEY app, then send to [mykeymanager](https://bloks.io/account/mykeymanager) for verify signature and then forward to the target contracts. In most of cases, anything works correctly without any changes in code. 
+
+#### How to check dApps are running in MYKEY webview
+
+There are two methods to check if dApps are running in MYKEY client.
+
+1. Use `navigator.userAgent` to check. MYKEY webview will append `MYKEY/[version]` after the original userAgent.
+
+```
+function isMYKEY(){
+	return navigator.userAgent.indexOf("MYKEY") > -1;
+}
+
+```
+
+2. Use `scatter.getIdentity` to check if the response data contain `{'type':'mykey'}`
+
+
+#### If dApps dependent on `getArbitrarySignature` 
+
+For dApps are using method `scatter.getArbitrarySignature` to verify account authority in sever side. The code for verifying signature should be refined.
+
+In this case. MYKEY uses the reserved key which index is 3 to sign through `scatter.getArbitrarySignature`. Server side of dApps need use the corresponding public key of reserved key to verify signature, it can be queried by backend code in table `keydata` of contract `mykeymanager ` by scope `ACCOUNT_NAME`. 
+
+We already implement some code sample for reference. Please check it out.
+
+[https://github.com/clar/mykeyjs/blob/master/index.js#L42-L49](https://github.com/clar/mykeyjs/blob/master/index.js#L42-L49)
+
+
+
+
+
