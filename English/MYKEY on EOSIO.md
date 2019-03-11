@@ -87,7 +87,7 @@ the return data snippet
 
 ```
 {
-	accounts: [{authority: 'active', blockchain: 'eos', name: [ACCOUNT_NAME], type: 'MYKEY'}],
+    accounts: [{authority: 'active', blockchain: 'eos', name: [ACCOUNT_NAME], type: 'MYKEY'}],
     publicKey: [OperationKey 3/Reserved key]
 };
                 
