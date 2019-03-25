@@ -102,7 +102,7 @@ In this case. MYKEY uses the reserved key which index is 3 to sign through `scat
 
 We already implemented some sample code for reference. Please check it out.
 
-[https://github.com/clar/mykeyjs/blob/master/index.js#L42-L49](https://github.com/clar/mykeyjs/blob/master/index.js#L42-L49)
+[https://github.com/mykeylab/mykey-js-sdk/blob/master/index.js#L42-L49](https://github.com/mykeylab/mykey-js-sdk/blob/master/index.js#L42-L49)
 
 ### 3. For native dapps
 
