@@ -94,15 +94,15 @@ the return data snippet
 ```
 
 
-#### *If dapp dependents on `getArbitrarySignature`*
+#### *If dapp dependents on `getArbitrarySignature` or other server side authentication*
 
-For dapps are using method `scatter.getArbitrarySignature` to verify account authority in sever side. The code for verifying signature should be refined.
+For dapps are using method `scatter.getArbitrarySignature` or other method to verify account authority in sever side. The code for verifying signature should be refined for MYKEY account.
 
 In this case. MYKEY uses the reserved key which index is 3 to sign through `scatter.getArbitrarySignature`. Server side of dapps need use the corresponding public key of reserved key to verify signature, it can be queried by backend code in table `keydata` of contract `mykeymanager ` by scope `ACCOUNT_NAME`. 
 
 We already implemented some sample code for reference. Please check it out.
 
-[https://github.com/mykeylab/mykey-js-sdk/blob/master/index.js#L42-L49](https://github.com/mykeylab/mykey-js-sdk/blob/master/index.js#L42-L49)
+[https://github.com/mykeylab/mykey-js-sdk/blob/master/src/index.js#L79-L86](https://github.com/mykeylab/mykey-js-sdk/blob/master/src/index.js#L79-L86)
 
 ### 3. For native dapps
 
