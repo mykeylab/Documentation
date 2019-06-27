@@ -37,7 +37,6 @@ implementation(name: 'MYKEYWalletLib', ext: 'aar')
 
 MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分别是init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
 
-
 ### 方法描述 Method Summary
 
 
@@ -86,24 +85,24 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
 
 ```java
 AuthorizeRequest authorizeRequest = new AuthorizeRequest()
-    .setUserName("bobbobbobbob")
-    // DApp CallbackUrl
-    // param：{"protocol": "", "version": "", "dapp_key": "", "uuID": "", "public_key": "", "sign": "", "ref": "", "timestamp": "", "account": ""}
-    // return: same as SimpleWallet {"code": [0-2], "message": ""}
-    .setCallbackUrl(Config.DAPP_CALLBACK_URL)
-    .setInfo("Perform the binding of dapp and MYKEY");
+        .setUserName("bobbobbobbob")
+        // DApp CallbackUrl
+        // param：{"protocol": "", "version": "", "dapp_key": "", "uuID": "", "public_key": "", "sign": "", "ref": "", "timestamp": "", "account": ""}
+        // return: same as SimpleWallet {"code": [0-2], "message": ""}
+        .setCallbackUrl(Config.DAPP_CALLBACK_URL)
+        .setInfo("Perform the binding of dapp and MYKEY");
 MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
         LogUtil.e(TAG, "onSuccess");
-        Toast.makeText(activity, "bind success", Toast.LENGTH_LONG).show();
+        Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
         // DApp此时需要去DApp server查询是否绑定成功
     }
 
     @Override
-    public void onError(int errorCode, String errorMsg, String payloadJson) {
-        LogUtil.e(TAG, "onError errorCode:" + errorCode);
-        Toast.makeText(activity, "bind error，errorCode:" + errorCode, Toast.LENGTH_LONG).show();
+    public void onError(String payloadJson) {
+        LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
+        Toast.makeText(activity, "error，payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -119,20 +118,20 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
 
 ```java
 TransferRequest transferRequest = new TransferRequest()
-    .setFrom("bobbobbobbob")
-    .setTo("alicealice11")
-    .setAmount(0.0001)
-    .setMemo("memo")
-    .setContractName("eosio.token")
-    .setSymbol("EOS")
-    .setInfo("transfer to alicealice11")
-    .setDecimal(4)
-    // order ID which come from dapp server
-    .setOrderId("BH1000001")
-    // DApp CallbackUrl
-    // param：{"protocol": "", "version": "", "tx_id": "", "ref": "", "account": ""}
-    // return: same as SimpleWallet {"code": [0-2], "message": ""}
-    .setCallBackUrl(Config.DAPP_CALLBACK_URL);
+        .setFrom("bobbobbobbob")
+        .setTo("alicealice11")
+        .setAmount(0.0001)
+        .setMemo("memo")
+        .setContractName("eosio.token")
+        .setSymbol("EOS")
+        .setInfo("transfer to alicealice11")
+        .setDecimal(4)
+        // order ID which come from dapp server
+        .setOrderId("BH1000001")
+        // DApp CallbackUrl
+        // param：{"protocol": "", "version": "", "tx_id": "", "ref": "", "account": ""}
+        // return: same as SimpleWallet {"code": [0-2], "message": ""}
+        .setCallBackUrl(Config.DAPP_CALLBACK_URL);
 MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
@@ -141,9 +140,9 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
     }
 
     @Override
-    public void onError(int errorCode, String errorMsg, String payloadJson) {
-        LogUtil.e(TAG, "onError errorCode:" + errorCode);
-        Toast.makeText(activity, "error, errorCode:" + errorCode, Toast.LENGTH_LONG).show();
+    public void onError(String payloadJson) {
+        LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
+        Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -163,25 +162,25 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 ```java
 
 ContractRequest contractRequest = new ContractRequest()
-    .setInfo("Perform the mortgage REX operation")
-    // order ID which come from dapp server
-    .setOrderId("BH1000001")
-    // DApp CallbackUrl
-    // param：{"protocol": "", "version": "", "tx_id": "", "ref": "", "account": ""}
-    // return: same as SimpleWallet {"code": [0-2], "message": ""}
-    .setCallBackUrl(Config.DAPP_CALLBACK_URL);
+        .setInfo("Perform the mortgage REX operation")
+        // order ID which come from dapp server
+        .setOrderId("BH1000001")
+        // DApp CallbackUrl
+        // param：{"protocol": "", "version": "", "tx_id": "", "ref": "", "account": ""}
+        // return: same as SimpleWallet {"code": [0-2], "message": ""}
+        .setCallBackUrl(Config.DAPP_CALLBACK_URL);
 ContractAction contractActionRequest = new ContractAction();
 contractActionRequest.setAccount("eosio")
-    .setName("buyram")
-    .setInfo("buy ram")
-    .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
+        .setName("buyram")
+        .setInfo("buy ram")
+        .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
 contractRequest.addAction(contractActionRequest);
 
 TransferAction transferActionRequest = new TransferAction();
 transferActionRequest.setAccount("eosio.token")
-    .setName("transfer")
-    .setInfo("transfer to alicealice11")
-    .setData(new TransferData().setFrom("bobbobbobbob").setTo("alicealice11").setQuantity("0.0001 EOS").setMemo("memo"));
+        .setName("transfer")
+        .setInfo("transfer to alicealice11")
+        .setData(new TransferData().setFrom("bobbobbobbob").setTo("alicealice11").setQuantity("0.0001 EOS").setMemo("memo"));
 contractRequest.addAction(transferActionRequest);
 
 MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
@@ -192,9 +191,9 @@ MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
     }
 
     @Override
-    public void onError(int errorCode, String errorMsg, String payloadJson) {
-        LogUtil.e(TAG, "onError errorCode:" + errorCode);
-        Toast.makeText(activity, "error, errorCode:" + errorCode, Toast.LENGTH_LONG).show();
+    public void onError(String payloadJson) {
+        LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
+        Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -210,10 +209,10 @@ MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
 
 ```java
 SignRequest signRequest = new SignRequest().setMessage("Messages that need to be signed, [it could be random which come from dapp server]")
-    // DApp CallbackUrl
-    // param：{"protocol": "", "version": "", "message": "", "sign": "", "ref": "", "account": ""}
-    // return: same as SimpleWallet {"code": [0-2], "message": ""}
-    .setCallBackUrl(Config.DAPP_CALLBACK_URL);
+        // DApp CallbackUrl
+        // param：{"protocol": "", "version": "", "message": "", "sign": "", "ref": "", "account": ""}
+        // return: same as SimpleWallet {"code": [0-2], "message": ""}
+        .setCallBackUrl(Config.DAPP_CALLBACK_URL);
 MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
@@ -222,9 +221,9 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
     }
 
     @Override
-    public void onError(int errorCode, String errorMsg, String payloadJson) {
-        LogUtil.e(TAG, "onError errorCode:" + errorCode);
-        Toast.makeText(activity, "error, errorCode:" + errorCode, Toast.LENGTH_LONG).show();
+    public void onError(String payloadJson) {
+        LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
+        Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -348,7 +347,7 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |-----------|-------------|
 |   0       |   用户主动取消操作  |
 |   1	      |  操作成功  |
-|   2	      | 操作失败，比较宽泛，MYKEYSdk暂时未用到 |
+|   2	      | 操作失败 |
 |   10001   | 未知异常导致无法唤醒MYKEY |
 |   10002	  | MYKEY未安装 |
 |   10003	  | MYKEY账户被冻结 |

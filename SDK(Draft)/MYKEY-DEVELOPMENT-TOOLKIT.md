@@ -3,7 +3,7 @@
 
 ## 简介
 
-MYKEY Development Toolkit(MDK)是方便开发者基于MYKEY账户体系开发应用的工具包。其包含MYKEY Client SDK，JSBridge Lib以及SimpleWallet协议扩展。该套开发者工具包可以帮助应用唤起MYKEY进行登录、转账、合约调用、签名等多种链上操作。该工具包暂只支持EOS链，并会随着MYKEY对多链的支持进行拓展。
+MYKEY Development Toolkit(MDK)是方便开发者基于MYKEY账户体系开发应用的工具包。其包含MYKEY Client SDK，JSBridge Lib，Deeplink以及SimpleWallet协议扩展。该套开发者工具包可以帮助应用唤起MYKEY进行登录、转账、合约调用、签名等多种链上操作。该工具包暂只支持EOS链，并会随着MYKEY对多链的支持进行拓展。
 
 
 ## MYKEY Client SDK
@@ -86,6 +86,8 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
 除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
 
+**特别注意:** [MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+
 ### 合约
 
 #### Web扫码调用合约时序图
@@ -160,7 +162,8 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 ```
 
 
-## issue报告
+## ISSUE报告
 
+请在github中的issue板块提交ticket
 
 ## FAQ
