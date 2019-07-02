@@ -26,6 +26,8 @@ Android SDK和iOS SDK可以帮助简化APP开发者使用MYKEY账号进行登录
 
 JSBridge 为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入库，其支持Scatter协议，开发者可以使用[Scatter文档](https://get-scatter.com/docs/api-reference)进行H5 DApp的开发。在支持以太坊后也会支持web3协议。
 
+**特别注意:** [MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+
 此外为了方便控制MYKEY应用中心浏览器的一些额外属性，如全屏，签名弹框方向，关闭应用等
 
 ### 开启全屏
@@ -87,6 +89,19 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
 
 **特别注意:** [MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+
+**特别注意:** Android端SimpleWallet跳转MYKEY时请使用如下代码（设置MYKEY的包名）
+
+```
+try {
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    intent.setPackage("com.mykey.id");
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
 
 ### 合约
 
