@@ -94,6 +94,7 @@ AuthorizeRequest authorizeRequest = new AuthorizeRequest()
 MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
+        // dataJson：{"protocol": "", "version": "", "dapp_key": "", "uuID": "", "public_key": "", "sign": "", "ref": "", "timestamp": "", "account": ""}
         LogUtil.e(TAG, "onSuccess");
         Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
         // DApp此时需要去DApp server查询是否绑定成功
@@ -101,6 +102,7 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
 
     @Override
     public void onError(String payloadJson) {
+        // payloadJson: {"errorCode":,"errorMsg":""}
         LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
         Toast.makeText(activity, "error，payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
@@ -135,12 +137,14 @@ TransferRequest transferRequest = new TransferRequest()
 MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
+        // dataJson：{"txId":""}
         LogUtil.e(TAG, "onSuccess data：" + dataJson);
         Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onError(String payloadJson) {
+        // payloadJson: {"errorCode":,"errorMsg":""}
         LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
         Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
@@ -186,12 +190,14 @@ contractRequest.addAction(transferActionRequest);
 MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
+        // dataJson：{"txId":""}
         LogUtil.e(TAG, "onSuccess");
         Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onError(String payloadJson) {
+        // payloadJson: {"errorCode":,"errorMsg":""}
         LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
         Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
@@ -216,12 +222,14 @@ SignRequest signRequest = new SignRequest().setMessage("Messages that need to be
 MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
     @Override
     public void onSuccess(String dataJson) {
+        // dataJson：{"sign":""}
         LogUtil.e(TAG, "onSuccess data：" + dataJson);
         Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onError(String payloadJson) {
+        // payloadJson: {"errorCode":,"errorMsg":""}
         LogUtil.e(TAG, "onError payloadJson:" + payloadJson);
         Toast.makeText(activity, "error, payloadJson:" + payloadJson, Toast.LENGTH_LONG).show();
     }
@@ -351,3 +359,4 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |   10001   | 未知异常导致无法唤醒MYKEY |
 |   10002	  | MYKEY未安装 |
 |   10003	  | MYKEY账户被冻结 |
+|   10004	  | 转账或合约方法调用上链超时 |
