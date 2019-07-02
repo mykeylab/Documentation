@@ -82,13 +82,7 @@ mykey://mykey.org/dapp?url=%encodeURIComponent(Dapp_URL)%
 
 ## 兼容SimpleWallet协议
 
-MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
-
-[https://github.com/southex/SimpleWallet/blob/master/README_en.md](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
-
-除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
-
-**特别注意:** [MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+### 使用SimpleWallet跳转MYKEY代码示例
 
 **特别注意:** Android端SimpleWallet跳转MYKEY时请使用如下代码（设置MYKEY的包名）
 
@@ -102,6 +96,17 @@ try {
     e.printStackTrace();
 }
 ```
+
+### 登录和签名
+
+MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
+
+[https://github.com/southex/SimpleWallet/blob/master/README_en.md](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
+
+除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
+
+**特别注意:** [MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+
 
 ### 合约
 
