@@ -11,11 +11,27 @@ dirs 'libs'
 }
 }
 ```  
-### 3. 在app模块的build.gradle文件中添加依赖
+### 3. 在app模块android后面添加jni目录与Java版本
+```
+android {
+    ...
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+```
+### 4. 在app模块的build.gradle文件中添加依赖
 ```
 implementation(name: 'MYKEYWalletLib', ext: 'aar')
 ```
-### 4. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
+### 5. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
 ```xml
 <activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
     <intent-filter>
