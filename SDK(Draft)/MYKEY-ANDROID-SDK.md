@@ -6,12 +6,12 @@
 ### 2. 在app模块的build.gradle文件的空白处添加如下代码：
 ```
 repositories {
-flatDir {
-dirs 'libs'
-}
+    flatDir {
+        dirs 'libs'
+    }
 }
 ```  
-### 3. 在app模块的build.gradle文件android下添加Jni文件夹配置与Java1.8版本支持
+### 3. 在app模块的build.gradle文件android下添加Jni文件夹配置
 ```
 android {
     ...
@@ -20,18 +20,33 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
 }
-```
+``` 
 ### 4. 在app模块的build.gradle文件中添加依赖
 ```
-implementation(name: 'MYKEYWalletLib', ext: 'aar')
+dependencies{
+    implementation(name: 'MYKEYWalletLib', ext: 'aar')
+}
 ```
-### 5. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
+### 5. 在app模块的build.gradle文件中添加依赖库冲突的处理代码
+```
+android{
+    ...
+    configurations {
+        compile.exclude module: 'gson'
+        compile.exclude module: 'fastjson'
+        compile.exclude module: 'constraint-layout'
+    }
+    ...
+}
+
+```
+### 6. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
 ```xml
 <activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
     <intent-filter>
@@ -47,7 +62,7 @@ implementation(name: 'MYKEYWalletLib', ext: 'aar')
     </intent-filter>
 </activity>
 ```
-此设置会为你生成一个供MYKEY调用的深度链接，在MYKEY初始化时会用到。
+此设置会为你生成一个供MYKEY调用的深度链接，在MYKEY初始化时会用到，[init](#init) [initSimple](#initSimple)。
 
 ## Class MyKeySdk
 
@@ -176,7 +191,7 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 
 ### contract
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractRequest和TransferActionRequest两种形式的action类型。
+唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。
 参数请详见类定义: [ContractRequest](#class-contractrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 ```java
@@ -375,4 +390,5 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |   10001   | 未知异常导致无法唤醒MYKEY |
 |   10002	  | MYKEY未安装 |
 |   10003	  | MYKEY账户被冻结 |
-|   10004	  | 转账或合约方法调用上链超时 |
+|   10004	  | 未初始化 |
+|   10005	  | 转账或合约方法调用上链超时 |
