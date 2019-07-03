@@ -1,9 +1,10 @@
 # MYKEY Android SDK
 
-## 如何集成
+## How to integration
 
-### 1. 复制本项目中的MYKEYWalletLib.aar文件到你app模块的libs目录下
-### 2. 在app模块的build.gradle文件的空白处添加如下代码：
+### 1. Copy 'MYKEYWalletLib.aar' to libs directory of your app module
+
+### 2. Add following code to file build.gradle:
 ```
 repositories {
 flatDir {
@@ -11,7 +12,7 @@ dirs 'libs'
 }
 }
 ```  
-### 3. 在app模块的build.gradle文件android下添加Jni文件夹配置与Java1.8版本支持
+### 3. In file build.gradle, add config for Jni directory and Java1.8 support
 ```
 android {
     ...
@@ -27,11 +28,11 @@ android {
     }
 }
 ```
-### 4. 在app模块的build.gradle文件中添加依赖
+### 4. Add following dependency in file build.gradle
 ```
 implementation(name: 'MYKEYWalletLib', ext: 'aar')
 ```
-### 5. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
+### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
 ```xml
 <activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
     <intent-filter>
@@ -47,13 +48,13 @@ implementation(name: 'MYKEYWalletLib', ext: 'aar')
     </intent-filter>
 </activity>
 ```
-此设置会为你生成一个供MYKEY调用的深度链接，在MYKEY初始化时会用到。
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization.
 
 ## Class MyKeySdk
 
-MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分别是init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
+MYKEY Android SDK's main logic is encapsulated in the MyKeySdk class, which implements six methods, namely init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
 
-### 方法描述 Method Summary
+### Method Summary
 
 
 | Methods          |         
@@ -68,7 +69,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 
 ### init
 
-实例化MyKeySdk类，在主进程中进行SDK初始化，使用此初始化方法，dapp如果存在账户体系，可以与MYKEY进行绑定操作。参数请详见类定义:  [InitRequest](#class-initrequest)
+Instantiate the class MyKeySdk, initialize the SDK in the main process, use this initialization method, if dapp already have an account system, you can bind with MYKEY. See the class definition for the parameters: [InitRequest](#class-initrequest)
 
 
 ```java
@@ -83,8 +84,7 @@ MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_K
 
 ### initSimple
 
-实例化MyKeySdk类，在主进程中进行SDK初始化，底层使用simplewallet协议逻辑，使用此初始化方法，dapp可以没有账户体系，不需要与MYKEY进行绑定操作。参数请详见类定义:  [InitSimpleRequest](#class-initsimplerequest)
-
+Instantiate the class MyKeySdk, initialize the SDK in the main process, and use the simplewallet protocol logic at the bottom layler. Using this initialization method, the dapp can have no account system, without deep bind with MYKEY account. See the class definition for the parameters: [InitSimpleRequest](#class-initsimplerequest)
 
 ```java
 MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAMPLE_DAPP_NAME)
@@ -96,7 +96,7 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
 
 ### authorize
 
-唤起MYKEY进行认证绑定。参数请详见类定义: [AuthorizeRequest](#class-authorizerequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](#class-authorizerequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 
 ```java
@@ -113,7 +113,7 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
         // dataJson：{"protocol": "", "version": "", "dapp_key": "", "uuID": "", "public_key": "", "sign": "", "ref": "", "timestamp": "", "account": ""}
         LogUtil.e(TAG, "onSuccess");
         Toast.makeText(activity, "success", Toast.LENGTH_LONG).show();
-        // DApp此时需要去DApp server查询是否绑定成功
+        //Add check code here, Check if bind success in dapp server
     }
 
     @Override
@@ -132,7 +132,8 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
 ```
 
 ### transfer
-唤起MYKEY进行转账。参数请详见类定义: [TransferRequest](#class-transferrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+
+Pull up MYKEY to transfer. See the class definition for the parameters: [TransferRequest](#class-transferrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 ```java
 TransferRequest transferRequest = new TransferRequest()
@@ -176,8 +177,7 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 
 ### contract
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractRequest和TransferActionRequest两种形式的action类型。
-参数请详见类定义: [ContractRequest](#class-contractrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractRequest and TransferActionRequest two types of action types. Please refer to the class definition for the parameters [ContractRequest](#class-contractrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 ```java
 
@@ -227,7 +227,8 @@ MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
 ```
 
 ### sign
-唤起MYKEY进行Sign签名操作。参数请详见类定义: [SignRequest](#class-signrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+
+Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](#class-signrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 ```java
 SignRequest signRequest = new SignRequest().setMessage("Messages that need to be signed, [it could be random which come from dapp server]")
@@ -259,120 +260,121 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 ```
 
 ### jumpToGuideInstall
-跳转到弹出引导安装MYKEY页面，当用户没有安装MYKEY时进行引导。
 
-### 字段描述 Field Summary
+Jump to the pop-up to MYKEY installation page and boot when the user does not have MYKEY installed.
+
+### Other Field Summary
 
 | Field           |      Type                             |  Description       |
 |-----------------|:------------------------------------:|-------------|
-| initHandle      | com.mykey.sdk.handle.InitHandle     | 实例化类的处理逻辑   |
-| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | 认证操作的处理逻辑   |
-| transferHandle  | com.mykey.sdk.handle.TransferHandle  | 转账操作的处理逻辑   |
-| contractHandle  | com.mykey.sdk.handle.ContractHandle  | 合约操作的处理逻辑   |
-| signatureHandle | com.mykey.sdk.handle.SignatureHandle | 签名操作的处理逻辑   |
+| initHandle      | com.mykey.sdk.handle.InitHandle      | initialization implemented logic   |
+| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | Authorize implemented logic   |
+| transferHandle  | com.mykey.sdk.handle.TransferHandle  | Transfer implemented logic   |
+| contractHandle  | com.mykey.sdk.handle.ContractHandle  | Contract implemented logic   |
+| signatureHandle | com.mykey.sdk.handle.SignatureHandle | Sign implemented logic   |
 
-## 其他类定义
+## Other Class Defination
 
 ### Class InitRequest
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| context |  android.content.Context | 可传入dapp应用上下文|
-| appKey |    String   |  为每一个dapp指定的唯一key |
-| userId | String |   dapp为该用户提供的唯一ID,建议使用uuid |
-| dappName | String |    dapp的名称 |
-| dappIcon | String |    dapp的logo, 建议不低于144x144px |
-| disableInstall（默认false） | boolean |    是否禁用MYKEY未安装时显示默认引导页面 |
-| callback | String |    MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| context |  android.content.Context | dapp application context|
+| appKey |    String   | unique id assigned to each dapp, contact us |
+| userId | String |   the unique user id in dapp server side, recommend to use uuid |
+| dappName | String |    dapp name |
+| dappIcon | String |    dapp icon logo, no small than 144x144px |
+| disableInstall(default false) | boolean |    Whether to disable the default install page when MYKEY is not installed |
+| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
 
 ### Class InitSimpleRequest
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| context |  android.content.Context | 可传入dapp应用上下文|
-| dappName | String |    dapp的名称 |
-| dappIcon | String |    dapp的logo, 建议不低于144x144px |
-| disableInstall（默认false） | boolean |    是否禁用MYKEY未安装时显示默认引导页面 |
-| callback | String |    MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| context |  android.content.Context | dapp application context|
+| dappName | String |    dapp name |
+| dappIcon | String |    dapp icon logo, no small than 144x144px  |
+| disableInstall(default false) | boolean |     Whether to disable the default install page when MYKEY is not installed |
+| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](), e.g. customscheme://customhost/custompath |
 
 ### Class AuthorizeRequest
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| userName |  String | 自定义用户名|
-| callBackUrl（可选） | String |  dapp server的回调url，MYKEY绑定成功会先回调dapp server,然后再唤醒移动端  |
-| info     | String | 备注信息，用于绑定认证页面的语义化描述 |
+| userName |  String | Custom user name|
+| callBackUrl(optional) | String |  Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client  |
+| info     | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
 ### Class TransferRequest
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| from |  String | 转账账户|
-| to | String |  接受账户  |
-| amount     | String | 转账数量 |
-| symbol     | String | 币种Symbol, e.g. "EOS" |
-| contractName     | String | 合约名称, e.g. "eosio.token" |
-| decimal     | String | 币种对应的小数位数 |
-| memo     | String | 链上的MEMO备注 |
-| info     | String | 备注信息，用于语义化该笔转账交易 |
-| orderId     | String | 订单ID，dapp提供的订单ID，可为空 e.g. "20190606001" |
-| callbackUrl（可选）     | String | dapp server的回调url，上链成功会先回调dapp server,然后再唤醒移动端 |
+| from |  String | From account|
+| to | String |  To account  |
+| amount     | String | Amount, e.g "1.0000" |
+| symbol     | String | Symbol, e.g. "EOS" |
+| contractName     | String | contract code name, e.g. "eosio.token" |
+| decimal     | String | Decimal |
+| memo     | String | Memo |
+| info     | String |  Semantic description of MYKEY display to the user about this action |
+| orderId     | String | The order id from dapp, optional, can be null e.g. "20190606001" |
+| callbackUrl(optional)     | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
 
 ### Class ContractRequest
 
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| orderId |  String | dapp 提供的订单ID, 可为空|
-| info     | String | 备注信息，用于语义化该笔操作 |
-| callbackUrl（可选）     | String | dapp server的回调url，上链成功会先回调dapp server,然后再唤醒移动端 |
-| list\<BaseAction\> | [ContractAction](#class-contractaction) 或者 [TransferAction](#class-transferaction) | 合约操作action的列表
+| orderId |  String | The order id from dapp, optional, can be null|
+| info     | String | Semantic description of MYKEY display to the user about this action |
+| callbackUrl(optional)  | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
+| list\<BaseAction\> | [ContractAction](#class-contractaction) or [TransferAction](#class-transferaction) | List of contract actions
 
 ### Class ContractAction
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| account |  String | 合约名 |
-| name     | String | 合约方法 |
-| info     | String | 备注信息，用于语义化该笔操作 |
-| data | Object | 根据合约abi定义所传的参数对象 e.g. {key1: value1, key2: value2 }|
+| account |  String | contract code name |
+| name     | String | contract action name |
+| info     | String | Semantic description of MYKEY display to the user about this action |
+| data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 }|
 
 ### Class TransferAction
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| account |  String | 合约名 |
-| name     | String | 合约方法，填写"transfer" |
-| info     | String | 备注信息，用于语义化该笔操作 |
-| transferObj | [TransferData](#class-transferdata) | 转账信息对象|
+| account |  String | contract code name |
+| name     | String | contract action name, use "transfer" |
+| info     | String | Semantic description of MYKEY display to the user about this action |
+| transferObj | [TransferData](#class-transferdata) | Transfer info object|
 
 ### Class TransferData
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| from |  String | 转账支出账号|
-| to     | String | 转账接收账号 |
-| quantity     | String | 转账金额与单位 |
-| memo | String| 链上备注信息
+| from |  String | From account name|
+| to     | String | To account name |
+| quantity     | String | Amount and Symbol |
+| memo | String| Memo
 
 ### Class SignRequest
 | properties   |      Type      | Description |
 |----------|:-------------:|------|
-| message |  String | 需要签名的数据|
-| callbackUrl     | String | dapp server的回调url，MYKEY绑定成功会先回调dapp server,然后再唤醒移动端 |
+| message |  String | Unsigned messages|
+| callbackUrl     | String |  Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client|
 
 ### Class MYKEYWalletCallback
 
 | methods   | Description |
 |-----------|-------------|
-| onSuccess | 成功的回调    |
-| onError   | 失败的回调,[errorCode列表](#error-code)    |
-| onCancel | 取消交易的回调 |
+| onSuccess | Success Callback    |
+| onError   | Failure Callback,[errorCode list](#error-code)    |
+| onCancel | Cancel Callback |
 
 ## Error Code
 
-0-2为SimpleWallet定义字段
+0-2 are defined by SimpleWallet
 
-10001-X为MYKEYSdk定义字段
+10001-X are defined by MYKEYSdk
 
 | code   | Description |
 |-----------|-------------|
-|   0       |   用户主动取消操作  |
-|   1	      |  操作成功  |
-|   2	      | 操作失败 |
-|   10001   | 未知异常导致无法唤醒MYKEY |
-|   10002	  | MYKEY未安装 |
-|   10003	  | MYKEY账户被冻结 |
-|   10004	  | 转账或合约方法调用上链超时 |
+|   0       |  User cancel the transaction  |
+|   1	      |  Success  |
+|   2	      |  Failure |
+|   10001   | unknow issue lead can not wakeup MYKEY |
+|   10002	  | MYKEY not installed yet |
+|   10003	  | MYKEY account is frozen |
+|   10004	  | Push transaction timeout|
