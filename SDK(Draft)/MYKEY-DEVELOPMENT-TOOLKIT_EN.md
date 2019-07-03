@@ -23,7 +23,7 @@ The SDKs also include extra contract operations for the token issued by [eos-sta
 
 ### iOS SDK
 
-code and docuemnt
+coming soon
 
 ## JSBridge Lib
 
