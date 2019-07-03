@@ -7,12 +7,12 @@
 ### 2. Add following code to file build.gradle:
 ```
 repositories {
-flatDir {
-dirs 'libs'
-}
+    flatDir {
+        dirs 'libs'
+    }
 }
 ```  
-### 3. In file build.gradle, add config for Jni directory and Java1.8 support
+### 3. In file build.gradle, add config for Jni directory
 ```
 android {
     ...
@@ -21,16 +21,32 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
+    
 }
 ```
 ### 4. Add following dependency in file build.gradle
 ```
-implementation(name: 'MYKEYWalletLib', ext: 'aar')
+dependencies{
+    implementation(name: 'MYKEYWalletLib', ext: 'aar')
+}
+```
+### 5. To deal with conflict in file build.gradle
+```
+android{
+    ...
+    configurations {
+        compile.exclude module: 'gson'
+        compile.exclude module: 'fastjson'
+        compile.exclude module: 'constraint-layout'
+    }
+    ...
+}
 ```
 ### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
 ```xml
@@ -48,7 +64,7 @@ implementation(name: 'MYKEYWalletLib', ext: 'aar')
     </intent-filter>
 </activity>
 ```
-This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization.
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](#init) [initSimple](#initSimple).
 
 ## Class MyKeySdk
 
@@ -177,7 +193,7 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 
 ### contract
 
-Pull up MYKEY for contract calls, support multiple action combination calls, support ContractRequest and TransferActionRequest two types of action types. Please refer to the class definition for the parameters [ContractRequest](#class-contractrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](#class-contractrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
 
 ```java
 
@@ -377,4 +393,5 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 |   10001   | unknow issue lead can not wakeup MYKEY |
 |   10002	  | MYKEY not installed yet |
 |   10003	  | MYKEY account is frozen |
-|   10004	  | Push transaction timeout|
+|   10004	  | Uninitialized |
+|   10005	  | Push transaction timeout |
