@@ -395,3 +395,10 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 |   10003	  | MYKEY account is frozen |
 |   10004	  | Uninitialized |
 |   10005	  | Push transaction timeout |
+|   10006	  | Binded, triggered at authorize |
+|   10007	  | Unbind, triggered at transaction, trasnfer, sign |
+|   10008	  | dapp binded, and MYKEY unbind, triggered at transaction, trasnfer, sign |
+|   10009	  | MYKEY binded, triggered at authorize |
+|   100010	  | dapp binded, and MYKEY binded, but not match |
+|   100011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
+
