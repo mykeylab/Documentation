@@ -38,13 +38,12 @@ dependencies{
 ```
 ### 5. To deal with conflict in file build.gradle
 ```
-android{
-    ...
-    configurations {
-        compile.exclude module: 'gson'
-        compile.exclude module: 'fastjson'
-        compile.exclude module: 'constraint-layout'
-    }
+root directory
+configurations {
+    compile.exclude module: 'gson'
+    compile.exclude module: 'fastjson'
+}
+dependencies{
     ...
 }
 ```
@@ -209,6 +208,7 @@ ContractAction contractActionRequest = new ContractAction();
 contractActionRequest.setAccount("eosio")
         .setName("buyram")
         .setInfo("buy ram")
+        // JSON string support, eg:setData("{\"player\":\"bobbobbobbob\",\"receiver\":\"alicealice11\",\"quant\":\"1.0000 EOS\"}")
         .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
 contractRequest.addAction(contractActionRequest);
 
@@ -401,4 +401,3 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 |   10009	  | MYKEY binded, triggered at authorize |
 |   100010	  | dapp binded, and MYKEY binded, but not match |
 |   100011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
-
