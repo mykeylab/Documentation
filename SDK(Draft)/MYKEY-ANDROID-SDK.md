@@ -35,16 +35,14 @@ dependencies{
 ```
 ### 5. 在app模块的build.gradle文件中添加依赖库冲突的处理代码
 ```
-android{
-    ...
-    configurations {
-        compile.exclude module: 'gson'
-        compile.exclude module: 'fastjson'
-        compile.exclude module: 'constraint-layout'
-    }
+根目录
+configurations {
+    compile.exclude module: 'gson'
+    compile.exclude module: 'fastjson'
+}
+dependencies{
     ...
 }
-
 ```
 ### 6. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
 ```xml
@@ -208,6 +206,7 @@ ContractAction contractActionRequest = new ContractAction();
 contractActionRequest.setAccount("eosio")
         .setName("buyram")
         .setInfo("buy ram")
+        // JSON string support, eg:setData("{\"player\":\"bobbobbobbob\",\"receiver\":\"alicealice11\",\"quant\":\"1.0000 EOS\"}")
         .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
 contractRequest.addAction(contractActionRequest);
 
@@ -398,4 +397,3 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |   10009	  | MYKEY已绑定，执行绑定操作时抛出 |
 |   100010	  | dapp与MYKEY都已绑定，但是并不匹配 |
 |   100011	  | MYKEY未注册，执行方法操作时抛出 |
-
