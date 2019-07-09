@@ -31,20 +31,10 @@ android {
 ```
 dependencies{
     implementation(name: 'MYKEYWalletLib', ext: 'aar')
+    implementation "com.alibaba:fastjson:1.1.70.android"
 }
 ```
-### 5. 在app模块的build.gradle文件中添加依赖库冲突的处理代码
-```
-根目录
-configurations {
-    compile.exclude module: 'gson'
-    compile.exclude module: 'fastjson'
-}
-dependencies{
-    ...
-}
-```
-### 6. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
+### 5. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
 ```xml
 <activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
     <intent-filter>
