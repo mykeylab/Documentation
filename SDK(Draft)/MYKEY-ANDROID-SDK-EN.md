@@ -34,17 +34,7 @@ android {
 ```
 dependencies{
     implementation(name: 'MYKEYWalletLib', ext: 'aar')
-}
-```
-### 5. To deal with conflict in file build.gradle
-```
-root directory
-configurations {
-    compile.exclude module: 'gson'
-    compile.exclude module: 'fastjson'
-}
-dependencies{
-    ...
+    implementation "com.alibaba:fastjson:1.1.70.android"
 }
 ```
 ### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
