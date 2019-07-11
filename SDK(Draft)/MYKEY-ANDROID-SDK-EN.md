@@ -54,7 +54,11 @@ dependencies{
 </activity>
 ```
 This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](#init) [initSimple](#initSimple).
-
+### 6. Proguard rules
+```
+-keep class com.mykey.sdk**{*;}
+-dontwarn com.mykey.sdk**
+```
 ## Class MyKeySdk
 
 MYKEY Android SDK's main logic is encapsulated in the MyKeySdk class, which implements six methods, namely init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
