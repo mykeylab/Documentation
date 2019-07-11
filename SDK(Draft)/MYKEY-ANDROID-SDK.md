@@ -51,7 +51,11 @@ dependencies{
 </activity>
 ```
 此设置会为你生成一个供MYKEY调用的深度链接，在MYKEY初始化时会用到，[init](#init) [initSimple](#initSimple)。
-
+### 6. 添加混淆配置
+```
+-keep class com.mykey.sdk**{*;}
+-dontwarn com.mykey.sdk**
+```
 ## Class MyKeySdk
 
 MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分别是init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
