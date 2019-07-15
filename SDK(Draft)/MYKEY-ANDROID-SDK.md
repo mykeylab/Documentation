@@ -389,5 +389,5 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |   10007	  | 未绑定，执行方法操作时抛出 |
 |   10008	  | dapp已绑定，但是MYKEY未绑定，执行方法操作时抛出 |
 |   10009	  | MYKEY已绑定，执行绑定操作时抛出 |
-|   100010	  | dapp与MYKEY都已绑定，但是并不匹配 |
-|   100011	  | MYKEY未注册，执行方法操作时抛出 |
+|   10010	  | dapp与MYKEY都已绑定，但是并不匹配 |
+|   10011	  | MYKEY未注册，执行方法操作时抛出 |
