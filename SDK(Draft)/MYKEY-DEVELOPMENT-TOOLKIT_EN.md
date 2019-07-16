@@ -23,7 +23,7 @@ The SDKs also include extra contract operations for the token issued by [eos-sta
 
 ### iOS SDK
 
-[document](./MYKEY-IOS-SDK-EN.md)
+[document](./MYKEY-iOS-SDK-EN.md)
 
 
 ## JSBridge Lib
