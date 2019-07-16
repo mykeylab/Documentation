@@ -16,11 +16,11 @@ Android SDK和iOS SDK可以帮助简化APP开发者使用MYKEY账号进行登录
 
 ### Android SDK
 
-[开源代码及文档](./MYKEY-ANDROID-SDK.md)
+[文档](./MYKEY-ANDROID-SDK.md)
 
 ### iOS SDK
 
-开源代码及文档
+[文档](./MYKEY-IOS-SDK.md)
 
 ## JSBridge Lib
 
