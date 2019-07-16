@@ -8,23 +8,23 @@
 
 For example, use 'demoscheme' as follows
 
-![](./image/iOS-URLTypes.jpg)
+![](./image/iOSURLTypes.jpg)
 
 This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization. [See initWallet](#initwallet) and [See initWalletSimple](#initwalletsimple).
 
 ### 1.3 Add one more option on "LSApplicationQueriesSchemes" in info.plist, the value is "mykey"
-![](./image/iOS-LSApplicationQueriesSchemes.jpg)
+![](./image/iOSLSApplicationQueriesSchemes.jpg)
 
 
 ### 1.4 Set "Enable Bitcode" to "false" in Build settings
-![](./image/iOS-bitcode.jpg)
+![](./image/iOSbitcode.jpg)
 
 ### 1.5 Note
 
 This library is using swift code, if your application is Objective-C project will need some special configuration
 
 Project are required to create one empty swift file in project. For example, Empty.swift, meanwhile project will auto generate corresponding \<ProjectName-Bridging-Header.h\> file.
-![](./image/iOS-bridging.jpg)
+![](./image/iOSbridging.jpg)
 
 ## 2. Initialize
 
