@@ -20,7 +20,7 @@ Android SDK和iOS SDK可以帮助简化APP开发者使用MYKEY账号进行登录
 
 ### iOS SDK
 
-[文档](./MYKEY-IOS-SDK.md)
+[文档](./MYKEY-iOS-SDK.md)
 
 ## JSBridge Lib
 
