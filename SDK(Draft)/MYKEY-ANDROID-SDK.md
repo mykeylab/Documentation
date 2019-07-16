@@ -51,11 +51,13 @@ dependencies{
 </activity>
 ```
 此设置会为你生成一个供MYKEY调用的深度链接，在MYKEY初始化时会用到，[init](#init) [initSimple](#initSimple)。
+
 ### 6. 添加混淆配置
 ```
 -keep class com.mykey.sdk**{*;}
 -dontwarn com.mykey.sdk**
 ```
+
 ## Class MyKeySdk
 
 MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分别是init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
@@ -291,6 +293,8 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 | dappIcon | String |    dapp的logo, 建议不低于144x144px |
 | disableInstall（默认false） | boolean |    是否禁用MYKEY未安装时显示默认引导页面 |
 | callback | String |    MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| showUpgradeTip（默认false） | boolean |    MYKEY非最新版本是否显示更新提示，提示为系统默认Toast |
+| mykeyServer | String |    MYKEY服务端环境Endpoint |
 
 ### Class InitSimpleRequest
 | properties   |      Type      | Description |
@@ -391,3 +395,7 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 |   10009	  | MYKEY已绑定，执行绑定操作时抛出 |
 |   10010	  | dapp与MYKEY都已绑定，但是并不匹配 |
 |   10011	  | MYKEY未注册，执行方法操作时抛出 |
+|   10012	  | 参数非法 |
+|   10013	  | 余额不足 |
+
+

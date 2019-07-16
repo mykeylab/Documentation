@@ -21,13 +21,13 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-    
+
     defaultConfig {
         ndk {
             abiFilters "armeabi-v7a"
         }
     }
-    
+
 }
 ```
 ### 4. Add following dependency in file build.gradle
@@ -295,6 +295,8 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | dappIcon | String |    dapp icon logo, no small than 144x144px |
 | disableInstall(default false) | boolean |    Whether to disable the default install page when MYKEY is not installed |
 | callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
+| showUpgradeTip(default false) | boolean |    Toast tip when MYKEY is not the latest version |
+| mykeyServer | String |    Environment URL endpoint of MYKEY server |
 
 ### Class InitSimpleRequest
 | properties   |      Type      | Description |
@@ -357,7 +359,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | from |  String | From account name|
 | to     | String | To account name |
 | quantity     | String | Amount and Symbol |
-| memo | String| Memo
+| memo | String| Memo |
 
 ### Class SignRequest
 | properties   |      Type      | Description |
@@ -395,3 +397,5 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 |   10009	  | MYKEY binded, triggered at authorize |
 |   10010	  | dapp binded, and MYKEY binded, but not match |
 |   10011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
+|   10012	  | Illegal param |
+|   10013	  | Insufficient balance |
