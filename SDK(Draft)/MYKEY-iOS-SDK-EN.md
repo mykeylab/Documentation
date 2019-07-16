@@ -320,7 +320,7 @@ MYKEYWallet.shared.sign(signRequest: signRequest, response: MYKEYResponse.init(s
 | properties  | Description |
 |-----------|-------------|
 | success | Success Callback   |
-| failure   | Failure Callback,[errorCode list](#error-code)    |
+| failure   | Failure Callback, [errorCode list](#error-code)    |
 | cancelled |  Cancel Callback |
 
 
