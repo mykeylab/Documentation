@@ -19,11 +19,11 @@ The SDKs also include extra contract operations for the token issued by [eos-sta
 
 ### Android SDK
 
-[code and docuemnt](./MYKEY-ANDROID-SDK-EN.md)
+[docuemnt](./MYKEY-ANDROID-SDK-EN.md)
 
 ### iOS SDK
 
-coming soon
+[document](./MYKEY-iOS-SDK-EN.md)
 
 
 ## JSBridge Lib
