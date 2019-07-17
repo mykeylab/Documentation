@@ -2,7 +2,10 @@
 
 ## 如何集成
 
-### 1. 复制本项目中的MYKEYWalletLib.aar文件到你app模块的libs目录下
+### 1. 在以下项目链接中，下载MYKEYWalletLib.aar文件，复制到到你app模块的libs目录下
+
+https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/Android
+
 ### 2. 在app模块的build.gradle文件的空白处添加如下代码：
 ```
 repositories {
