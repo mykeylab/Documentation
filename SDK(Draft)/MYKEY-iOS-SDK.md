@@ -2,7 +2,10 @@
 
 ## 1.如何集成
 
-### 1.1 下载MYKEYSDK.zip文档，解压后，拖进工程目录；
+### 1.1 在以下项目中下载MYKEYWalletLib-iOS.zip，解压后，拖进工程目录；
+
+https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/iOS
+
 ### 1.2 在Xcode设置URL scheme: Project->TARGETS->info->URL Types->添加 URL scheme；
 
 例如使用demoscheme，详见下图
