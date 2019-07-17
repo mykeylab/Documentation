@@ -2,7 +2,9 @@
 
 ## How to integration
 
-### 1. Copy 'MYKEYWalletLib.aar' to libs directory of your app module
+### 1. Download 'MYKEYWalletLib.aar' from following link, copy to libs directory of your app module
+
+https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/Android
 
 ### 2. Add following code to file build.gradle:
 ```
