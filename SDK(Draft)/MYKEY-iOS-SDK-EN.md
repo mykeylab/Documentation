@@ -2,7 +2,9 @@
 
 ## 1. How to integration
 
-### 1.1 Download MYKEYSDK.zip, unzip and place it into your project
+### 1.1 Download MYKEYWalletLib-iOS.zip from following link, unzip and place it into your project
+
+https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/iOS
 
 ### 1.2 Setup URL scheme in Xcode: Goto "Project->TARGETS->info->URL Types", click "add icon".
 
