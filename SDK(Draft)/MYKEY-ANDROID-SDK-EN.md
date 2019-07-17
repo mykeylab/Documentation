@@ -18,25 +18,6 @@ repositories {
 ```
 android {
     ...
-    sourceSets {# MYKEY Android SDK
-```
-
-## How to integration
-
-### 1. Copy 'MYKEYWalletLib.aar' to libs directory of your app module
-
-### 2. Add following code to file build.gradle:
-```
-repositories {
-    flatDir {
-        dirs 'libs'
-    }
-}
-```  
-### 3. In file build.gradle, add config for Jni directory
-```
-android {
-    ...
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
