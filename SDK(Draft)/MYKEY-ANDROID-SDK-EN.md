@@ -19,6 +19,7 @@ repositories {
 android {
     ...
     sourceSets {# MYKEY Android SDK
+```
 
 ## How to integration
 
