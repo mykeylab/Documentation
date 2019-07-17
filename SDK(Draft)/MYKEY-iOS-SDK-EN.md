@@ -111,9 +111,43 @@ For the param scheme, [refer scheme configuration in 1.2](#12-setup-url-scheme-i
 
 ### authorize
 
-
 Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](#class-authorizerequest) and [MYKEYResponse](#class-mykeyresponse)
 
+For greater security, dapp can set CallBackUrl for server-side verification.
+
+MYKEY will post the signed data to CallBackUrl which provided by dapp, server-side of dapp should verify the signature, dapp server should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata) and [MYKEY Verify Sign](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+
+The format of the data post to CallBackUrl
+
+```java
+{
+	"protocol": "", // protocol name，Use init method, protocol name is 'MYKEY', use initSimple to init, protocol name is 'MYKEYSimple'
+	"version": "",  // Version，1.0
+	"dapp_key": "", // DAPP_KEY assigned by MYKEY，contact MYKEY team to apply. In simple mode, it is null
+	"uuID": "",     // user id，dapp passed it in init method；In simple mode, it is device id
+	"sign": "",     // eos signature, sign data：timestamp + account + uuID + ref
+	"ref": "",      // ref, mykey
+	"timestamp": "",// UNIX timestamp, accurate to second
+	"account": ""   // eos account name
+}
+```
+Verify signature：
+```javascript
+// generate unsignedMessage
+let unsignedData = timestamp + account + uuID + ref
+// publicKey: ReserveKey of MYKEY，can be quired from SmartContract https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata
+ecc.verify(signature, unsignedData, pubkey) === true
+```
+
+dapp should provide response of CallBackUrl call to MYKEY
+```java
+{
+	"code": 0,     // error code，=0 is success. >0, dapp should describe error in message.
+	"message": ""  // message
+}
+```
+
+Sample
 ```
 let authorizeRequest = AuthorizeRequest()
 authorizeRequest.userName = "uchihamadara"
@@ -217,6 +251,8 @@ MYKEYWallet.shared.contract(contractRequest: contractRequest, response: MYKEYRes
 ### sign
 
 Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](#class-signrequest)
+
+dapp server or client should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata) and [MYKEY Verify Sign](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
 
 ```
 let signRequest = SignRequest()
