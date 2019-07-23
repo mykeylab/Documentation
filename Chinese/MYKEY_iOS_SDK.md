@@ -389,3 +389,4 @@ MYKEYWallet.shared.sign(signRequest: signRequest, response: MYKEYResponse.init(s
 |   10011	  | MYKEY未注册，执行方法操作时抛出 |
 |   10012	  | 参数非法 |
 |   10013	  | 余额不足 |
+|   10014	  | MYKEY账户不可用 |

@@ -393,3 +393,4 @@ MYKEYWallet.shared.sign(signRequest: signRequest, response: MYKEYResponse.init(s
 |   10011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
 |   10012	  | Illegal param |
 |   10013	  | Insufficient balance |
+|   10014	  | MYKEY account unavailable |
