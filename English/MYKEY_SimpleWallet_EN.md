@@ -28,11 +28,11 @@ Beside support **login** and **transfer** of SimpleWallet specification，MYKEY 
 ### Contract
 
 #### Sequence diagram for Web QR code scan
-![](./image/SimpleWalletWebContract.jpg)
+![](../image/SimpleWalletWebContract.jpg)
 
 
 #### Sequence diagram for Mobile applcaiton wake up
-![](./image/SimpleWalletDAppContract.jpg)
+![](../image/SimpleWalletDAppContract.jpg)
 
 Please pass the data to MYKEY as follows, the data format is json:
 
@@ -76,10 +76,10 @@ Please pass the data to MYKEY as follows, the data format is json:
 ### Sign
 
 #### Sequence diagram for Web QR code scan
-![](./image/SimpleWalletWebSign.jpg)
+![](../image/SimpleWalletWebSign.jpg)
 
 #### Sequence diagram for Mobile applcaiton wake up
-![](./image/SimpleWalletDAppSign.jpg)
+![](../image/SimpleWalletDAppSign.jpg)
 
 Please pass the data to MYKEY as follows, the data format is json:
 

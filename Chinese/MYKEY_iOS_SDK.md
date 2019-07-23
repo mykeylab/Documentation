@@ -10,20 +10,20 @@ https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/iOS
 
 例如使用demoscheme，详见下图
 
-![](./image/iOSURLTypes.jpg)
+![](../image/iOSURLTypes.jpg)
 
 这个配置会自动生成MYEKY回掉的深度链接，将会被用于MYKEY SDK的初始化方法中. [详见 initWalletSimple](#initwalletsimple).
 
 ### 1.3 在info.plist中LSApplicationQueriesSchemes下添加一项，值为mykey；
-![](./image/iOSLSApplicationQueriesSchemes.jpg)
+![](../image/iOSLSApplicationQueriesSchemes.jpg)
 
 ### 1.4 Build Settings 下 Enable Bitcode置为false
-![](./image/iOSbitcode.jpg)
+![](../image/iOSbitcode.jpg)
 
 ### 1.5 备注
 
 该库使用swift编写，Objective-C工程需要配置Bridging-Header.h文件，如果工程中没有，可以创建Empty.swift(一个空的swift文件)，工程会自动生成Bridging-Header.h。
-![](./image/iOSbridging.jpg)
+![](../image/iOSbridging.jpg)
 
 
 

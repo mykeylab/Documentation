@@ -29,11 +29,11 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 ### 合约
 
 #### Web扫码调用合约时序图
-![](./image/SimpleWalletWebContract.jpg)
+![](../image/SimpleWalletWebContract.jpg)
 
 
 #### 移动端App调用合约时序图
-![](./image/SimpleWalletDAppContract.jpg)
+![](../image/SimpleWalletDAppContract.jpg)
 
 请传递给MYKEY如下的数据，数据格式为json：
 
@@ -76,10 +76,10 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 ### 签名
 
 #### Web扫码调用签名时序图
-![](./image/SimpleWalletWebSign.jpg)
+![](../image/SimpleWalletWebSign.jpg)
 
 #### 移动端App调用签名时序图
-![](./image/SimpleWalletDAppSign.jpg)
+![](../image/SimpleWalletDAppSign.jpg)
 
 请传递给MYKEY如下的数据，数据格式为json：
 
