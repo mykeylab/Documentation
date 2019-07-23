@@ -16,24 +16,24 @@ Android SDK和iOS SDK可以帮助简化APP开发者使用MYKEY账号进行登录
 
 ### Android SDK
 
-[文档](./MYKEY-ANDROID-SDK.md)
+[文档](./MYKEY_ANDROID_SDK.md)
 
 ### iOS SDK
 
-[文档](./MYKEY-iOS-SDK.md)
+[文档](./MYKEY_iOS_SDK.md)
 
 ## JSBridge Lib
 
 JSBridge 为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入库，其支持Scatter协议，开发者可以使用[Scatter文档](https://get-scatter.com/docs/api-reference)进行H5 DApp的开发。在支持以太坊后也会支持web3协议。
 
-[JSBridge Documentation](./MYKEY-JSBridge.md)
+[JSBridge Documentation](./MYKEY_JSBridge.md)
 
 
 ## SimpleWallet协议
 
 MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
-[SimpleWallet Documentation](./MYKEY-SimpleWallet.md)
+[SimpleWallet Documentation](./MYKEY_SimpleWallet.md)
 
 
 ## DeepLink协议

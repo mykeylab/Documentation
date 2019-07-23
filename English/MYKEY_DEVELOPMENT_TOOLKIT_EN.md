@@ -19,25 +19,25 @@ The SDKs also include extra contract operations for the token issued by [eos-sta
 
 ### Android SDK
 
-[docuemnt](./MYKEY-ANDROID-SDK-EN.md)
+[docuemnt](./MYKEY_ANDROID_SDK_EN.md)
 
 ### iOS SDK
 
-[document](./MYKEY-iOS-SDK-EN.md)
+[document](./MYKEY_iOS_SDK_EN.md)
 
 
 ## JSBridge Lib
 
 JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, it support Scatter protocol, developers can develop H5 dapp follow [Scatter Document](https://get-scatter.com/docs/api-reference), it will also support web3js protocol when MYKEY support ETH.
 
-[JSBridge Documentation](./MYKEY-JSBridge-EN.md)
+[JSBridge Documentation](./MYKEY_JSBridge_EN.md)
 
 
 ## SimpleWallet protocol
 
 MYKEY follows the SimpleWallet protocol implementation. See the following document for details:
 
-[SimpleWallet Documentation](./MYKEY-SimpleWallet-EN.md)
+[SimpleWallet Documentation](./MYKEY_SimpleWallet_EN.md)
 
 
 ## DeepLink Protocol
