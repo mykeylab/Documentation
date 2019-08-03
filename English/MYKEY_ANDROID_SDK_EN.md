@@ -41,7 +41,7 @@ dependencies{
 ```
 ### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
 ```xml
-<activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
+<activity android:name="com.mykey.sdk.connect.scheme.callback.MYKEYCallbackActivity">
     <intent-filter>
         <data
             android:scheme="customscheme"
@@ -60,6 +60,12 @@ This configuration will generate a deeplink for MYKEY callback, which will be us
 ```
 -keep class com.mykey.sdk**{*;}
 -dontwarn com.mykey.sdk**
+
+-keep class go**{*;}
+-dontwarn go**
+
+-keep class mykeycore**{*;}
+-dontwarn mykeycore**
 ```
 ## Class MyKeySdk
 
@@ -90,6 +96,7 @@ MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_K
     .setDappIcon(Config.SAMPLE_DAPP_ICON)
     .setCallback(Config.SAMPLE_DAPP_CALLBACK)
     .setDsiableInstall(false)
+    .setContractPromptFree(true)
     .setContext(this));
 ```
 
@@ -102,6 +109,7 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
     .setDappIcon(Config.SAMPLE_DAPP_ICON)
     .setCallback(Config.SAMPLE_DAPP_CALLBACK)
     .setDisableInstall(false)
+    .setContractPromptFree(true)
     .setContext(this));
 ```
 
@@ -335,6 +343,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
 | showUpgradeTip(default false) | boolean |    Toast tip when MYKEY is not the latest version |
 | mykeyServer | String |    Environment URL endpoint of MYKEY server |
+| contractPromptFree | Boolean | Do not display prompt for contract action except transfer |
 
 ### Class InitSimpleRequest
 | properties   |      Type      | Description |
@@ -344,6 +353,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | dappIcon | String |    dapp icon logo, no small than 144x144px  |
 | disableInstall(default false) | boolean |     Whether to disable the default install page when MYKEY is not installed |
 | callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](), e.g. customscheme://customhost/custompath |
+| contractPromptFree | Boolean | Do not display prompt for contract action except transfer |
 
 ### Class AuthorizeRequest
 | properties   |      Type      | Description |

@@ -39,7 +39,7 @@ dependencies{
 ```
 ### 5. 复制下面的代码到你的AndroidManifest.xml，并设置符合你包名或规则的scheme、host和path
 ```xml
-<activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
+<activity android:name="com.mykey.sdk.connect.scheme.callback.MYKEYCallbackActivity">
     <intent-filter>
         <data
             android:scheme="customscheme"
@@ -59,6 +59,12 @@ dependencies{
 ```
 -keep class com.mykey.sdk**{*;}
 -dontwarn com.mykey.sdk**
+
+-keep class go**{*;}
+-dontwarn go**
+
+-keep class mykeycore**{*;}
+-dontwarn mykeycore**
 ```
 
 ## Class MyKeySdk
@@ -90,6 +96,7 @@ MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_K
     .setDappIcon(Config.SAMPLE_DAPP_ICON)
     .setCallback(Config.SAMPLE_DAPP_CALLBACK)
     .setDsiableInstall(false)
+    .setContractPromptFree(true)
     .setContext(this));
 ```
 
@@ -103,6 +110,7 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
     .setDappIcon(Config.SAMPLE_DAPP_ICON)
     .setCallback(Config.SAMPLE_DAPP_CALLBACK)
     .setDisableInstall(false)
+    .setContractPromptFree(true)
     .setContext(this));
 ```
 
@@ -331,6 +339,7 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 | callback | String |    MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
 | showUpgradeTip（默认false） | boolean |    MYKEY非最新版本是否显示更新提示，提示为系统默认Toast |
 | mykeyServer | String |    MYKEY服务端环境Endpoint |
+| contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
 
 ### Class InitSimpleRequest
 | properties   |      Type      | Description |
@@ -340,6 +349,7 @@ MYKEYSdk.getInstance().sign(signRequest, new MYKEYWalletCallback() {
 | dappIcon | String |    dapp的logo, 建议不低于144x144px |
 | disableInstall（默认false） | boolean |    是否禁用MYKEY未安装时显示默认引导页面 |
 | callback | String |    MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
 
 ### Class AuthorizeRequest
 | properties   |      Type      | Description |
