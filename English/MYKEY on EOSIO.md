@@ -44,7 +44,7 @@ Every keys of MYKEY account will be stored in table `keydata` of contract `mykey
 
 Use following account `mykeyhulu521 ` for example,
 
-[https://eosq.app/account/mykeymanager/tables?sope=mykeyhulu521&tableName=keydata](https://eosq.app/account/mykeymanager/tables?sope=mykeyhulu521&tableName=keydata)
+[https://eosq.app/account/mykeymanager/tables?scope=mykeyhulu521&tableName=keydata](https://eosq.app/account/mykeymanager/tables?scope=mykeyhulu521&tableName=keydata)
 
 MYKEY predefined four keys for every account during sign up. Details shown in the following table
 
