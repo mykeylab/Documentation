@@ -98,7 +98,7 @@ the return data snippet
 
 For dapps are using method `scatter.getArbitrarySignature` or other method to verify account authority in sever side. The code for verifying signature should be refined for MYKEY account.
 
-In this case. MYKEY uses the reserved key which index is 3 to sign through `scatter.getArbitrarySignature`. Server side of dapps need use the corresponding public key of reserved key to verify signature, it can be queried by backend code in table `keydata` of contract `mykeymanager ` by scope `ACCOUNT_NAME`.
+In this case. MYKEY uses the reserved key which index is 3 to sign through `scatter.getArbitrarySignature`. Server side of dapps need use the corresponding public key of reserved key to verify signature, it can be queried by backend code in table `keydata` of contract [`mykeymanager`](https://eosq.app/account/mykeymanager/tables?scope=mykeyhulu521&tableName=keydata) by scope `ACCOUNT_NAME`.
 
 We already implemented some sample code for reference. Please check it out.
 
