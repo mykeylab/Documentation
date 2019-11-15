@@ -37,7 +37,7 @@ import MYKEYWalletLib
 
 #### Objective-C
 ```
-#import <MYKEYWalletLib/MYKEYWalletLib.h>
+#import <MYKEYWalletLib/MYKEYWalletLib-Swift.h>
 ```
 ### 执行初始化
 
