@@ -39,7 +39,7 @@ import MYKEYWalletLib
 
 #### In Objective-C
 ```
-#import <MYKEYWalletLib/MYKEYWalletLib.h>
+#import <MYKEYWalletLib/MYKEYWalletLib-Swift.h>
 ```
 ### 2.2 Init
 
