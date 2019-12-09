@@ -4,18 +4,21 @@
 
 ### 1. Download 'MYKEYWalletLib.aar' from following link, copy to libs directory of your app module
 
-https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/Android
+[https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/Android](https://github.com/mykeylab/MYKEY-Client-SDK/tree/master/Android)
 
 ### 2. Add following code to file build.gradle:
-```
+
+```text
 repositories {
     flatDir {
         dirs 'libs'
     }
 }
-```  
-### 3. In file build.gradle, add config for Jni directory
 ```
+
+### 3. In file build.gradle, add config for Jni directory
+
+```text
 android {
     ...
     sourceSets {
@@ -32,15 +35,19 @@ android {
 
 }
 ```
+
 ### 4. Add following dependency in file build.gradle
-```
+
+```text
 dependencies{
     implementation(name: 'MYKEYWalletLib', ext: 'aar')
     implementation "com.alibaba:fastjson:1.1.70.android"
 }
 ```
+
 ### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
-```xml
+
+```markup
 <activity android:name="com.mykey.sdk.connect.scheme.callback.MYKEYCallbackActivity">
     <intent-filter>
         <data
@@ -55,9 +62,12 @@ dependencies{
     </intent-filter>
 </activity>
 ```
-This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](#init) [initSimple](#initSimple).
+
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](mykey_android_sdk_en.md#init) [initSimple](mykey_android_sdk_en.md#initSimple).
+
 ### 6. Proguard rules
-```
+
+```text
 -keep class com.mykey.sdk**{*;}
 -dontwarn com.mykey.sdk**
 
@@ -67,27 +77,26 @@ This configuration will generate a deeplink for MYKEY callback, which will be us
 -keep class mykeycore**{*;}
 -dontwarn mykeycore**
 ```
+
 ## Class MyKeySdk
 
 MYKEY Android SDK's main logic is encapsulated in the MyKeySdk class, which implements six methods, namely init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
 
 ### Method Summary
 
-
-| Methods          |         
-|:-----------------:|
-| [init](#init)      |
-| [initSimple](#initsimple) |
-| [authorize](#authorize) |
-| [transfer](#transfer)  |
-| [contract](#contract)  |
-| [sign](#sign) |
-| [jumpToGuideInstall](#jumptoguideinstall) |
+| Methods |
+| :---: |
+| [init](mykey_android_sdk_en.md#init) |
+| [initSimple](mykey_android_sdk_en.md#initsimple) |
+| [authorize](mykey_android_sdk_en.md#authorize) |
+| [transfer](mykey_android_sdk_en.md#transfer) |
+| [contract](mykey_android_sdk_en.md#contract) |
+| [sign](mykey_android_sdk_en.md#sign) |
+| [jumpToGuideInstall](mykey_android_sdk_en.md#jumptoguideinstall) |
 
 ### init
 
-Instantiate the class MyKeySdk, initialize the SDK in the main process, use this initialization method, if dapp already have an account system, you can bind with MYKEY. See the class definition for the parameters: [InitRequest](#class-initrequest)
-
+Instantiate the class MyKeySdk, initialize the SDK in the main process, use this initialization method, if dapp already have an account system, you can bind with MYKEY. See the class definition for the parameters: [InitRequest](mykey_android_sdk_en.md#class-initrequest)
 
 ```java
 MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_KEY)
@@ -102,7 +111,7 @@ MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_K
 
 ### initSimple
 
-Instantiate the class MyKeySdk, initialize the SDK in the main process, and use the simplewallet protocol logic at the bottom layler. Using this initialization method, the dapp can have no account system, without deep bind with MYKEY account. See the class definition for the parameters: [InitSimpleRequest](#class-initsimplerequest)
+Instantiate the class MyKeySdk, initialize the SDK in the main process, and use the simplewallet protocol logic at the bottom layler. Using this initialization method, the dapp can have no account system, without deep bind with MYKEY account. See the class definition for the parameters: [InitSimpleRequest](mykey_android_sdk_en.md#class-initsimplerequest)
 
 ```java
 MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAMPLE_DAPP_NAME)
@@ -115,7 +124,7 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
 
 ### authorize
 
-Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](#class-authorizerequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](mykey_android_sdk_en.md#class-authorizerequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 For greater security, dapp can set CallBackUrl for server-side verification.
 
@@ -125,17 +134,19 @@ The format of the data post to CallBackUrl
 
 ```java
 {
-	"protocol": "", // protocol name，Use init method, protocol name is 'MYKEY', use initSimple to init, protocol name is 'MYKEYSimple'
-	"version": "",  // Version，1.0
-	"dapp_key": "", // DAPP_KEY assigned by MYKEY，contact MYKEY team to apply. In simple mode, it is null
-	"uuID": "",     // user id，dapp passed it in init method；In simple mode, it is device id
-	"sign": "",     // eos signature, sign data：timestamp + account + uuID + ref
-	"ref": "",      // ref, mykey
-	"timestamp": "",// UNIX timestamp, accurate to second
-	"account": ""   // eos account name
+    "protocol": "", // protocol name，Use init method, protocol name is 'MYKEY', use initSimple to init, protocol name is 'MYKEYSimple'
+    "version": "",  // Version，1.0
+    "dapp_key": "", // DAPP_KEY assigned by MYKEY，contact MYKEY team to apply. In simple mode, it is null
+    "uuID": "",     // user id，dapp passed it in init method；In simple mode, it is device id
+    "sign": "",     // eos signature, sign data：timestamp + account + uuID + ref
+    "ref": "",      // ref, mykey
+    "timestamp": "",// UNIX timestamp, accurate to second
+    "account": ""   // eos account name
 }
 ```
+
 Verify signature：
+
 ```javascript
 // generate unsignedMessage
 let unsignedData = timestamp + account + uuID + ref
@@ -144,12 +155,14 @@ ecc.verify(signature, unsignedData, pubkey) === true
 ```
 
 dapp should provide response of CallBackUrl call to MYKEY
+
 ```java
 {
-	"code": 0,     // error code，=0 is success. >0, dapp should describe error in message.
-	"message": ""  // message
+    "code": 0,     // error code，=0 is success. >0, dapp should describe error in message.
+    "message": ""  // message
 }
 ```
+
 Sample
 
 ```java
@@ -186,7 +199,7 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
 
 ### transfer
 
-Pull up MYKEY to transfer. See the class definition for the parameters: [TransferRequest](#class-transferrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY to transfer. See the class definition for the parameters: [TransferRequest](mykey_android_sdk_en.md#class-transferrequest) 和 [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
 TransferRequest transferRequest = new TransferRequest()
@@ -227,13 +240,11 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 });
 ```
 
-
 ### contract
 
-Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](#class-contractrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](mykey_android_sdk_en.md#class-contractrequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
-
 ContractRequest contractRequest = new ContractRequest()
         .setInfo("Perform the mortgage REX operation")
         // order ID which come from dapp server
@@ -282,7 +293,7 @@ MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
 
 ### sign
 
-Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](#class-signrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](mykey_android_sdk_en.md#class-signrequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 dapp server or client should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata) and [MYKEY Verify Sign](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
 
@@ -321,106 +332,114 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 
 ### Other Field Summary
 
-| Field           |      Type                             |  Description       |
-|-----------------|:------------------------------------:|-------------|
-| initHandle      | com.mykey.sdk.handle.InitHandle      | initialization implemented logic   |
-| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | Authorize implemented logic   |
-| transferHandle  | com.mykey.sdk.handle.TransferHandle  | Transfer implemented logic   |
-| contractHandle  | com.mykey.sdk.handle.ContractHandle  | Contract implemented logic   |
-| signatureHandle | com.mykey.sdk.handle.SignatureHandle | Sign implemented logic   |
+| Field | Type | Description |
+| :--- | :---: | :--- |
+| initHandle | com.mykey.sdk.handle.InitHandle | initialization implemented logic |
+| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | Authorize implemented logic |
+| transferHandle | com.mykey.sdk.handle.TransferHandle | Transfer implemented logic |
+| contractHandle | com.mykey.sdk.handle.ContractHandle | Contract implemented logic |
+| signatureHandle | com.mykey.sdk.handle.SignatureHandle | Sign implemented logic |
 
 ## Other Class Defination
 
 ### Class InitRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| context |  android.content.Context | dapp application context|
-| appKey |    String   | unique id assigned to each dapp, contact us |
-| uuid | UUID |   the unique user id in dapp server side, recommend to use uuid |
-| dappName | String |    dapp name |
-| dappIcon | String |    dapp icon logo, no small than 144x144px |
-| disableInstall(default false) | boolean |    Whether to disable the default install page when MYKEY is not installed |
-| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
-| showUpgradeTip(default false) | boolean |    Toast tip when MYKEY is not the latest version |
-| mykeyServer | String |    Environment URL endpoint of MYKEY server |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| context | android.content.Context | dapp application context |
+| appKey | String | unique id assigned to each dapp, contact us |
+| uuid | UUID | the unique user id in dapp server side, recommend to use uuid |
+| dappName | String | dapp name |
+| dappIcon | String | dapp icon logo, no small than 144x144px |
+| disableInstall\(default false\) | boolean | Whether to disable the default install page when MYKEY is not installed |
+| callback | String | Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](mykey_android_sdk_en.md#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
+| showUpgradeTip\(default false\) | boolean | Toast tip when MYKEY is not the latest version |
+| mykeyServer | String | Environment URL endpoint of MYKEY server |
 | contractPromptFree | Boolean | Do not display prompt for contract action except transfer |
 
 ### Class InitSimpleRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| context |  android.content.Context | dapp application context|
-| dappName | String |    dapp name |
-| dappIcon | String |    dapp icon logo, no small than 144x144px  |
-| disableInstall(default false) | boolean |     Whether to disable the default install page when MYKEY is not installed |
-| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](), e.g. customscheme://customhost/custompath |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| context | android.content.Context | dapp application context |
+| dappName | String | dapp name |
+| dappIcon | String | dapp icon logo, no small than 144x144px |
+| disableInstall\(default false\) | boolean | Whether to disable the default install page when MYKEY is not installed |
+| callback | String | Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](mykey_android_sdk_en.md), e.g. customscheme://customhost/custompath |
 | contractPromptFree | Boolean | Do not display prompt for contract action except transfer |
 
 ### Class AuthorizeRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| userName |  String | Custom user name|
-| callBackUrl(optional) | String |  Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client  |
-| info     | String | Info, Semantic description of MYKEY display to the user for authorization page |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| userName | String | Custom user name |
+| callBackUrl\(optional\) | String | Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client |
+| info | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
 ### Class TransferRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| from |  String | From account|
-| to | String |  To account  |
-| amount     | String | Amount, e.g "1.0000" |
-| symbol     | String | Symbol, e.g. "EOS" |
-| contractName     | String | contract code name, e.g. "eosio.token" |
-| decimal     | String | Decimal |
-| memo     | String | Memo |
-| info     | String |  Semantic description of MYKEY display to the user about this action |
-| orderId     | String | The order id from dapp, optional, can be null e.g. "20190606001" |
-| callbackUrl(optional)     | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| from | String | From account |
+| to | String | To account |
+| amount | String | Amount, e.g "1.0000" |
+| symbol | String | Symbol, e.g. "EOS" |
+| contractName | String | contract code name, e.g. "eosio.token" |
+| decimal | String | Decimal |
+| memo | String | Memo |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| orderId | String | The order id from dapp, optional, can be null e.g. "20190606001" |
+| callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
 
 ### Class ContractRequest
 
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| orderId |  String | The order id from dapp, optional, can be null|
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| callbackUrl(optional)  | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
-| list\<BaseAction\> | [ContractAction](#class-contractaction) or [TransferAction](#class-transferaction) | List of contract actions
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| orderId | String | The order id from dapp, optional, can be null |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
+| list\ | [ContractAction](mykey_android_sdk_en.md#class-contractaction) or [TransferAction](mykey_android_sdk_en.md#class-transferaction) | List of contract actions |
 
 ### Class ContractAction
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| account |  String | contract code name |
-| name     | String | contract action name |
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 }|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| account | String | contract code name |
+| name | String | contract action name |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 } |
 
 ### Class TransferAction
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| account |  String | contract code name |
-| name     | String | contract action name, use "transfer" |
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| transferObj | [TransferData](#class-transferdata) | Transfer info object|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| account | String | contract code name |
+| name | String | contract action name, use "transfer" |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| transferObj | [TransferData](mykey_android_sdk_en.md#class-transferdata) | Transfer info object |
 
 ### Class TransferData
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| from |  String | From account name|
-| to     | String | To account name |
-| quantity     | String | Amount and Symbol |
-| memo | String| Memo |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| from | String | From account name |
+| to | String | To account name |
+| quantity | String | Amount and Symbol |
+| memo | String | Memo |
 
 ### Class SignRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| message |  String | Unsigned messages|
-| callbackUrl     | String |  Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| message | String | Unsigned messages |
+| callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client |
 
 ### Class MYKEYWalletCallback
 
-| methods   | Description |
-|-----------|-------------|
-| onSuccess | Success Callback    |
-| onError   | Failure Callback,[errorCode list](#error-code)    |
+| methods | Description |
+| :--- | :--- |
+| onSuccess | Success Callback |
+| onError | Failure Callback,[errorCode list](mykey_android_sdk_en.md#error-code) |
 | onCancel | Cancel Callback |
 
 ## Error Code
@@ -429,45 +448,47 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 
 10001-X are defined by MYKEYSdk
 
-| code   | Description |
-|-----------|-------------|
-|   0       |  User cancel the transaction  |
-|   1	      |  Success  |
-|   2	      |  Failure |
-|   10001   | unknow issue lead can not wakeup MYKEY |
-|   10002	  | MYKEY not installed yet |
-|   10003	  | MYKEY account is frozen |
-|   10004	  | Uninitialized |
-|   10005	  | Push transaction timeout |
-|   10006	  | Binded, triggered at authorize |
-|   10007	  | Unbind, triggered at transaction, trasnfer, sign |
-|   10008	  | dapp binded, and MYKEY unbind, triggered at transaction, trasnfer, sign |
-|   10009	  | MYKEY binded, triggered at authorize |
-|   10010	  | dapp binded, and MYKEY binded, but not match |
-|   10011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
-|   10012	  | Illegal param |
-|   10013	  | Insufficient balance |
+| code | Description |
+| :--- | :--- |
+| 0 | User cancel the transaction |
+| 1 | Success |
+| 2 | Failure |
+| 10001 | unknow issue lead can not wakeup MYKEY |
+| 10002 | MYKEY not installed yet |
+| 10003 | MYKEY account is frozen |
+| 10004 | Uninitialized |
+| 10005 | Push transaction timeout |
+| 10006 | Binded, triggered at authorize |
+| 10007 | Unbind, triggered at transaction, trasnfer, sign |
+| 10008 | dapp binded, and MYKEY unbind, triggered at transaction, trasnfer, sign |
+| 10009 | MYKEY binded, triggered at authorize |
+| 10010 | dapp binded, and MYKEY binded, but not match |
+| 10011 | MYKEY unregistered, triggered at transaction, trasnfer, sign |
+| 10012 | Illegal param |
+| 10013 | Insufficient balance |
 
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
+```text
+    main {
+        jniLibs.srcDirs = ['libs']
     }
+}
 
-    defaultConfig {
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
+defaultConfig {
+    ndk {
+        abiFilters "armeabi-v7a"
     }
-
 }
 ```
+
+}
+
+```text
 ### 4. Add following dependency in file build.gradle
 ```
-dependencies{
-    implementation(name: 'MYKEYWalletLib', ext: 'aar')
-    implementation "com.alibaba:fastjson:1.1.70.android"
-}
-```
+
+dependencies{ implementation\(name: 'MYKEYWalletLib', ext: 'aar'\) implementation "com.alibaba:fastjson:1.1.70.android" }
+
+```text
 ### 5. Copy following code to AndroidManifest.xml, and set the callback deeplink, composed by scheme、host and path
 ```xml
 <activity android:name="com.mykey.sdk.callback.MYKEYCallbackActivity">
@@ -484,33 +505,35 @@ dependencies{
     </intent-filter>
 </activity>
 ```
-This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](#init) [initSimple](#initSimple).
+
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [init](mykey_android_sdk_en.md#init) [initSimple](mykey_android_sdk_en.md#initSimple).
+
 ### 6. Proguard rules
-```
+
+```text
 -keep class com.mykey.sdk**{*;}
 -dontwarn com.mykey.sdk**
 ```
+
 ## Class MyKeySdk
 
 MYKEY Android SDK's main logic is encapsulated in the MyKeySdk class, which implements six methods, namely init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
 
 ### Method Summary
 
-
-| Methods          |         
-|:-----------------:|
-| [init](#init)      |
-| [initSimple](#initsimple) |
-| [authorize](#authorize) |
-| [transfer](#transfer)  |
-| [contract](#contract)  |
-| [sign](#sign) |
-| [jumpToGuideInstall](#jumptoguideinstall) |
+| Methods |
+| :---: |
+| [init](mykey_android_sdk_en.md#init) |
+| [initSimple](mykey_android_sdk_en.md#initsimple) |
+| [authorize](mykey_android_sdk_en.md#authorize) |
+| [transfer](mykey_android_sdk_en.md#transfer) |
+| [contract](mykey_android_sdk_en.md#contract) |
+| [sign](mykey_android_sdk_en.md#sign) |
+| [jumpToGuideInstall](mykey_android_sdk_en.md#jumptoguideinstall) |
 
 ### init
 
-Instantiate the class MyKeySdk, initialize the SDK in the main process, use this initialization method, if dapp already have an account system, you can bind with MYKEY. See the class definition for the parameters: [InitRequest](#class-initrequest)
-
+Instantiate the class MyKeySdk, initialize the SDK in the main process, use this initialization method, if dapp already have an account system, you can bind with MYKEY. See the class definition for the parameters: [InitRequest](mykey_android_sdk_en.md#class-initrequest)
 
 ```java
 MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_KEY)
@@ -524,7 +547,7 @@ MYKEYSdk.getInstance().init(new InitRequest().setAppKey(Config.SAMPLE_DAPP_APP_K
 
 ### initSimple
 
-Instantiate the class MyKeySdk, initialize the SDK in the main process, and use the simplewallet protocol logic at the bottom layler. Using this initialization method, the dapp can have no account system, without deep bind with MYKEY account. See the class definition for the parameters: [InitSimpleRequest](#class-initsimplerequest)
+Instantiate the class MyKeySdk, initialize the SDK in the main process, and use the simplewallet protocol logic at the bottom layler. Using this initialization method, the dapp can have no account system, without deep bind with MYKEY account. See the class definition for the parameters: [InitSimpleRequest](mykey_android_sdk_en.md#class-initsimplerequest)
 
 ```java
 MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAMPLE_DAPP_NAME)
@@ -536,8 +559,7 @@ MYKEYSdk.getInstance().initSimple(new InitSimpleRequest().setDappName(Config.SAM
 
 ### authorize
 
-Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](#class-authorizerequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
-
+Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](mykey_android_sdk_en.md#class-authorizerequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
 AuthorizeRequest authorizeRequest = new AuthorizeRequest()
@@ -573,7 +595,7 @@ MYKEYSdk.getInstance().authorize(authorizeRequest, new MYKEYWalletCallback() {
 
 ### transfer
 
-Pull up MYKEY to transfer. See the class definition for the parameters: [TransferRequest](#class-transferrequest) 和 [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY to transfer. See the class definition for the parameters: [TransferRequest](mykey_android_sdk_en.md#class-transferrequest) 和 [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
 TransferRequest transferRequest = new TransferRequest()
@@ -614,13 +636,11 @@ MYKEYSdk.getInstance().transfer(transferRequest, new MYKEYWalletCallback() {
 });
 ```
 
-
 ### contract
 
-Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](#class-contractrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](mykey_android_sdk_en.md#class-contractrequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
-
 ContractRequest contractRequest = new ContractRequest()
         .setInfo("Perform the mortgage REX operation")
         // order ID which come from dapp server
@@ -669,7 +689,7 @@ MYKEYSdk.getInstance().contract(contractRequest, new MYKEYWalletCallback() {
 
 ### sign
 
-Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](#class-signrequest) and [MYKEYWalletCallback](#class-mykeywalletcallback)
+Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](mykey_android_sdk_en.md#class-signrequest) and [MYKEYWalletCallback](mykey_android_sdk_en.md#class-mykeywalletcallback)
 
 ```java
 SignRequest signRequest = new SignRequest().setMessage("Messages that need to be signed, [it could be random which come from dapp server]")
@@ -706,104 +726,112 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 
 ### Other Field Summary
 
-| Field           |      Type                             |  Description       |
-|-----------------|:------------------------------------:|-------------|
-| initHandle      | com.mykey.sdk.handle.InitHandle      | initialization implemented logic   |
-| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | Authorize implemented logic   |
-| transferHandle  | com.mykey.sdk.handle.TransferHandle  | Transfer implemented logic   |
-| contractHandle  | com.mykey.sdk.handle.ContractHandle  | Contract implemented logic   |
-| signatureHandle | com.mykey.sdk.handle.SignatureHandle | Sign implemented logic   |
+| Field | Type | Description |
+| :--- | :---: | :--- |
+| initHandle | com.mykey.sdk.handle.InitHandle | initialization implemented logic |
+| authorizeHandle | com.mykey.sdk.handle.AuthorizeHandle | Authorize implemented logic |
+| transferHandle | com.mykey.sdk.handle.TransferHandle | Transfer implemented logic |
+| contractHandle | com.mykey.sdk.handle.ContractHandle | Contract implemented logic |
+| signatureHandle | com.mykey.sdk.handle.SignatureHandle | Sign implemented logic |
 
 ## Other Class Defination
 
 ### Class InitRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| context |  android.content.Context | dapp application context|
-| appKey |    String   | unique id assigned to each dapp, contact us |
-| userId | String |   the unique user id in dapp server side, recommend to use uuid |
-| dappName | String |    dapp name |
-| dappIcon | String |    dapp icon logo, no small than 144x144px |
-| disableInstall(default false) | boolean |    Whether to disable the default install page when MYKEY is not installed |
-| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
-| showUpgradeTip(default false) | boolean |    Toast tip when MYKEY is not the latest version |
-| mykeyServer | String |    Environment URL endpoint of MYKEY server |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| context | android.content.Context | dapp application context |
+| appKey | String | unique id assigned to each dapp, contact us |
+| userId | String | the unique user id in dapp server side, recommend to use uuid |
+| dappName | String | dapp name |
+| dappIcon | String | dapp icon logo, no small than 144x144px |
+| disableInstall\(default false\) | boolean | Whether to disable the default install page when MYKEY is not installed |
+| callback | String | Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](mykey_android_sdk_en.md#5-copy-following-code-to-androidmanifestxml-and-set-the-callback-deeplink-composed-by-schemehost-and-path), e.g. customscheme://customhost/custompath |
+| showUpgradeTip\(default false\) | boolean | Toast tip when MYKEY is not the latest version |
+| mykeyServer | String | Environment URL endpoint of MYKEY server |
 
 ### Class InitSimpleRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| context |  android.content.Context | dapp application context|
-| dappName | String |    dapp name |
-| dappIcon | String |    dapp icon logo, no small than 144x144px  |
-| disableInstall(default false) | boolean |     Whether to disable the default install page when MYKEY is not installed |
-| callback | String |    Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](), e.g. customscheme://customhost/custompath |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| context | android.content.Context | dapp application context |
+| dappName | String | dapp name |
+| dappIcon | String | dapp icon logo, no small than 144x144px |
+| disableInstall\(default false\) | boolean | Whether to disable the default install page when MYKEY is not installed |
+| callback | String | Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](mykey_android_sdk_en.md), e.g. customscheme://customhost/custompath |
 
 ### Class AuthorizeRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| userName |  String | Custom user name|
-| callBackUrl(optional) | String |  Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client  |
-| info     | String | Info, Semantic description of MYKEY display to the user for authorization page |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| userName | String | Custom user name |
+| callBackUrl\(optional\) | String | Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client |
+| info | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
 ### Class TransferRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| from |  String | From account|
-| to | String |  To account  |
-| amount     | String | Amount, e.g "1.0000" |
-| symbol     | String | Symbol, e.g. "EOS" |
-| contractName     | String | contract code name, e.g. "eosio.token" |
-| decimal     | String | Decimal |
-| memo     | String | Memo |
-| info     | String |  Semantic description of MYKEY display to the user about this action |
-| orderId     | String | The order id from dapp, optional, can be null e.g. "20190606001" |
-| callbackUrl(optional)     | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| from | String | From account |
+| to | String | To account |
+| amount | String | Amount, e.g "1.0000" |
+| symbol | String | Symbol, e.g. "EOS" |
+| contractName | String | contract code name, e.g. "eosio.token" |
+| decimal | String | Decimal |
+| memo | String | Memo |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| orderId | String | The order id from dapp, optional, can be null e.g. "20190606001" |
+| callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
 
 ### Class ContractRequest
 
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| orderId |  String | The order id from dapp, optional, can be null|
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| callbackUrl(optional)  | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
-| list\<BaseAction\> | [ContractAction](#class-contractaction) or [TransferAction](#class-transferaction) | List of contract actions
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| orderId | String | The order id from dapp, optional, can be null |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
+| list\ | [ContractAction](mykey_android_sdk_en.md#class-contractaction) or [TransferAction](mykey_android_sdk_en.md#class-transferaction) | List of contract actions |
 
 ### Class ContractAction
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| account |  String | contract code name |
-| name     | String | contract action name |
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 }|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| account | String | contract code name |
+| name | String | contract action name |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 } |
 
 ### Class TransferAction
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| account |  String | contract code name |
-| name     | String | contract action name, use "transfer" |
-| info     | String | Semantic description of MYKEY display to the user about this action |
-| transferObj | [TransferData](#class-transferdata) | Transfer info object|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| account | String | contract code name |
+| name | String | contract action name, use "transfer" |
+| info | String | Semantic description of MYKEY display to the user about this action |
+| transferObj | [TransferData](mykey_android_sdk_en.md#class-transferdata) | Transfer info object |
 
 ### Class TransferData
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| from |  String | From account name|
-| to     | String | To account name |
-| quantity     | String | Amount and Symbol |
-| memo | String| Memo |
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| from | String | From account name |
+| to | String | To account name |
+| quantity | String | Amount and Symbol |
+| memo | String | Memo |
 
 ### Class SignRequest
-| properties   |      Type      | Description |
-|----------|:-------------:|------|
-| message |  String | Unsigned messages|
-| callbackUrl     | String |  Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client|
+
+| properties | Type | Description |
+| :--- | :---: | :--- |
+| message | String | Unsigned messages |
+| callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client |
 
 ### Class MYKEYWalletCallback
 
-| methods   | Description |
-|-----------|-------------|
-| onSuccess | Success Callback    |
-| onError   | Failure Callback,[errorCode list](#error-code)    |
+| methods | Description |
+| :--- | :--- |
+| onSuccess | Success Callback |
+| onError | Failure Callback,[errorCode list](mykey_android_sdk_en.md#error-code) |
 | onCancel | Cancel Callback |
 
 ## Error Code
@@ -812,22 +840,23 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 
 10001-X are defined by MYKEYSdk
 
-| code   | Description |
-|-----------|-------------|
-|   0       |  User cancel the transaction  |
-|   1	      |  Success  |
-|   2	      |  Failure |
-|   10001   | unknow issue lead can not wakeup MYKEY |
-|   10002	  | MYKEY not installed yet |
-|   10003	  | MYKEY account is frozen |
-|   10004	  | Uninitialized |
-|   10005	  | Push transaction timeout |
-|   10006	  | Binded, triggered at authorize |
-|   10007	  | Unbind, triggered at transaction, trasnfer, sign |
-|   10008	  | dapp binded, and MYKEY unbind, triggered at transaction, trasnfer, sign |
-|   10009	  | MYKEY binded, triggered at authorize |
-|   10010	  | dapp binded, and MYKEY binded, but not match |
-|   10011	  | MYKEY unregistered, triggered at transaction, trasnfer, sign |
-|   10012	  | Illegal param |
-|   10013	  | Insufficient balance |
-|   10014	  | MYKEY account unavailable |
+| code | Description |
+| :--- | :--- |
+| 0 | User cancel the transaction |
+| 1 | Success |
+| 2 | Failure |
+| 10001 | unknow issue lead can not wakeup MYKEY |
+| 10002 | MYKEY not installed yet |
+| 10003 | MYKEY account is frozen |
+| 10004 | Uninitialized |
+| 10005 | Push transaction timeout |
+| 10006 | Binded, triggered at authorize |
+| 10007 | Unbind, triggered at transaction, trasnfer, sign |
+| 10008 | dapp binded, and MYKEY unbind, triggered at transaction, trasnfer, sign |
+| 10009 | MYKEY binded, triggered at authorize |
+| 10010 | dapp binded, and MYKEY binded, but not match |
+| 10011 | MYKEY unregistered, triggered at transaction, trasnfer, sign |
+| 10012 | Illegal param |
+| 10013 | Insufficient balance |
+| 10014 | MYKEY account unavailable |
+

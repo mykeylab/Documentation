@@ -1,10 +1,10 @@
-## SimpleWallet Protocol Compatible
+# SimpleWallet Protocol Compatible
 
-### Sample code for redirect to MYKEY
+## Sample code for redirect to MYKEY
 
 **Reminder:** In Android client, for avoid conflict with other wallets, developer can use following code to rediect to MYKEY precisely through set the MYKEY packge name: com.mykye.id
 
-```
+```text
 try {
     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
     intent.setPackage("com.mykey.id");
@@ -15,28 +15,29 @@ try {
 }
 ```
 
-### Login and Transfer
+## Login and Transfer
 
 MYKEY follows the SimpleWallet protocol implementation. See the following document for details:
 
-[https://github.com/southex/SimpleWallet/blob/master/README_en.md](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
+[https://github.com/southex/SimpleWallet/blob/master/README\_en.md](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
 
 Beside support **login** and **transfer** of SimpleWallet specification，MYKEY also additionally supports **contract** and **signature** method.
 
 **Special Notice:** [MYKEY account structure](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
 
-### Contract
+## Contract
 
-#### Sequence diagram for Web QR code scan
-![](../image/SimpleWalletWebContract.jpg)
+### Sequence diagram for Web QR code scan
 
+![](../.gitbook/assets/simplewalletwebcontract.jpg)
 
-#### Sequence diagram for Mobile applcaiton wake up
-![](../image/SimpleWalletDAppContract.jpg)
+### Sequence diagram for Mobile applcaiton wake up
+
+![](../.gitbook/assets/simplewalletdappcontract%20%281%29.jpg)
 
 Please pass the data to MYKEY as follows, the data format is json:
 
-```
+```text
 // Contract call data format
 
 {
@@ -50,40 +51,40 @@ Please pass the data to MYKEY as follows, the data format is json:
     notifyUrl   string   // The callback URL endpoint of DAppServer for receive success notification from MYKEY
     ContractRequest [  // Arrary of contact actions, include transfer and non-transfer actions
       { // non-transfer
-    	  account   string // contract code name
-    	  name      string // contract action name
-    	  info      string // Semantic description of MYKEY display to the user about this action
-    	  data      object // The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 }
+          account   string // contract code name
+          name      string // contract action name
+          info      string // Semantic description of MYKEY display to the user about this action
+          data      object // The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 }
       },
       { // transfer
-    	  account   string //  contract code name
-    	  name      string // contract action name
-    	  info      string // Semantic description of MYKEY display to the user about this action
-    	  TransferDataRequest {
-    	    from     string // From
-    	    to       string // To
-    	    quantity string // Amount and Symbol，e.g. "1.0000 EOS"
-    	    memo     string // Memo
-    	  }
+          account   string //  contract code name
+          name      string // contract action name
+          info      string // Semantic description of MYKEY display to the user about this action
+          TransferDataRequest {
+            from     string // From
+            to       string // To
+            quantity string // Amount and Symbol，e.g. "1.0000 EOS"
+            memo     string // Memo
+          }
       }
     ]
-    expired	    number   // 仅Web二维码模式可用，过期时间，unix时间戳
+    expired        number   // 仅Web二维码模式可用，过期时间，unix时间戳
 }
 ```
 
+## Sign
 
+### Sequence diagram for Web QR code scan
 
-### Sign
+![](../.gitbook/assets/simplewalletwebsign%20%281%29.jpg)
 
-#### Sequence diagram for Web QR code scan
-![](../image/SimpleWalletWebSign.jpg)
+### Sequence diagram for Mobile applcaiton wake up
 
-#### Sequence diagram for Mobile applcaiton wake up
-![](../image/SimpleWalletDAppSign.jpg)
+![](../.gitbook/assets/simplewalletdappsign%20%281%29.jpg)
 
 Please pass the data to MYKEY as follows, the data format is json:
 
-```
+```text
 // Sign call data format
 {
     protocol    string   // protocol name，use "SimpleWallet" by default
@@ -98,3 +99,4 @@ Please pass the data to MYKEY as follows, the data format is json:
     expired     number   // Only in web QR code mode, expire date,unix timestamp
 }
 ```
+
