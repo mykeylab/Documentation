@@ -28,6 +28,7 @@
 * [类和方法定义](shen-ru-mykey/mykey_android_sdk.md)
 * [错误码](shen-ru-mykey/cuo-wu-ma.md)
 * [合约充值](shen-ru-mykey/he-yue-chong-zhi.md)
+* [MYKEY白皮书](shen-ru-mykey/mykey-bai-pi-shu.md)
 
 ## 开发资源
 
