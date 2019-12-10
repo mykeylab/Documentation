@@ -10,7 +10,7 @@ import MYKEYWalletLib
 
 Object-C
 
-```swift
+```objectivec
 #import <MYKEYWalletLib/MYKEYWalletLib-Swift.h>
 ```
 
