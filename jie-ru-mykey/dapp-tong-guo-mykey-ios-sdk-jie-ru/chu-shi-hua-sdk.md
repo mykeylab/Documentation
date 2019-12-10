@@ -25,7 +25,7 @@ initSimpleData.disableInstall = true
 MYKEYWallet.shared.initWalletSimple(initSimpleData: initSimpleData)
 ```
 
-Scheme参数，[参考1.2 scheme](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md#12-%E5%9C%A8xcode%E8%AE%BE%E7%BD%AEurl-scheme-project-targets-info-url-types-%E6%B7%BB%E5%8A%A0-url-scheme)
+Scheme参数，[参考1.2 scheme](huan-jing-zhun-bei.md#2-tian-jia-url-scheme)
 
 ### 2. 在"application:openURL:"调用handlerUrl
 

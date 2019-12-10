@@ -16,7 +16,7 @@
 
 ![](../../.gitbook/assets/demoschema.png)
 
-这个配置会自动生成MYEKY回掉的深度链接，将会被用于MYKEY SDK的初始化方法中.[详见 initWalletSimple](https://docs.mykey.org/chinese/mykey_ios_sdk#initwalletsimple).
+这个配置会自动生成MYEKY回掉的深度链接，将会被用于MYKEY SDK的初始化方法中.[详见 initWalletSimple](../../shen-ru-mykey/mykey_android_sdk.md#lei-initsimplerequest).
 
 ### 3. 添加 LSApplicationQueriesSchemes
 

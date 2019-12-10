@@ -1,8 +1,8 @@
 # 签名
 
-唤起MYKEY进行Sign签名操作。参数请详见类定义:[SignRequest](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_ANDROID_SDK_EN.md#class-signrequest)和[MYKEYWalletCallback](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_ANDROID_SDK_EN.md#class-mykeywalletcallback)
+唤起MYKEY进行Sign签名操作。参数请详见类定义:[SignRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-signrequest)和[MYKEYWalletCallback](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeywalletcallback)
 
-dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata) 和 [MYKEY Verify Sign](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)
+dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../shen-ru-mykey/eos-shang-de-mykey.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../shen-ru-mykey/eos-shang-de-mykey.md#如何检查dapps是否在mykey-webview中运行)
 
 ```java
 SignRequest signRequest = new SignRequest()

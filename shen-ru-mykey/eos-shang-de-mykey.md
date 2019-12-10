@@ -6,7 +6,7 @@ MYKEY是一个自主身份系统。底层协议为KEY ID。
 
 ## MYKEY有啥不同？ <a id="mykey&#x6709;&#x5565;&#x4E0D;&#x540C;&#xFF1F;"></a>
 
-为了改善用户体验并降低EOS使用门槛，MYKEY旨在解决基于KEY ID协议的私钥管理和资源消耗管理的问题。更多详细信息请参考[MYKEY白皮书](https://github.com/mykeylab/Documentation/blob/master/Whitepaper/mykey_whitepaper_en.pdf)
+为了改善用户体验并降低EOS使用门槛，MYKEY旨在解决基于KEY ID协议的私钥管理和资源消耗管理的问题。更多详细信息请参考[MYKEY白皮书](mykey-bai-pi-shu.md)
 
 MYKEY通过KEY ID智能合约重新设计了EOS帐户，该EOS主网上的合约包含两部分：
 
@@ -20,6 +20,8 @@ MYKEY通过KEY ID智能合约重新设计了EOS帐户，该EOS主网上的合约
 ## MYKEY的帐户结构 <a id="mykey&#x5E10;&#x6237;&#x7ED3;&#x6784;"></a>
 
 MYKEY帐户结构中有两种密钥：admin key（管理密钥）和operation key（操作密钥）。在KEYID智能合约中，“Admin Key”不能签署任何常规交易，只能签署带时间锁的交易来替换“Operation Key”。
+
+![](../.gitbook/assets/account_model%20%281%29.png)
 
 Admin Key对应的私钥由移动设备生成，可以在账户注册期间通过恢复码或硬件钱包进行冷备份。Operation Key对应的私钥由移动设备生成并加密存储。
 
@@ -89,7 +91,7 @@ function isMYKEY(){
 
 MYKEY Development Toolkit，又名MDT，是基于MYKEY帐户系统开发应用程序的工具包。它包含MYKEY Client SDK，JSBridge Lib和SimpleWallet协议扩展。该开发工具套件可以帮助应用程序唤醒MYKEY进行登录，转账，合约调用，签名和其他链上操作。到目前为止，它只支持EOS链，以后会随着MYKEY的多链路线图扩展到其他公链。
 
-原生DAPP可以使用[MYKEY开发工具包](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_DEVELOPMENT_TOOLKIT_EN.md)来使用MYKEY进行授权，转账，合约调用，签名等。
+原生DAPP可以使用MYKEY开发工具包来使用MYKEY进行授权，转账，合约调用，签名等。
 
 ### 4. 应用程序支持操作密钥（即将推出） <a id="4----&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x64CD;&#x4F5C;&#x5BC6;&#x94A5;&#xFF08;&#x5373;&#x5C06;&#x63A8;&#x51FA;&#xFF09;"></a>
 

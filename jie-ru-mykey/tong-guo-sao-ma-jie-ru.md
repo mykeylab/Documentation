@@ -35,5 +35,5 @@ WEB应用收到的MYKEY如下的数据，格式为json:
 }
 ```
 
-WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要通过读取mykey合约获得，见[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)。
+WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要通过读取mykey合约获得，见[文档](../shen-ru-mykey/eos-shang-de-mykey.md#mykey帐户结构)。
 

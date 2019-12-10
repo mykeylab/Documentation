@@ -1,6 +1,6 @@
 # 合约调用
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_ANDROID_SDK.md#class-contractrequest) 和 [MYKEYWalletCallback](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_ANDROID_SDK.md#class-mykeywalletcallback)
+唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-contractrequest) 和 [MYKEYWalletCallback](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeywalletcallback)
 
 ```java
 ContractRequest contractRequest = new ContractRequest()

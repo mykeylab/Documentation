@@ -1,6 +1,6 @@
 # 转账
 
-唤起MYKEY进行转账。参数请详见类定义:[TransferRequest](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_ANDROID_SDK.md#class-transferrequest)和[MYKEYWalletCallback](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_ANDROID_SDK.md#class-mykeywalletcallback)
+唤起MYKEY进行转账。参数请详见类定义:[TransferRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-transferrequest)和[MYKEYWalletCallback](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeywalletcallback)
 
 ```java
 TransferRequest transferRequest =new TransferRequest()

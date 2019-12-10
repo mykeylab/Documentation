@@ -1,6 +1,6 @@
 # 合约调用
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md#class-contractrequest),[ContractAction](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md#class-contractaction),[TransferAction](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md#class-transferaction) 和 [MYKEYResponse](https://github.com/mykeylab/Documentation/blob/master/Chinese/MYKEY_iOS_SDK.md#class-mykeyresponse).
+唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-contractrequest),[ContractAction](../../shen-ru-mykey/mykey_android_sdk.md#lei-contractaction),[TransferAction](../../shen-ru-mykey/mykey_android_sdk.md#lei-transferaction) 和 [MYKEYResponse](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeyresponse).
 
 ```swift
 let transferData = TransferData()

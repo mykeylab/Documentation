@@ -2,7 +2,7 @@
 
 JSBridge 为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入库，支持web3协议；也支持Scatter协议，开发者可以使用[Scatter文档](https://get-scatter.com/docs/api-reference)进行H5 DApp的开发。
 
-**特别注意:**[MYKEY的账号体系](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure)与其他的EOS账号有所差异，需要在服务端验签时使用**Reserved公钥**进行验签，详细请查阅[文档](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#if-dapp-dependents-on-getarbitrarysignature-or-other-server-side-authentication)。
+**特别注意:**[MYKEY的账号体系](../shen-ru-mykey/eos-shang-de-mykey.md#mykey帐户结构)与其他的EOS账号有所差异，需要在服务端验签时使用**Reserved公钥**进行验签，详细请查阅[文档](../shen-ru-mykey/eos-shang-de-mykey.md#2-dui-yu-yu-scatter-jian-rong-de-dapp)。
 
 ## web3协议验签
 
