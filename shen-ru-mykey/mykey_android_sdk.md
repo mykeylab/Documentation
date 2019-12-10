@@ -1,10 +1,10 @@
 # 类和方法定义
 
-### 类 MyKeySdk
+## 类 MyKeySdk
 
 MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分别是init, initSimple, authorize, transfer, contract, signature, jumpToGuideInstall.
 
-#### 方法 jumpToGuideInstall
+### 方法 jumpToGuideInstall
 
 跳转到弹出引导安装MYKEY页面，当用户没有安装MYKEY时进行引导。
 
@@ -18,9 +18,9 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | contractHandle | com.mykey.sdk.handle.ContractHandle | 合约操作的处理逻辑 |
 | signatureHandle | com.mykey.sdk.handle.SignatureHandle | 签名操作的处理逻辑 |
 
-### 其他类定义
+## 其他类定义
 
-#### 类 InitRequest
+### 类 InitRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -35,7 +35,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | mykeyServer | String | MYKEY服务端环境Endpoint |
 | contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
 
-#### 类 InitSimpleRequest
+### 类 InitSimpleRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -46,7 +46,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | callback | String | MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](mykey_android_sdk.md#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
 | contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
 
-#### 类 AuthorizeRequest
+### 类 AuthorizeRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -54,7 +54,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | callBackUrl（可选） | String | dapp server的回调url，MYKEY绑定成功会先回调dapp server,然后再唤醒移动端 |
 | info | String | 备注信息，用于绑定认证页面的语义化描述 |
 
-#### 类 TransferRequest
+### 类 TransferRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -69,7 +69,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | orderId | String | 订单ID，dapp提供的订单ID，可为空 e.g. "20190606001" |
 | callbackUrl（可选） | String | dapp server的回调url，上链成功会先回调dapp server,然后再唤醒移动端 |
 
-#### 类 ContractRequest
+### 类 ContractRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -78,7 +78,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | callbackUrl（可选） | String | dapp server的回调url，上链成功会先回调dapp server,然后再唤醒移动端 |
 | list\ | [ContractAction](mykey_android_sdk.md#class-contractaction) 或者 [TransferAction](mykey_android_sdk.md#class-transferaction) | 合约操作action的列表 |
 
-#### 类 ContractAction
+### 类 ContractAction
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -87,7 +87,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | info | String | 备注信息，用于语义化该笔操作 |
 | data | Object | 根据合约abi定义所传的参数对象 e.g. {key1: value1, key2: value2 } |
 
-#### 类 TransferAction
+### 类 TransferAction
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -96,7 +96,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | info | String | 备注信息，用于语义化该笔操作 |
 | transferObj | [TransferData](mykey_android_sdk.md#class-transferdata) | 转账信息对象 |
 
-#### 类 TransferData
+### 类 TransferData
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
@@ -105,14 +105,29 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | quantity | String | 转账金额与单位 |
 | memo | String | 链上备注信息 |
 
-#### 类 SignRequest
+### 类 SignRequest
 
 | properties | Type | Description |
 | :--- | :---: | :--- |
 | message | String | 需要签名的数据 |
 | callbackUrl | String | dapp server的回调url，MYKEY绑定成功会先回调dapp server,然后再唤醒移动端 |
 
-#### 类 MYKEYWalletCallback
+### 类 MYKEYResponse
+
+| properties | Description |
+| :--- | :--- |
+| success | 成功的回调 |
+| failure | 失败的回调, 错误列表[errorCode list](https://github.com/mykeylab/Documentation/blob/master/english/mykey_ios_sdk_en.md#error-code) |
+| cancelled | 取消的回调 |
+
+### 类 MYKEYApiResponse
+
+| properties | Description |
+| :--- | :--- |
+| success | 成功的回调 |
+| failure | 失败的回调 |
+
+### 类 MYKEYWalletCallback
 
 | methods | Description |
 | :--- | :--- |
