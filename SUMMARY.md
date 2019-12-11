@@ -2,41 +2,41 @@
 
 * [快速开始](README.md)
 
-## 接入MYKEY
+## 接入MYKEY <a id="integrate-with-mykey"></a>
 
-* [dapp通过MYKEY Android SDK接入](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/README.md)
-  * [环境准备](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/huan-jing-zhun-bei.md)
-  * [初始化SDK](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/chu-shi-hua-sdk.md)
-  * [认证](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/ren-zheng.md)
-  * [签名](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/qian-ming.md)
-  * [转账](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/zhuan-zhang.md)
-  * [合约调用](jie-ru-mykey/dapp-tong-guo-mykey-android-sdk-jie-ru/he-yue-tiao-yong.md)
-* [dapp通过MYKEY iOS SDK接入](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/README.md)
-  * [环境准备](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/huan-jing-zhun-bei.md)
-  * [初始化SDK](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/chu-shi-hua-sdk.md)
-  * [认证](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/ren-zheng.md)
-  * [签名](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/qian-ming.md)
-  * [转账](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/zhuan-zhang.md)
-  * [合约调用](jie-ru-mykey/dapp-tong-guo-mykey-ios-sdk-jie-ru/he-yue-tiao-yong.md)
-* [通过H5页面接入](jie-ru-mykey/tong-guo-h5-ye-mian-jie-ru.md)
-* [通过扫码接入](jie-ru-mykey/tong-guo-sao-ma-jie-ru.md)
+* [dapp通过MYKEY Android SDK接入](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/README.md)
+  * [环境准备](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/preconditions.md)
+  * [初始化SDK](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/initiate-sdk.md)
+  * [认证](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/authorize.md)
+  * [签名](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/sign.md)
+  * [转账](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/transfer.md)
+  * [合约调用](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/call-contracts.md)
+* [dapp通过MYKEY iOS SDK接入](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/README.md)
+  * [环境准备](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/preconditions.md)
+  * [初始化SDK](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/initiate-sdk.md)
+  * [认证](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/authorize.md)
+  * [签名](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/sign.md)
+  * [转账](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/transfer.md)
+  * [合约调用](integrate-with-mykey/dapp-integration-via-mykey-ios-sdk/call-contracts.md)
+* [通过H5页面接入](integrate-with-mykey/dapp-integration-via-h5-pages.md)
+* [通过扫码接入](integrate-with-mykey/dapp-integration-via-scanning-qrcode.md)
 
-## 深入MYKEY
+## 深入MYKEY <a id="dive-into-mykey"></a>
 
-* [EOS上的MYKEY](shen-ru-mykey/eos-shang-de-mykey.md)
-* [JS功能扩展](shen-ru-mykey/js-gong-neng-kuo-zhan.md)
-* [类和方法定义](shen-ru-mykey/mykey_android_sdk.md)
-* [错误码](shen-ru-mykey/cuo-wu-ma.md)
-* [合约充值](shen-ru-mykey/he-yue-chong-zhi.md)
-* [MYKEY白皮书](shen-ru-mykey/mykey-bai-pi-shu.md)
+* [EOS上的MYKEY](dive-into-mykey/mykey-on-eos.md)
+* [JS功能扩展](dive-into-mykey/js-extensions.md)
+* [类和方法定义](dive-into-mykey/classes-and-methods.md)
+* [错误码](dive-into-mykey/error-code.md)
+* [合约充值](dive-into-mykey/contracts-deposit.md)
+* [MYKEY白皮书](dive-into-mykey/mykey-whitepaper.md)
 
-## 开发资源
+## 开发资源 <a id="development-resources"></a>
 
-* [EOS](kai-fa-zi-yuan/eos.md)
-* [ETH](kai-fa-zi-yuan/eth.md)
+* [EOS](development-resources/eos.md)
+* [ETH](development-resources/eth.md)
 
-## 加入我们
+## 加入我们 <a id="development-resources-1"></a>
 
-* [项目提交上架](jia-ru-wo-men/xiang-mu-ti-jiao-shang-jia.md)
-* [开发者社区](jia-ru-wo-men/kai-fa-zhe-she-qu.md)
+* [项目提交上架](development-resources-1/dapp-submit.md)
+* [开发者社区](development-resources-1/developers-community.md)
 

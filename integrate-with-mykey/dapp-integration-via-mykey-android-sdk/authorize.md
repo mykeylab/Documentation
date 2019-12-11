@@ -1,10 +1,10 @@
 # 认证
 
-唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-authorizerequest) 和 [MYKEYWalletCallback](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeywalletcallback)
+唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods.md#lei-authorizerequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods.md#lei-mykeywalletcallback)
 
 为了更强的安全性，可以设置CallBackUrl进行服务端验签
 
-MYKEY将签名后的数据POST到dapp提供的CallBackUrl，请求dapp服务端验证，dapp服务端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../shen-ru-mykey/eos-shang-de-mykey.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../shen-ru-mykey/eos-shang-de-mykey.md#如何检查dapps是否在mykey-webview中运行)
+MYKEY将签名后的数据POST到dapp提供的CallBackUrl，请求dapp服务端验证，dapp服务端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#如何检查dapps是否在mykey-webview中运行)
 
 dapp提供的CallBackUrl接口参数：
 

@@ -30,7 +30,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | dappName | String | dapp的名称 |
 | dappIcon | String | dapp的logo, 建议不低于144x144px |
 | disableInstall（默认false） | boolean | 是否禁用MYKEY未安装时显示默认引导页面 |
-| callback | String | MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](mykey_android_sdk.md#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| callback | String | MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](classes-and-methods.md#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
 | showUpgradeTip（默认false） | boolean | MYKEY非最新版本是否显示更新提示，提示为系统默认Toast |
 | mykeyServer | String | MYKEY服务端环境Endpoint |
 | contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
@@ -43,7 +43,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | dappName | String | dapp的名称 |
 | dappIcon | String | dapp的logo, 建议不低于144x144px |
 | disableInstall（默认false） | boolean | 是否禁用MYKEY未安装时显示默认引导页面 |
-| callback | String | MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](mykey_android_sdk.md#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
+| callback | String | MYKEY调用成功后回调dapp的深度链接,在[AndroidManifest.xml中定义](classes-and-methods.md#4-复制下面的代码到你的androidmanifestxml并设置符合你包名或规则的schemehost和path), e.g. customscheme://customhost/custompath |
 | contractPromptFree | Boolean | 除转账行为之外的合约方法免提示开关 |
 
 ### 类 AuthorizeRequest
@@ -76,7 +76,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | orderId | String | dapp 提供的订单ID, 可为空 |
 | info | String | 备注信息，用于语义化该笔操作 |
 | callbackUrl（可选） | String | dapp server的回调url，上链成功会先回调dapp server,然后再唤醒移动端 |
-| list\ | [ContractAction](mykey_android_sdk.md#class-contractaction) 或者 [TransferAction](mykey_android_sdk.md#class-transferaction) | 合约操作action的列表 |
+| list\ | [ContractAction](classes-and-methods.md#class-contractaction) 或者 [TransferAction](classes-and-methods.md#class-transferaction) | 合约操作action的列表 |
 
 ### 类 ContractAction
 
@@ -94,7 +94,7 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | account | String | 合约名 |
 | name | String | 合约方法，填写"transfer" |
 | info | String | 备注信息，用于语义化该笔操作 |
-| transferObj | [TransferData](mykey_android_sdk.md#class-transferdata) | 转账信息对象 |
+| transferObj | [TransferData](classes-and-methods.md#class-transferdata) | 转账信息对象 |
 
 ### 类 TransferData
 
@@ -132,8 +132,6 @@ MYKEY Android主要的逻辑封装在MyKeySdk类中, 实现了6个方法，分�
 | methods | Description |
 | :--- | :--- |
 | onSuccess | 成功的回调 |
-| onError | 失败的回调,[errorCode列表](mykey_android_sdk.md#error-code) |
+| onError | 失败的回调,[errorCode列表](classes-and-methods.md#error-code) |
 | onCancel | 取消交易的回调 |
-
-
 

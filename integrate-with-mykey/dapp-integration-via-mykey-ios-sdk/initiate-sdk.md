@@ -1,6 +1,6 @@
 # 初始化SDK
 
-### 1. 添加文件 "MYKEYWalletLib.h" 到  "AppDelegate.m"
+## 1. 添加文件 "MYKEYWalletLib.h" 到  "AppDelegate.m"
 
 Swift
 
@@ -25,9 +25,9 @@ initSimpleData.disableInstall = true
 MYKEYWallet.shared.initWalletSimple(initSimpleData: initSimpleData)
 ```
 
-Scheme参数，[参考1.2 scheme](huan-jing-zhun-bei.md#2-tian-jia-url-scheme)
+Scheme参数，[参考1.2 scheme](preconditions.md#2-tian-jia-url-scheme)
 
-### 2. 在"application:openURL:"调用handlerUrl
+## 2. 在"application:openURL:"调用handlerUrl
 
 ```swift
 MYKEYWallet.shared.handleUrl(url: url)

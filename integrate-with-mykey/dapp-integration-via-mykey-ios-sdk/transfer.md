@@ -1,6 +1,6 @@
-# 合约调用
+# 转账
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../shen-ru-mykey/mykey_android_sdk.md#lei-contractrequest),[ContractAction](../../shen-ru-mykey/mykey_android_sdk.md#lei-contractaction),[TransferAction](../../shen-ru-mykey/mykey_android_sdk.md#lei-transferaction) 和 [MYKEYResponse](../../shen-ru-mykey/mykey_android_sdk.md#lei-mykeyresponse).
+唤起MYKEY进行转账。参数请详见类定义:[TransferRequest](../../dive-into-mykey/classes-and-methods.md#lei-transferrequest)和[MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#lei-mykeyresponse)
 
 ```swift
 let transferData = TransferData()
@@ -25,15 +25,12 @@ let contractRequest = ContractRequest()
 contractRequest.info = "Perform the mortgage REX operation"
 contractRequest.orderId = "BH19004"
 // param：{"protocol": "", "version": "", "tx_id": "", "ref": "", "account": ""}
-// return: same as SimpleWallet {"code": [0-2], "message": ""}
 contractRequest.callbackUrl = "https://dappserver.xxx.url"
 contractRequest.actions = [transferActionData,contractActionData]
 
 MYKEYWallet.shared.contract(contractRequest: contractRequest, response: MYKEYResponse.init(success: { (response) in
-    self.presentDataView(data: response)
     self.view.makeToast("success")
 }, failure: { (errorValue) in
-    self.presentDataView(data: errorValue)
     self.view.makeToast("failure")
 }, cancelled: {
     self.view.makeToast("cancelled")

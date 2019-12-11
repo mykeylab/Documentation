@@ -6,7 +6,7 @@ MYKEY是一个自主身份系统。底层协议为KEY ID。
 
 ## MYKEY有啥不同？ <a id="mykey&#x6709;&#x5565;&#x4E0D;&#x540C;&#xFF1F;"></a>
 
-为了改善用户体验并降低EOS使用门槛，MYKEY旨在解决基于KEY ID协议的私钥管理和资源消耗管理的问题。更多详细信息请参考[MYKEY白皮书](mykey-bai-pi-shu.md)
+为了改善用户体验并降低EOS使用门槛，MYKEY旨在解决基于KEY ID协议的私钥管理和资源消耗管理的问题。更多详细信息请参考[MYKEY白皮书](mykey-whitepaper.md)
 
 MYKEY通过KEY ID智能合约重新设计了EOS帐户，该EOS主网上的合约包含两部分：
 
@@ -72,7 +72,7 @@ function isMYKEY(){
 }
 ```
 
-2. 使用scatter.getIdentity检查响应数据是否包含类型："MYKEY"
+1. 使用scatter.getIdentity检查响应数据是否包含类型："MYKEY"
 
 ```java
 {
