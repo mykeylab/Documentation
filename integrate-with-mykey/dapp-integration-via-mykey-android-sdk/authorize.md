@@ -1,10 +1,10 @@
 # Authorize
 
-Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest]() and [MYKEYWalletCallback]()
+Pull up MYKEY for authentication binding. See the class definition for the parameters: [AuthorizeRequest](../../dive-into-mykey/classes-and-methods.md#class-authorizerequest) and [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods.md#class-mykeywalletcallback)
 
 For better security, dapp can set CallBackUrl for server-side verification.
 
-MYKEY will post the signed data to CallBackUrl which provided by dapp, server-side of dapp should verify the signature, dapp server should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY]() and [MYKEY Verify Sign]()
+MYKEY will post the signed data to CallBackUrl which provided by dapp, server-side of dapp should verify the signature, dapp server should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) and [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey)
 
 The format of the data post to CallBackUrl:
 

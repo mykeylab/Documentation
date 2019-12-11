@@ -1,6 +1,6 @@
 # Call contracts
 
-Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest]() and [MYKEYWalletCallback]()
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](../../dive-into-mykey/classes-and-methods.md#class-contractrequest) and [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods.md#class-mykeywalletcallback)
 
 ```java
 ContractRequest contractRequest = new ContractRequest()

@@ -8,7 +8,7 @@ As a multi-chain wallet, MYKEY, will support multiple smart contract platform. S
 
 Here you can learn how to quickly integrate with the smart wallet - MYKEY, and get the most useful development resources. This website including:
 
-* [Integrated with MYKEY]() Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol etc.
-* [Dive into MYKEY](http://localhost:4000/en/mykey_on_eos.html) Detailed design, extensions of MYKEY.
-* [Dev resources]() The most practical EOS、ETH development resources.
+* [Integrated with MYKEY](integrate-with-mykey/dapp-integration-via-mykey-android-sdk/) Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol etc.
+* [Dive into MYKEY](dive-into-mykey/mykey-on-eos.md) Detailed design, extensions of MYKEY.
+* [Dev resources](development-resources/eos.md) The most practical EOS、ETH development resources.
 

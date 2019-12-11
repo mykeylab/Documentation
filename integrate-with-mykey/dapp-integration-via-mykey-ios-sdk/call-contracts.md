@@ -1,6 +1,6 @@
 # Call contracts
 
-Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](),[ContractAction](),[TransferAction]() and [MYKEYResponse]().
+Pull up MYKEY for contract calls, support multiple action combination calls, support ContractAction and TransferAction two types of action types. Please refer to the class definition for the parameters [ContractRequest](../../dive-into-mykey/classes-and-methods.md#class-contractrequest), [ContractAction](../../dive-into-mykey/classes-and-methods.md#class-contractaction), [TransferAction](../../dive-into-mykey/classes-and-methods.md#class-transferaction) and [MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#class-mykeyresponse).
 
 ```swift
 let transferData = TransferData()

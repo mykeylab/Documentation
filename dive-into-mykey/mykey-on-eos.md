@@ -52,15 +52,15 @@ MYKEY predefined four keys for every account during sign up. Details shown in th
 | 2 | OperationKey 2/Adding key: For creating more new operation keys |
 | 3 | OperationKey 3/Reserved key: For other actions without specific operation keys |
 
-### Integrate EOS dapps with MYKEY
+## Integrate EOS dapps with MYKEY
 
 Because MYKEY does some customization on EOS account structure, there're some good tips for dapp developers.
 
-#### 1. Ignore the CPU and NET monitor
+### 1. Ignore the CPU and NET monitor
 
 Because MYKEY take care all resource status for users. Every MYKEY account always stake 0 CPU and 0 NET on EOS chain. So dapps user interface should ignore resource warning for MYKEY account.
 
-#### 2. For dapps compatible with Scatter
+### 2. For dapps compatible with Scatter
 
 MYKEY almost compatible with interfaces of Scatter protocol. The only difference from traditional wallet is MYKEY will use one of its 3rd OperationKey/Reserved Key to sign transactions instead of the EOS owner/active key.
 
