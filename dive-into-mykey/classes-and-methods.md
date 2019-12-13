@@ -61,7 +61,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | orderId | String | The order id from dapp, optional, can be null |
 | info | String | Semantic description of MYKEY display to the user about this action |
 | callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
-| actions: \[BaseAction\] | [ContractAction]() or [TransferAction]() | List of contract actions |
+| actions: \[BaseAction\] | [ContractAction](classes-and-methods.md#class-contractaction) or [TransferAction](classes-and-methods.md#class-transferaction) | List of contract actions |
 
 ### Class ContractAction
 
@@ -79,7 +79,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | account | String | contract code name |
 | name | String | contract action name, use "transfer" |
 | info | String | Semantic description of MYKEY display to the user about this action |
-| transferObj | [TransferData]() | Transfer info object |
+| transferObj | [TransferData](classes-and-methods.md#class-transferdata) | Transfer info object |
 
 ### Class TransferData
 
@@ -102,7 +102,7 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | properties | Description |
 | :--- | :--- |
 | success | Success Callback |
-| failure | Failure Callback, [errorCode list]() |
+| failure | Failure Callback, [errorCode list](error-code.md) |
 | cancelled | Cancel Callback |
 
 ### Class MYKEYApiResponse
@@ -117,6 +117,6 @@ Jump to the pop-up to MYKEY installation page and boot when the user does not ha
 | methods | Description |
 | :--- | :--- |
 | onSuccess | Success Callback |
-| onError | Failure Callback, [errorCode list]() |
+| onError | Failure Callback, [errorCode list](error-code.md) |
 | onCancel | Cancel Callback |
 

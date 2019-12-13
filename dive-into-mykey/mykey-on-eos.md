@@ -10,7 +10,7 @@ Meanwhile, document will demonstrate the simple way to make your code compatible
 
 To improve user experiences and lower the threshold of EOS usage, MYKEY designed to resolve the problem of private key management and resource consumption management based on KEY ID protocol.
 
-More details in [MYKEY Whitepaper](https://github.com/mykeylab/Documentation/blob/master/Whitepaper/mykey_whitepaper_en.pdf)
+More details in [MYKEY Whitepaper](mykey-whitepaper.md)
 
 MYKEY has re-designed the native EOS account by KEY ID Smart Contracts that split two parts on EOS mainnet.
 
@@ -99,7 +99,7 @@ We already implemented some sample code for reference. Please check it out.
 
 MYKEY Development Toolkit, aka MDT, a toolkit for developers to develop applications based on the MYKEY account system. It contains MYKEY Client SDK, JSBridge Lib and SimpleWallet protocol extension. This suite of development toolkit can help applications wake up MYKEY to login, transfer, contracts invoke, sign and other on-chain operations. This tooklit only support EOS chain by now, and will extend to other public chains with the roadmap of MYKEY for multi-chain.
 
-Native dapps can use [MYKEY Development Tool](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY_DEVELOPMENT_TOOLKIT_EN.md) to use MYKEY to authorize, transfer, contract, sign.
+Native dapps can use [MYKEY Development Tool](../integrate-with-mykey/integration-android/) to use MYKEY to authorize, transfer, contract, sign.
 
 ### 4. Application Op Key support\(coming soon\)
 
