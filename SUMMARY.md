@@ -1,6 +1,6 @@
 # Table of contents
 
-* [快速开始](README.md)
+* [简介](README.md)
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
