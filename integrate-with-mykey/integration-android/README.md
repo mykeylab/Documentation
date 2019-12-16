@@ -1,2 +1,2 @@
-# dapp通过MYKEY Android SDK接入
+# 通过MYKEY Android SDK接入
 

@@ -1,2 +1,2 @@
-# dapp通过MYKEY iOS SDK接入
+# 通过MYKEY iOS SDK接入
 

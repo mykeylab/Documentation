@@ -4,14 +4,14 @@
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
-* [dapp通过MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
+* [通过MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
   * [认证](integrate-with-mykey/integration-android/authorize.md)
   * [签名](integrate-with-mykey/integration-android/sign.md)
   * [转账](integrate-with-mykey/integration-android/transfer.md)
   * [合约调用](integrate-with-mykey/integration-android/call-contracts.md)
-* [dapp通过MYKEY iOS SDK接入](integrate-with-mykey/integration-ios/README.md)
+* [通过MYKEY iOS SDK接入](integrate-with-mykey/integration-ios/README.md)
   * [环境准备](integrate-with-mykey/integration-ios/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-ios/initiate-sdk.md)
   * [认证](integrate-with-mykey/integration-ios/authorize.md)
