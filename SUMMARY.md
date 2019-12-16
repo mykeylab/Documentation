@@ -4,22 +4,22 @@
 
 ## Integrate with MYKEY
 
-* [dapp integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
+* [integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
   * [Preconditions](integrate-with-mykey/integration-android/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
   * [Authorize](integrate-with-mykey/integration-android/authorize.md)
   * [Sign](integrate-with-mykey/integration-android/sign.md)
   * [Transfer](integrate-with-mykey/integration-android/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-android/call-contracts.md)
-* [dapp integration via MYKEY iOS SDK](integrate-with-mykey/integration-ios/README.md)
+* [integration via MYKEY iOS SDK](integrate-with-mykey/integration-ios/README.md)
   * [Preconditions](integrate-with-mykey/integration-ios/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-ios/initiate-sdk.md)
   * [Authorize](integrate-with-mykey/integration-ios/authorize.md)
   * [Sign](integrate-with-mykey/integration-ios/sign.md)
   * [Transfer](integrate-with-mykey/integration-ios/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-ios/call-contracts.md)
-* [dapp integration via H5 pages](integrate-with-mykey/h5.md)
-* [dapp integration via scanning qrcode](integrate-with-mykey/scan.md)
+* [integration via H5 pages](integrate-with-mykey/h5.md)
+* [integration via scanning qrcode](integrate-with-mykey/scan.md)
 
 ## Dive into MYKEY
 

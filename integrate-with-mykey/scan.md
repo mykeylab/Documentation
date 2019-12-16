@@ -1,4 +1,4 @@
-# dapp integration via scanning qrcode
+# integration via scanning qrcode
 
 For WEB application, you can scan the QR code to login via the MYKEY APP as long as you follow the SimpleWallet protocol.
 

@@ -1,2 +1,2 @@
-# dapp integration via MYKEY iOS SDK
+# integration via MYKEY iOS SDK
 

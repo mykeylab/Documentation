@@ -1,2 +1,2 @@
-# dapp integration via MYKEY Android SDK
+# integration via MYKEY Android SDK
 
