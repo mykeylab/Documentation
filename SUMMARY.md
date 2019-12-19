@@ -18,7 +18,9 @@
   * [Sign](integrate-with-mykey/integration-ios/sign.md)
   * [Transfer](integrate-with-mykey/integration-ios/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-ios/call-contracts.md)
-* [mobile dapp with H5 pages](integrate-with-mykey/h5.md)
+* [mobile dapp with H5 pages](integrate-with-mykey/h5/README.md)
+  * [EOS](integrate-with-mykey/h5/eos.md)
+  * [ETH](integrate-with-mykey/h5/eth.md)
 * [PC web with scanning qrcode](integrate-with-mykey/scan.md)
 
 ## Dive into MYKEY

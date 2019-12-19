@@ -1,10 +1,14 @@
-# mobile dapp with H5 pages
+# ETH
 
-JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, it support Scatter protocol, developers can develop H5 dapp follow [Scatter Document](https://get-scatter.com/developers/settingupforwebapps), it will also support web3js protocol when MYKEY support ETH.
+## Compatible with web3 protocol
 
-**Special Notice**: [MYKEY account structure](../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document](../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey).
+MYKEY is compatible with web3 protocol. You can develop dapp with web3 protocol, and access it with MYKEY's default browser. 
 
-## Verify signing with web3 protocol
+You can also refer below link to get more details about eth web3 protocol:
+
+[https://learnblockchain.cn/docs/web3js-0.2x/web3.html](https://learnblockchain.cn/docs/web3js-0.2x/web3.html)
+
+## Verify signing with MYKEY
 
 Due to the unique design of MYKEY, the client will use **Reserved Key** to sign messages, and the server backend should use **Reserved Key** to verify signatures. For example, we use web3 protocol to sign and verify a message:
 
