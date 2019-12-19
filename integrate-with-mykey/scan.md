@@ -1,4 +1,4 @@
-# integration via scanning qrcode
+# PC web with scanning qrcode
 
 For WEB application, you can scan the QR code to login via the MYKEY APP as long as you follow the SimpleWallet protocol.
 
