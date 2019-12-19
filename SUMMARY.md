@@ -18,8 +18,8 @@
   * [签名](integrate-with-mykey/integration-ios/sign.md)
   * [转账](integrate-with-mykey/integration-ios/transfer.md)
   * [合约调用](integrate-with-mykey/integration-ios/call-contracts.md)
-* [通过H5页面接入](integrate-with-mykey/h5.md)
-* [通过扫码接入](integrate-with-mykey/scan.md)
+* [Mobile通过H5页面接入](integrate-with-mykey/h5.md)
+* [PC Web通过扫码接入](integrate-with-mykey/scan.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 

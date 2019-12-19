@@ -1,4 +1,4 @@
-# 通过扫码接入
+# PC Web通过扫码接入
 
 对于WEB应用，只要遵循SimpleWallet协议，即可通过MYKEY APP扫描二维码登录。
 
