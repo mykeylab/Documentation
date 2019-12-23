@@ -16,7 +16,7 @@ For example, use 'demoscheme' as follows
 
 ![](../../.gitbook/assets/demoschema.png)
 
-This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initialization. See [initWalletSimple](../../dive-into-mykey/classes-and-methods.md#initsimplerequest).
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initialization. See [initWalletSimple](../../dive-into-mykey/classes-and-methods/#initsimplerequest).
 
 ### 3. Add LSApplicationQueriesSchemes
 

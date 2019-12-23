@@ -1,6 +1,6 @@
 # Authorize
 
-Pull up MYKEY for authentication binding. See the class definition for the parameters:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods.md#class-authorizerequest) and [MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#class-mykeyresponse)
+Pull up MYKEY for authentication binding. See the class definition for the parameters:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods/#class-authorizerequest) and [MYKEYResponse](../../dive-into-mykey/classes-and-methods/#class-mykeyresponse)
 
 For greater security, dapp can set CallBackUrl for server-side verification.
 

@@ -16,7 +16,7 @@ Object-C
 
 ### 2. Init
 
-To instantiate class MyKeySdk, this lightweight authorization will initiate SDK in major process and use the same logic as SimpleWallet protocol. By using such way, DAPPs don't need to have own accounts system. Binding with MYKEY is not needed either. Parameters are here:[InitSimpleRequest](../../dive-into-mykey/classes-and-methods.md#initsimplerequest)
+To instantiate class MyKeySdk, this lightweight authorization will initiate SDK in major process and use the same logic as SimpleWallet protocol. By using such way, DAPPs don't need to have own accounts system. Binding with MYKEY is not needed either. Parameters are here:[InitSimpleRequest](../../dive-into-mykey/classes-and-methods/#initsimplerequest)
 
 ```swift
 let initSimpleData = InitSimpleRequest()

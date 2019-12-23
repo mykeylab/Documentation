@@ -71,7 +71,7 @@ Copy following code to AndroidManifest.xml, and set the callback deeplink, compo
 </activity>
 ```
 
-This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [initSimple](../../dive-into-mykey/classes-and-methods.md#initsimplerequest)。
+This configuration will generate a deeplink for MYKEY callback, which will be used in MYKEK SDK initlization, [initSimple](../../dive-into-mykey/classes-and-methods/#initsimplerequest)。
 
 ### 6. Proguard rules
 
