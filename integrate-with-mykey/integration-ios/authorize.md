@@ -1,6 +1,6 @@
 # 认证
 
-唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods.md#lei-authorizerequest)和[MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#lei-mykeyresponse)
+唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods/#lei-authorizerequest)和[MYKEYResponse](../../dive-into-mykey/classes-and-methods/#lei-mykeyresponse)
 
 为了更强的安全性，可以设置CallBackUrl进行服务端验签。
 

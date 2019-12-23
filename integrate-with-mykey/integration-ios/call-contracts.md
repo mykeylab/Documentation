@@ -1,6 +1,6 @@
 # 合约调用
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../dive-into-mykey/classes-and-methods.md#lei-contractrequest),[ContractAction](../../dive-into-mykey/classes-and-methods.md#lei-contractaction),[TransferAction](../../dive-into-mykey/classes-and-methods.md#lei-transferaction) 和 [MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#lei-mykeyresponse).
+唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../dive-into-mykey/classes-and-methods/#lei-contractrequest),[ContractAction](../../dive-into-mykey/classes-and-methods/#lei-contractaction),[TransferAction](../../dive-into-mykey/classes-and-methods/#lei-transferaction) 和 [MYKEYResponse](../../dive-into-mykey/classes-and-methods/#lei-mykeyresponse).
 
 ```swift
 let transferData = TransferData()

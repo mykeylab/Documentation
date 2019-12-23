@@ -27,7 +27,9 @@
 
 * [EOS上的MYKEY](dive-into-mykey/mykey-on-eos.md)
 * [JS功能扩展](dive-into-mykey/js-extensions.md)
-* [类和方法定义](dive-into-mykey/classes-and-methods.md)
+* [类和方法定义](dive-into-mykey/classes-and-methods/README.md)
+  * [Android类](dive-into-mykey/classes-and-methods/android-lei.md)
+  * [iOS类](dive-into-mykey/classes-and-methods/ios.md)
 * [错误码](dive-into-mykey/error-code.md)
 * [合约充值](dive-into-mykey/contracts-deposit.md)
 * [MYKEY白皮书](dive-into-mykey/mykey-whitepaper.md)

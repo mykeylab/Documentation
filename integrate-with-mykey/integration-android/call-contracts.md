@@ -1,6 +1,6 @@
 # 合约调用
 
-唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../dive-into-mykey/classes-and-methods.md#lei-contractrequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods.md#lei-mykeywalletcallback)
+唤起MYKEY进行合约调用, 支持多Action组合调用, 支持ContractAction和TransferAction两种形式的action类型。 参数请详见类定义:[ContractRequest](../../dive-into-mykey/classes-and-methods/#lei-contractrequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods/#lei-mykeywalletcallback)
 
 ```java
 ContractRequest contractRequest = new ContractRequest()

@@ -1,6 +1,6 @@
 # 转账
 
-唤起MYKEY进行转账。参数请详见类定义:[TransferRequest](../../dive-into-mykey/classes-and-methods.md#lei-transferrequest)和[MYKEYResponse](../../dive-into-mykey/classes-and-methods.md#lei-mykeyresponse)
+唤起MYKEY进行转账。参数请详见类定义:[TransferRequest](../../dive-into-mykey/classes-and-methods/#lei-transferrequest)和[MYKEYResponse](../../dive-into-mykey/classes-and-methods/#lei-mykeyresponse)
 
 ```swift
 let transferData = TransferData()
