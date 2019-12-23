@@ -1,6 +1,6 @@
 # Android Classes
 
-#### Class InitRequest
+### Class InitRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -14,7 +14,7 @@
 | showUpgradeTip\(default false\) | boolean | Toast tip when MYKEY is not the latest version |
 | mykeyServer | String | Environment URL endpoint of MYKEY server |
 
-#### Class InitSimpleRequest
+### Class InitSimpleRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -24,7 +24,7 @@
 | disableInstall\(default false\) | boolean | Whether to disable the default install page when MYKEY is not installed |
 | callback | String | Deeplink MYKEY callback to dapp,defined in [AndroidManifest.xml](../../integrate-with-mykey/integration-android/preconditions.md#5-add-mykey-activity), e.g. customscheme://customhost/custompath |
 
-#### Class AuthorizeRequest
+### Class AuthorizeRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -32,7 +32,7 @@
 | callBackUrl\(optional\) | String | Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client |
 | info | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
-#### Class TransferRequest
+### Class TransferRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -47,7 +47,7 @@
 | orderId | String | The order id from dapp, optional, can be null e.g. "20190606001" |
 | callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
 
-#### Class ContractRequest
+### Class ContractRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -56,7 +56,7 @@
 | callbackUrl\(optional\) | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
 | actions | [ContractAction](android.md#class-contractaction) or [TransferAction](android.md#class-transferaction) | List of contract actions |
 
-#### Class ContractAction
+### Class ContractAction
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -65,7 +65,7 @@
 | info | String | Semantic description of MYKEY display to the user about this action |
 | data | Object | The parameter object passed according to the contract abi definition e.g. {key1: value1, key2: value2 } |
 
-#### Class TransferAction
+### Class TransferAction
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -74,7 +74,7 @@
 | info | String | Semantic description of MYKEY display to the user about this action |
 | transferObj | [TransferData](android.md#class-transferdata) | Transfer info object |
 
-#### Class TransferData
+### Class TransferData
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -83,14 +83,14 @@
 | quantity | String | Amount and Symbol |
 | memo | String | Memo |
 
-#### Class SignRequest
+### Class SignRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
 | message | String | Unsigned messages |
 | callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client |
 
-#### Class MYKEYWalletCallback
+### Class MYKEYWalletCallback
 
 | methods | Description |
 | :--- | :--- |

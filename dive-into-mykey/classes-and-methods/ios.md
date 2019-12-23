@@ -1,8 +1,6 @@
 # iOS Classes
 
-
-
-#### Class InitRequest
+### Class InitRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -13,7 +11,7 @@
 | disableInstall | boolean | Default: false, Whether to disable the default install page when MYKEY is not installed |
 | scheme | String | Deeplink MYKEY callback to dapp,defined in [refer scheme configuration in 1.2](../../integrate-with-mykey/integration-ios/preconditions.md#2-add-url-scheme), e.g. demoscheme |
 
-#### Class InitSimpleRequest
+### Class InitSimpleRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -22,7 +20,7 @@
 | disableInstall | boolean | Default: false, Whether to disable the default install page when MYKEY is not installed |
 | scheme | String | Deeplink MYKEY callback to dapp,defined in [refer scheme configuration in 1.2](../../integrate-with-mykey/integration-ios/preconditions.md#2-add-url-scheme), e.g. demoscheme |
 
-#### Class AuthorizeRequest
+### Class AuthorizeRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -30,7 +28,7 @@
 | callBackUrl | String | Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client |
 | info | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
-#### Class TransferRequest
+### Class TransferRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -45,7 +43,7 @@
 | orderId | String | The order id from dapp, optional, can be null, e.g. "20190606001" |
 | callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after transfer request success at first, then wake up mobile client |
 
-#### Class ContractRequest
+### Class ContractRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -54,7 +52,7 @@
 | callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after contract request success at first, then wake up mobile client |
 | actions: \[BaseAction\] | [ContractAction](ios.md#class-contractaction) or [TransferAction](ios.md#class-transferaction) | List of contract actions |
 
-#### Class ContractAction
+### Class ContractAction
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -63,7 +61,7 @@
 | info | String | Semantic description of MYKEY display to the user about this action |
 | data | Any | The parameter object passed according to the contract abi definition，this any type should be valid by JSONSerialization.isValidJSONObject\(\_ obj: Any\)， e.g. {key1: value1, key2: value2 } |
 
-#### Class TransferAction
+### Class TransferAction
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -72,7 +70,7 @@
 | info | String | Semantic description of MYKEY display to the user about this action |
 | data | [TransferData](ios.md#class-transferdata) | Transfer info object |
 
-#### Class TransferData
+### Class TransferData
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
@@ -81,14 +79,14 @@
 | quantity | String | Amount and Symbol |
 | memo | String | Memo |
 
-#### Class SignRequest
+### Class SignRequest
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
 | message | String | Unsigned messages |
 | callbackUrl | String | Optional, callback endpoint url of dapp server，MYKEY will callback to dapp server after sign request success at first, then wake up mobile client |
 
-#### Class MYKEYResponse
+### Class MYKEYResponse
 
 | properties | Description |
 | :--- | :--- |
@@ -96,7 +94,7 @@
 | failure | Failure Callback, [errorCode list](../error-code.md) |
 | cancelled | Cancel Callback |
 
-#### Class MYKEYApiResponse
+### Class MYKEYApiResponse
 
 | properties | Description |
 | :--- | :--- |
