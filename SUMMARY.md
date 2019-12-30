@@ -21,7 +21,8 @@
 * [mobile dapp with H5 pages](integrate-with-mykey/h5/README.md)
   * [EOS](integrate-with-mykey/h5/eos.md)
   * [ETH](integrate-with-mykey/h5/eth.md)
-* [PC web with scanning qrcode](integrate-with-mykey/scan.md)
+* [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet/README.md)
+  * [PC web with scanning qrcode](integrate-with-mykey/simplewallet/scan.md)
 
 ## Dive into MYKEY
 
