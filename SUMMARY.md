@@ -21,7 +21,8 @@
 * [Mobile通过H5页面接入](integrate-with-mykey/h5/README.md)
   * [EOS](integrate-with-mykey/h5/eos.md)
   * [ETH](integrate-with-mykey/h5/eth.md)
-* [PC Web通过扫码接入](integrate-with-mykey/scan.md)
+* [通过SimpleWallet协议接入](integrate-with-mykey/simplewallet/README.md)
+  * [PC Web通过扫码接入](integrate-with-mykey/simplewallet/scan.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 
