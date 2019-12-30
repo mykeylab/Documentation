@@ -10,5 +10,6 @@ Here you can learn how to quickly integrate with the smart wallet - MYKEY, and g
 
 * [Integrated with MYKEY](integrate-with-mykey/integration-android/) Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol etc.
 * [Dive into MYKEY](dive-into-mykey/mykey-on-eos.md) Detailed design, extensions of MYKEY.
+  * [Deposit with MYKEY](dive-into-mykey/contracts-deposit.md)  how to identify MYKEY transactions and actions.
 * [Dev resources](development-resources/eos.md) The most practical EOS、ETH development resources.
 
