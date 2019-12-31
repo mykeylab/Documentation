@@ -28,3 +28,13 @@ history-tool部署维护较重，DAPP方建议使用dfuse的graphql接口来查�
 
 如果已有交易id，可以使用/v0/search/transactions来获取交易中所有的action和其他交易详情。
 
+### MYKEY转账举例
+
+比如账号 mykeyhulu511 转 nowwearegoin  0.2826 EOS，交易ID为：[https://eosq.app/tx/ad0e029edf6c8e3ae84b586f36737170fc27c5d995f1564422112050464b48cc](https://eosq.app/tx/ad0e029edf6c8e3ae84b586f36737170fc27c5d995f1564422112050464b48cc)
+
+识别出转账交易，从中提取出data就行：
+
+![](../.gitbook/assets/image%20%286%29.png)
+
+
+
