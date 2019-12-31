@@ -23,6 +23,7 @@
   * [ETH](integrate-with-mykey/h5/eth.md)
 * [通过SimpleWallet协议接入](integrate-with-mykey/simplewallet/README.md)
   * [PC Web通过扫码接入](integrate-with-mykey/simplewallet/scan.md)
+* [通过Deeplink协议接入](integrate-with-mykey/deeplink.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 

@@ -8,7 +8,7 @@ MYKEY作为多链钱包，将支持多种智能合约平台。由于MYKEY账户�
 
 在这里，你可以了解到如何快速接入海量KYC用户的多链钱包MYKEY，也可以获取到最有用的开发资源。 此文档包含以下内容：
 
-* [接入MYKEY](integrate-with-mykey/integration-android/) 说明使用MYKEY SDK，SimpleWallet，Scatter协议，web3协议等方式接入MYKEY。
+* [接入MYKEY](integrate-with-mykey/integration-android/) 说明使用MYKEY SDK，SimpleWallet，Scatter协议等方式接入MYKEY。
 * [深入MYKEY](dive-into-mykey/mykey-on-eos.md) 详细说明MYKEY的设计原理、功能扩展等。
   * [合约充值](dive-into-mykey/contracts-deposit.md) 介绍交易所和DAPP项目方如何识别MYKEY交易。
 * [开发资源](development-resources/eos.md) 最实用的EOS、ETH开发资源。
