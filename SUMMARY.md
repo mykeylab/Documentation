@@ -23,6 +23,7 @@
   * [ETH](integrate-with-mykey/h5/eth.md)
 * [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet/README.md)
   * [PC web with scanning qrcode](integrate-with-mykey/simplewallet/scan.md)
+* [Deeplink Protocol](integrate-with-mykey/deeplink.md)
 
 ## Dive into MYKEY
 
