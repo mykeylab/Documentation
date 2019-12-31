@@ -42,13 +42,3 @@ ecc.verify(signature, data, pubkey) === true
 
 ```
 
-
-
-
-
-
-
-In MYKEY, please use [authorize](../integration-android/authorize.md) to sign with MYKEY.  
-
-MYKEY generate signed message, and return the account info and signed message to dapp server, dapp server needs to verify the signature.
-

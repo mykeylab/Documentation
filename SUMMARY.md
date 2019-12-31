@@ -33,7 +33,7 @@
   * [Android Classes](dive-into-mykey/classes-and-methods/android.md)
   * [iOS Classes](dive-into-mykey/classes-and-methods/ios.md)
 * [Error Code](dive-into-mykey/error-code.md)
-* [Deposit with MYKEY](dive-into-mykey/contracts-deposit.md)
+* [Identify MYKEY deposit transaction](dive-into-mykey/contracts-deposit.md)
 * [MYKEY Whitepaper](dive-into-mykey/mykey-whitepaper.md)
 
 ## Development Resources

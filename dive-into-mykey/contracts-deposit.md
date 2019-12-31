@@ -1,4 +1,4 @@
-# Deposit with MYKEY
+# Identify MYKEY deposit transaction
 
 **For EOS**, the deposit actions are inline actions, which is pushed by Postman with users' signature on MYKEY's backend. Those inline actions can be displayed in the transaction details on the blockchain browser.
 
@@ -47,4 +47,12 @@ Due to the existence of micro fork, the transaction can be determined to be succ
 Deploying and maintaining history-tool plugin is too heavy for most dapps. It's recommended to use the graphql API to query/listen actions from dfuse. [https://docs.dfuse.io/reference/eosio/graphql/](https://docs.dfuse.io/reference/eosio/graphql/)
 
 If the transaction id is already known, you could use /v0/search/transactions to get all actions and other details for this transaction.
+
+### MYKEY transaction sample
+
+For example, account mykeyhulu511 transfer  0.2826 EOS to account nowwearegoin, the transaction id is: [https://eosq.app/tx/ad0e029edf6c8e3ae84b586f36737170fc27c5d995f1564422112050464b48cc](https://eosq.app/tx/ad0e029edf6c8e3ae84b586f36737170fc27c5d995f1564422112050464b48cc)
+
+Identify the transaction action and extract the data:
+
+![](../.gitbook/assets/image%20%286%29.png)
 

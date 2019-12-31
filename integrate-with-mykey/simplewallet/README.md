@@ -72,7 +72,7 @@ Please pass the data to MYKEY as follows, the data format is json:
 
 #### Sequence diagram for Mobile applcaiton wake up
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 Please pass the data to MYKEY as follows, the data format is json:
 
