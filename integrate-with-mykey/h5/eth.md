@@ -22,7 +22,7 @@ let AccountStorageAddr = '0xADc92d1fD878580579716d944eF3460E241604b7'
 let AccountStorageIns = new web3.eth.Contract(AccountStorageABI, AccountStorageAddr); 
 
 // 1. get mykey account Reserved key 
-// https://github.com/mykeylab/Documentation/blob/master/English/MYKEY on EOSIO.md
+// https://docs.mykey.org/v/English/dive-into-mykey/mykey-on-eos#mykey-account-structure
 let account = '0x67913A00a459fCd41CbF4124a887e8d8dE0742c0' 
 
 // account proxy 
