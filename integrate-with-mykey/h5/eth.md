@@ -13,31 +13,26 @@ MYKEY兼容web3协议，您可以直接开发兼容web3协议的dapp，再通过
 ```javascript
 let sigUtil = require('eth-sig-util') 
 let Web3 = require('web3'); 
-let web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/56444e75b6a24070a374f791bd25f811")); 
+let web3 = new Web3(new Web3.providers.HttpProvider("
+https://mainnet.infura.io/v3/56444e75b6a24070a374f791bd25f811
+")); 
 let json = require('./AccountStorage.abi.json'); 
 let AccountStorageABI = json.abi 
 let AccountStorageAddr = '0xADc92d1fD878580579716d944eF3460E241604b7' 
 let AccountStorageIns = new web3.eth.Contract(AccountStorageABI, AccountStorageAddr); 
 
 // 1. get mykey account Reserved key 
-// https://docs.mykey.org/dive-into-mykey/mykey-on-eos#keydata%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%AF%86%E9%92%A5
+// https://github.com/mykeylab/Documentation/blob/master/English/MYKEY on EOSIO.md
 let account = '0x67913A00a459fCd41CbF4124a887e8d8dE0742c0' 
 
-// account proxy 
-let reservedKeyAddr = await AccountStorageIns.methods.getKeyData(account, 3).call(); 
-console.log(account, "reserved key:", reservedKeyAddr) // should be 0xd2F9b4652D80FA870207C2b421B8437d7D54a484
-// 2. sign message, 
-web3.personal.sign("hello", web3.eth.coinbase, console.log); 
-let message = 'hello' 
-let privKeyHex = '78e2219400da88378b746499ec8ff0d6aa97f806950276f28c65b9d569f32f84' // prvkey of '0xd2F9b4652D80FA870207C2b421B8437d7D54a484' 
-let privKey = Buffer.from(privKeyHex, 'hex') 
+// account proxy let reservedKeyAddr = await AccountStorageIns.methods.getKeyData(account, 3).call(); console.log(account, "reserved key:", reservedKeyAddr) 
+// should be 0xd2F9b4652D80FA870207C2b421B8437d7D54a484
+// 2. sign message, web3.personal.sign("hello", web3.eth.coinbase, console.log); let message = 'hello' 
+let privKeyHex = '78e2219400da88378b746499ec8ff0d6aa97f806950276f28c65b9d569f32f84' // prvkey of '0xd2F9b4652D80FA870207C2b421B8437d7D54a484' let privKey = Buffer.from(privKeyHex, 'hex') 
 let msgParams = { data: message }
-let signed = sigUtil.personalSign(privKey, msgParams) 
-console.log("signature:", signed)
+let signed = sigUtil.personalSign(privKey, msgParams) console.log("signature:", signed)
 
-// 3. recover 
-msgParams.sig = signed 
-let recovered = sigUtil.recoverPersonalSignature(msgParams) 
+// 3. recover msgParams.sig = signed let recovered = sigUtil.recoverPersonalSignature(msgParams) 
 console.log("recovered:", recovered) 
 console.log(reservedKeyAddr.toLowerCase() === recovered.toLowerCase())
 ```
