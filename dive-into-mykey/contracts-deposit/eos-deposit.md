@@ -1,4 +1,4 @@
-# Identify MYKEY deposit transaction
+# EOS deposit
 
 **For EOS**, the deposit actions are inline actions, which is pushed by Postman with users' signature on MYKEY's backend. Those inline actions can be displayed in the transaction details on the blockchain browser.
 
@@ -54,5 +54,5 @@ For example, account mykeyhulu511 transfer  0.2826 EOS to account nowwearegoin, 
 
 Identify the transaction action and extract the data:
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 

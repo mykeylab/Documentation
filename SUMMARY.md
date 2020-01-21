@@ -33,7 +33,9 @@
   * [Android Classes](dive-into-mykey/classes-and-methods/android.md)
   * [iOS Classes](dive-into-mykey/classes-and-methods/ios.md)
 * [Error Code](dive-into-mykey/error-code.md)
-* [Identify MYKEY deposit transaction](dive-into-mykey/contracts-deposit.md)
+* [Identify MYKEY deposit transaction](dive-into-mykey/contracts-deposit/README.md)
+  * [ETH deposit](dive-into-mykey/contracts-deposit/eth-deposit.md)
+  * [EOS deposit](dive-into-mykey/contracts-deposit/eos-deposit.md)
 * [MYKEY Whitepaper](dive-into-mykey/mykey-whitepaper.md)
 
 ## Development Resources
