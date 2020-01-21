@@ -33,7 +33,9 @@
   * [Android类](dive-into-mykey/classes-and-methods/android-lei.md)
   * [iOS类](dive-into-mykey/classes-and-methods/ios.md)
 * [错误码](dive-into-mykey/error-code.md)
-* [合约充值](dive-into-mykey/contracts-deposit.md)
+* [识别MYKEY合约充值](dive-into-mykey/contracts-deposit/README.md)
+  * [ETH充值](dive-into-mykey/contracts-deposit/eth-deposit.md)
+  * [EOS充值](dive-into-mykey/contracts-deposit/eos-deposit.md)
 * [MYKEY白皮书](dive-into-mykey/mykey-whitepaper.md)
 
 ## 开发资源 <a id="development-resources"></a>

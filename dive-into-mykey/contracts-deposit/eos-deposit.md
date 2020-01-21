@@ -1,4 +1,4 @@
-# 合约充值
+# EOS充值
 
 MYKEY用户的交易，通过MYKEY服务端的Postman账户（携带用户签名）上链， 用户的充值是内部交易，在区块链浏览器上会显示在交易详情中。
 
@@ -34,7 +34,7 @@ history-tool部署维护较重，DAPP方建议使用dfuse的graphql接口来查�
 
 识别出转账交易，从中提取出data就行：
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 
 
