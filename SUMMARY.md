@@ -24,6 +24,7 @@
 * [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet/README.md)
   * [PC web with scanning qrcode](integrate-with-mykey/simplewallet/scan.md)
 * [Deeplink Protocol](integrate-with-mykey/deeplink.md)
+* [Summary of verifying MYKEY signature](integrate-with-mykey/signing-methods.md)
 
 ## Dive into MYKEY
 
