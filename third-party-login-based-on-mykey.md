@@ -83,9 +83,9 @@ If the status of the public key is not available, it will directly return failur
 
 If the public key is available, check \(1\) whether the signature corresponds to the user's public key; \(2\) whether the content of the signature is the same as the content of the request. If the verification passes, it returns success, otherwise it returns the signing failure.
 
-## 
+## Authentication methods for integration methods
 
-Unlike ordinary EOS / ETH accounts, MYKEY accounts have multiple permissions by default. MYKEY uses a permission called **Reserved Key** for signature. When DApp verifies the signature, it needs to find the Reserved Key of the MYKEY account from the smart contract first, then verifies the signature. MYKEY supports the following signing methods:
+MYKEY supports the following signing methods:
 
 <table>
   <thead>
