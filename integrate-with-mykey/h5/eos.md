@@ -10,7 +10,7 @@ MYKEY兼容Scatter协议，您可以直接开发兼容Scatter协议的dapp，再
 
 [MYKEY的账号体系](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，需要在服务端验签时使用**Reserved公钥**进行验签。客户端使用MYKEY账号index为3的公钥，用scatter.getArbitrarySignature方法进行签名。
 
-Reserved公钥，可以通过智能合约mykeymanager的表keydata查询到。查询时，指定范围为 MYKEY账号。
+Reserved Key的公钥，可以通过智能合约mykeymanager的表keydata查询到。查询时，指定范围为 MYKEY账号。
 
 ```javascript
 /**

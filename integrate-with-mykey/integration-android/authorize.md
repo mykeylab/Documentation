@@ -1,12 +1,12 @@
 # 认证
 
-唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods/#lei-authorizerequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods/#lei-mykeywalletcallback)
+使用MYKEY Android SDK进行认证，需要先[准备环境](preconditions.md)和[初始化SDK](initiate-sdk.md)。
 
-为了更强的安全性，可以设置CallBackUrl进行服务端验签
+第三方应用唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods/#lei-authorizerequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods/#lei-mykeywalletcallback)。（为了更强的安全性，可以设置CallBackUrl进行服务端验签。）
 
-MYKEY将签名后的数据POST到dapp提供的CallBackUrl，请求dapp服务端验证，dapp服务端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#如何检查dapps是否在mykey-webview中运行)
+MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第三方应用服务端验证，第三方应用服务端需要从合约数据中获取该用户MYKEY账号的Reserve Key进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#如何检查dapps是否在mykey-webview中运行)
 
-dapp提供的CallBackUrl接口参数：
+第三方应用提供的CallBackUrl接口参数：
 
 ```java
 {
@@ -21,7 +21,7 @@ dapp提供的CallBackUrl接口参数：
 }
 ```
 
-验签方式：
+验签公式：
 
 ```java
 // generate unsignedMessage

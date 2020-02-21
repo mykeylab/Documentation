@@ -1,6 +1,7 @@
 # Table of contents
 
 * [简介](README.md)
+* [基于MYKEY的第三方授权登录](third-party-login.md)
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
@@ -24,7 +25,6 @@
 * [通过SimpleWallet协议接入](integrate-with-mykey/simplewallet/README.md)
   * [PC Web通过扫码接入](integrate-with-mykey/simplewallet/scan.md)
 * [通过Deeplink协议接入](integrate-with-mykey/deeplink.md)
-* [MYKEY验签方式汇总](integrate-with-mykey/signing-methods.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 
