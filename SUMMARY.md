@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Third-Party Login based on MYKEY](third-party-login-based-on-mykey.md)
 
 ## Integrate with MYKEY
 
@@ -24,7 +25,6 @@
 * [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet/README.md)
   * [PC web with scanning qrcode](integrate-with-mykey/simplewallet/scan.md)
 * [Deeplink Protocol](integrate-with-mykey/deeplink.md)
-* [Summary of verifying MYKEY signature](integrate-with-mykey/signing-methods.md)
 
 ## Dive into MYKEY
 
