@@ -14,7 +14,7 @@ MYKEY login relies on ECDSA-secp256k1's signature and verification methods. A th
 
 ## authentication process of login with MYKEY
 
-![](.gitbook/assets/image%20%284%29.png)
+![](.gitbook/assets/image%20%285%29.png)
 
 ### 1. Initiate an authentication request
 
