@@ -6,7 +6,7 @@ MYKEY is compatible with web3 protocol. You can develop dapp with web3 protocol,
 
 You can also refer below link to get more details about eth web3 protocol:
 
-[https://learnblockchain.cn/docs/web3js-0.2x/web3.html](https://learnblockchain.cn/docs/web3js-0.2x/web3.html)
+[https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html)
 
 ## Verify signing with MYKEY
 
