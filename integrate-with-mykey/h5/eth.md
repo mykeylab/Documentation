@@ -4,7 +4,7 @@
 
 MYKEY兼容web3协议，您可以直接开发兼容web3协议的dapp，再通过mykey内置浏览器访问。也可以参考以下链接，了解更多eth web3协议的内容：
 
-[https://learnblockchain.cn/docs/web3js-0.2x/web3.html](https://learnblockchain.cn/docs/web3js-0.2x/web3.html)
+[https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html)
 
 ## MYKEY验签方式
 
