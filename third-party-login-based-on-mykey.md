@@ -75,6 +75,11 @@ Third-party applications can choose to directly query the user's public key thro
 
 The blockchain service provider or MYKEY returns the public key information of the corresponding address. Public key information includes the value and status of the public key.
 
+| Status of Reserved Key | Description |
+| :--- | :--- |
+| status=0 | Normal |
+| status=1 | Frozen |
+
 ![\(warning\)](https://confluence.inner-bihu.com/s/en_US/7901/04c8b7bf0a5b4889210956b8230224e43d124b25/_/images/icons/emoticons/warning.svg)Note: Public keys may be frozen.
 
 ### 5. Verify signature
