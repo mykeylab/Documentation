@@ -47,3 +47,13 @@ Allow native physical back button in Android
 window.MyKey.Browser.allowPhysicalBack()
 ```
 
+## Get MYKEY Account Info
+
+```java
+window.MyKey.Browser.getAccountInfo()
+```
+
+Response：
+
+{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Operation Keys","",""\]}
+
