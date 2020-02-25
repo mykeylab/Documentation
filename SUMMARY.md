@@ -5,6 +5,9 @@
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
+* [Mobile通过H5页面接入](integrate-with-mykey/h5/README.md)
+  * [EOS](integrate-with-mykey/h5/eos.md)
+  * [ETH](integrate-with-mykey/h5/eth.md)
 * [通过MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
@@ -19,9 +22,6 @@
   * [签名](integrate-with-mykey/integration-ios/sign.md)
   * [转账](integrate-with-mykey/integration-ios/transfer.md)
   * [合约调用](integrate-with-mykey/integration-ios/call-contracts.md)
-* [Mobile通过H5页面接入](integrate-with-mykey/h5/README.md)
-  * [EOS](integrate-with-mykey/h5/eos.md)
-  * [ETH](integrate-with-mykey/h5/eth.md)
 * [通过SimpleWallet协议接入](integrate-with-mykey/simplewallet/README.md)
   * [PC Web通过扫码接入](integrate-with-mykey/simplewallet/scan.md)
 * [通过Deeplink协议接入](integrate-with-mykey/deeplink.md)
