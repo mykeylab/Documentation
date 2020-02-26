@@ -39,6 +39,13 @@
   * [EOS充值](dive-into-mykey/contracts-deposit/eos-deposit.md)
 * [MYKEY白皮书](dive-into-mykey/mykey-whitepaper.md)
 
+## KEY ID
+
+* [MYKEY合约升级流程](key-id/contract-upgrade-process.md)
+* [MYKEY合约升级记录](key-id/mykey-he-yue-sheng-ji-ji-lu/README.md)
+  * [EOS](key-id/mykey-he-yue-sheng-ji-ji-lu/eos-contract-upgrade.md)
+  * [ETH](key-id/mykey-he-yue-sheng-ji-ji-lu/eth-contract-upgrade.md)
+
 ## 开发资源 <a id="development-resources"></a>
 
 * [EOS](development-resources/eos.md)
