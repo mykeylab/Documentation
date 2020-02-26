@@ -1,59 +1,135 @@
 # JS Extensions
 
-JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, it support Scatter protocol, developers can develop H5 dapp follow [Scatter Document](https://get-scatter.com/docs/api-reference), it will also support web3js protocol when MYKEY support ETH.
+JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, which support Scatter protocol, and web3js protocol.
 
-Special Notice: [MYKEY account structure](https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document](mykey-on-eos.md#2-for-dapps-compatible-with-scatter)
+In order to control the MYKEY application conveniently, MYKEY adds the following methods:
 
-For ease of use, it provided a few extra methods, e.g. fullscreen, rotation of the sign box, close window and so on
+package name: **window.MyKey.Browser**
 
-## Enter fullscreen mode
-
-Enter fullscreen mode, dapp can adjust the rotation of the sign box according the value of isLandscape
-
-```javascript
-// isLandscape: Rotation of the sign box , ture as horizontal，false as vertical.
-window.MyKey.Browser.openFullScreen(isLandscape)
-```
-
-## Exit fullscreen mode
-
-In non-fullscreen mode, the rotation of the sign box always in vertical screen mode.
-
-```javascript
-window.MyKey.Browser.closeFullScreen()
-```
-
-## Quit
-
-Quit dapp, destory the current window
-
-```javascript
-window.MyKey.Browser.closeWindow()
-```
-
-## Forbid Physical Back \(Only in Android\)
-
-Fobid native physical back button in Android
-
-```javascript
-window.MyKey.Browser.forbidPhysicalBack()
-```
-
-## Allow Physical Back \(Only in Android\)
-
-Allow native physical back button in Android
-
-```javascript
-window.MyKey.Browser.allowPhysicalBack()
-```
-
-## Get MYKEY Account Info
-
-```java
-window.MyKey.Browser.getAccountInfo()
-```
-
-Response：
-
-{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Operation Keys","",""\]}
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Methods</th>
+      <th style="text-align:left">Method description</th>
+      <th style="text-align:left">Params</th>
+      <th style="text-align:left">Response</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">closeWindow</td>
+      <td style="text-align:left">Close App window and return to MYKEY</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">openFullScreen</td>
+      <td style="text-align:left">Open full screen</td>
+      <td style="text-align:left">isLandscape:true, fasle</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">closeFullScreen</td>
+      <td style="text-align:left">Close full screen</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">forbidPhysicalBack</td>
+      <td style="text-align:left">Disable physical back button(Android Only)</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">allowPhysicalBack</td>
+      <td style="text-align:left">Allow physical back button(Android Only)</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">getAccountInfo</td>
+      <td style="text-align:left">Get MYKEY Account Information</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">{&quot;id&quot;:&quot;MYKEY UUID&quot;,&quot;accountName&quot;:&quot;Nickname
+        in MYKEY&quot;,&quot;chainInfoList&quot;:[{&quot;chain&quot;:&quot;EOS&quot;,&quot;account&quot;:&quot;&quot;}],&quot;operationKeys&quot;:[&quot;Three
+        operation keys&quot;,&quot;&quot;,&quot;&quot;]}</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">getClientConfig</td>
+      <td style="text-align:left">Get client configuration</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">{&quot;currency&quot;:&quot;CNY|USD&quot;,&quot;locale&quot;:&quot;zh-CN|en-US|ko-KR|ja-JP&quot;,&quot;userAgent&quot;:&quot;&quot;,&quot;recaptchaUserKey&quot;:&quot;&quot;}</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">sendTransaction</td>
+      <td style="text-align:left">Send transaction</td>
+      <td style="text-align:left">{&quot;actions&quot;:[{&quot;account&quot;:&quot;eosio&quot;,&quot;name&quot;:&quot;buyram&quot;,&quot;data&quot;:{&quot;payer&quot;:&quot;&quot;,&quot;receiver&quot;:&quot;&quot;,&quot;quant&quot;:&quot;1.0000
+        EOS&quot;}}],&quot;chain&quot;:&quot;EOS&quot;}</td>
+      <td style="text-align:left">
+        <p>return promise object</p>
+        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;transactionId&quot;:&quot;&quot;,&quot;signature&quot;:&quot;&quot;}}</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">sign</td>
+      <td style="text-align:left">Apply MYKEY sign transactions</td>
+      <td style="text-align:left">message:(unsignatured data in string)</td>
+      <td style="text-align:left">
+        <p>return promise object</p>
+        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;signature&quot;:&quot;&quot;}}</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">setTitle</td>
+      <td style="text-align:left">Set application title</td>
+      <td style="text-align:left">title:(title in string)</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">showLoading</td>
+      <td style="text-align:left">Show loading animation</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">hiddenLoading</td>
+      <td style="text-align:left">hidden loading animation</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">copyToClipboard</td>
+      <td style="text-align:left">Copy content to system clipboard</td>
+      <td style="text-align:left">message:(content to be copied in string)</td>
+      <td style="text-align:left">
+        <p>return promise object</p>
+        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;}</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">showOpenChain</td>
+      <td style="text-align:left">Show the page to open accounts with chains</td>
+      <td style="text-align:left">{&quot;chain&quot;:&quot;EOS|ETH&quot;}</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">showLessNetworkFee</td>
+      <td style="text-align:left">Pop-up box showing insufficient network fee balance</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">checkAppVersion</td>
+      <td style="text-align:left">Check App version</td>
+      <td style="text-align:left">None</td>
+      <td style="text-align:left">None</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">printLog</td>
+      <td style="text-align:left">Print log(client can push logs to servers to help debug issues)</td>
+      <td
+      style="text-align:left">log:(log in string)</td>
+        <td style="text-align:left">None</td>
+    </tr>
+  </tbody>
+</table>

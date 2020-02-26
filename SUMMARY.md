@@ -39,6 +39,13 @@
   * [EOS deposit](dive-into-mykey/contracts-deposit/eos-deposit.md)
 * [MYKEY Whitepaper](dive-into-mykey/mykey-whitepaper.md)
 
+## KEY ID
+
+* [MYKEY contract upgrade process](key-id/mykey-contract-upgrade-process.md)
+* [MYKEY contract upgrade records](key-id/mykey-contract-upgrade-records/README.md)
+  * [EOS](key-id/mykey-contract-upgrade-records/eos-contract-upgrade.md)
+  * [ETH](key-id/mykey-contract-upgrade-records/eth-contract-upgrade.md)
+
 ## Development Resources
 
 * [EOS](development-resources/eos.md)
