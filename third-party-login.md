@@ -73,12 +73,9 @@ MYKEY接收并解析参数，向用户展示第三方应用的名称和动作。
 
 ### 4. 返回公钥
 
-区块链服务商或MYKEY返回对应地址的公钥信息。公钥信息包括公钥的值和状态。
+区块链服务商或MYKEY返回对应地址的公钥信息。
 
-| 公钥状态 | 说明 |
-| :--- | :--- |
-| status=0 | 正常（可用） |
-| status=1 | 冻结 |
+![\(warning\)](https://confluence.inner-bihu.com/s/en_US/7901/04c8b7bf0a5b4889210956b8230224e43d124b25/_/images/icons/emoticons/warning.svg)备注: 公钥可能被冻结，下一步MYKEY会检测公钥状态.
 
 ### 5. 验证签名
 
