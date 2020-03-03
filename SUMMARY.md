@@ -44,7 +44,8 @@
 * [MYKEY contract upgrade process](key-id/mykey-contract-upgrade-process.md)
 * [MYKEY contract upgrade records](key-id/mykey-contract-upgrade-records/README.md)
   * [EOS](key-id/mykey-contract-upgrade-records/eos-contract-upgrade.md)
-  * [ETH](key-id/mykey-contract-upgrade-records/eth-contract-upgrade.md)
+  * [ETH](key-id/mykey-contract-upgrade-records/eth-contract-upgrade/README.md)
+    * [KEY ID Ethereum DappLogic Contract Upgrade](key-id/mykey-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-dapplogic-contract-upgrade.md)
 
 ## Development Resources
 
