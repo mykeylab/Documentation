@@ -1,2 +1,2 @@
-# integration via MYKEY iOS SDK
+# Integration via MYKEY iOS SDK
 

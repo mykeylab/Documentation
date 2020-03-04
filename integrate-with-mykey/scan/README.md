@@ -1,4 +1,4 @@
-# PC web with scanning qrcode
+# Desktop web with scanning qrcode
 
 ### Login
 

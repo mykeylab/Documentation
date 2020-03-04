@@ -5,25 +5,25 @@
 
 ## Integrate with MYKEY
 
-* [mobile dapp with H5 pages](integrate-with-mykey/h5/README.md)
+* [Mobile Dapp with H5 pages](integrate-with-mykey/h5/README.md)
   * [EOS](integrate-with-mykey/h5/eos.md)
   * [ETH](integrate-with-mykey/h5/eth.md)
-* [integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
+* [Integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
   * [Preconditions](integrate-with-mykey/integration-android/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
   * [Authorize](integrate-with-mykey/integration-android/authorize.md)
   * [Sign](integrate-with-mykey/integration-android/sign.md)
   * [Transfer](integrate-with-mykey/integration-android/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-android/call-contracts.md)
-* [integration via MYKEY iOS SDK](integrate-with-mykey/integration-ios/README.md)
+* [Integration via MYKEY iOS SDK](integrate-with-mykey/integration-ios/README.md)
   * [Preconditions](integrate-with-mykey/integration-ios/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-ios/initiate-sdk.md)
   * [Authorize](integrate-with-mykey/integration-ios/authorize.md)
   * [Sign](integrate-with-mykey/integration-ios/sign.md)
   * [Transfer](integrate-with-mykey/integration-ios/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-ios/call-contracts.md)
-* [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet/README.md)
-  * [PC web with scanning qrcode](integrate-with-mykey/simplewallet/scan.md)
+* [Desktop web with scanning qrcode](integrate-with-mykey/scan/README.md)
+  * [SimpleWallet Protocol Compatible](integrate-with-mykey/scan/simplewallet.md)
 * [Deeplink Protocol](integrate-with-mykey/deeplink.md)
 
 ## Dive into MYKEY
@@ -41,11 +41,10 @@
 
 ## KEY ID
 
-* [MYKEY contract upgrade process](key-id/mykey-contract-upgrade-process.md)
-* [MYKEY contract upgrade records](key-id/mykey-contract-upgrade-records/README.md)
-  * [EOS](key-id/mykey-contract-upgrade-records/eos-contract-upgrade.md)
-  * [ETH](key-id/mykey-contract-upgrade-records/eth-contract-upgrade/README.md)
-    * [KEY ID Ethereum DappLogic Contract Upgrade](key-id/mykey-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-dapplogic-contract-upgrade.md)
+* [KEYID contract upgrade process](key-id/keyid-contract-upgrade-process.md)
+* [KEYID contract upgrade records](key-id/keyid-contract-upgrade-records/README.md)
+  * [ETH](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/README.md)
+    * [KEY ID Ethereum DappLogic Contract Upgrade](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-dapplogic-contract-upgrade.md)
 
 ## Development Resources
 

@@ -1,2 +1,0 @@
-# MYKEY contract upgrade records
-

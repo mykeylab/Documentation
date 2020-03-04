@@ -1,4 +1,4 @@
-# mobile dapp with H5 pages
+# Mobile Dapp with H5 pages
 
 JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, which support Scatter protocol, and web3js protocol.
 

@@ -1,2 +1,2 @@
-# integration via MYKEY Android SDK
+# Integration via MYKEY Android SDK
 
