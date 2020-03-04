@@ -5,26 +5,26 @@
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
-* [Mobile通过H5页面接入](integrate-with-mykey/h5/README.md)
+* [Mobile H5页面接入](integrate-with-mykey/h5/README.md)
   * [EOS](integrate-with-mykey/h5/eos.md)
   * [ETH](integrate-with-mykey/h5/eth.md)
-* [通过MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
+* [MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
   * [认证](integrate-with-mykey/integration-android/authorize.md)
   * [签名](integrate-with-mykey/integration-android/sign.md)
   * [转账](integrate-with-mykey/integration-android/transfer.md)
   * [合约调用](integrate-with-mykey/integration-android/call-contracts.md)
-* [通过MYKEY iOS SDK接入](integrate-with-mykey/integration-ios/README.md)
+* [MYKEY iOS SDK接入](integrate-with-mykey/integration-ios/README.md)
   * [环境准备](integrate-with-mykey/integration-ios/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-ios/initiate-sdk.md)
   * [认证](integrate-with-mykey/integration-ios/authorize.md)
   * [签名](integrate-with-mykey/integration-ios/sign.md)
   * [转账](integrate-with-mykey/integration-ios/transfer.md)
   * [合约调用](integrate-with-mykey/integration-ios/call-contracts.md)
-* [通过SimpleWallet协议接入](integrate-with-mykey/simplewallet/README.md)
-  * [PC Web通过扫码接入](integrate-with-mykey/simplewallet/scan.md)
-* [通过Deeplink协议接入](integrate-with-mykey/deeplink.md)
+* [Desktop Web扫码接入](integrate-with-mykey/scan/README.md)
+  * [SimpleWallet协议接入](integrate-with-mykey/scan/simplewallet.md)
+* [Deeplink协议接入](integrate-with-mykey/deeplink.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 
@@ -41,11 +41,10 @@
 
 ## KEY ID
 
-* [MYKEY合约升级流程](key-id/contract-upgrade-process.md)
-* [MYKEY合约升级记录](key-id/mykey-he-yue-sheng-ji-ji-lu/README.md)
-  * [EOS](key-id/mykey-he-yue-sheng-ji-ji-lu/eos-contract-upgrade.md)
-  * [ETH](key-id/mykey-he-yue-sheng-ji-ji-lu/eth-contract-upgrade/README.md)
-    * [KEY ID以太坊 DappLogic 合约升级公示](key-id/mykey-he-yue-sheng-ji-ji-lu/eth-contract-upgrade/key-id-yi-tai-fang-dapplogic-he-yue-sheng-ji-gong-shi.md)
+* [KEYID合约升级流程](key-id/contract-upgrade-process.md)
+* [KEYID合约升级记录](key-id/keyid-upgrade-record/README.md)
+  * [ETH](key-id/keyid-upgrade-record/eth-contract-upgrade/README.md)
+    * [KEY ID以太坊 DappLogic 合约升级公示](key-id/keyid-upgrade-record/eth-contract-upgrade/key-id-yi-tai-fang-dapplogic-he-yue-sheng-ji-gong-shi.md)
 
 ## 开发资源 <a id="development-resources"></a>
 

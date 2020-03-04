@@ -1,2 +1,2 @@
-# 通过MYKEY Android SDK接入
+# MYKEY Android SDK接入
 

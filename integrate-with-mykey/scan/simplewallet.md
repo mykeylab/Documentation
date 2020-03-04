@@ -1,4 +1,4 @@
-# 通过SimpleWallet协议接入
+# SimpleWallet协议接入
 
 ### 使用SimpleWallet跳转MYKEY代码示例
 

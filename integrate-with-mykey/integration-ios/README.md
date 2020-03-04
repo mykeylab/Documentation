@@ -1,2 +1,2 @@
-# 通过MYKEY iOS SDK接入
+# MYKEY iOS SDK接入
 

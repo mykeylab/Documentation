@@ -1,4 +1,4 @@
-# 通过Deeplink协议接入
+# Deeplink协议接入
 
 ### 打开MYKEY
 

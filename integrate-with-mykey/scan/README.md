@@ -1,4 +1,4 @@
-# PC Web通过扫码接入
+# Desktop Web扫码接入
 
 ### 登录
 
