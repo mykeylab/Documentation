@@ -22,8 +22,8 @@
   * [Sign](integrate-with-mykey/integration-ios/sign.md)
   * [Transfer](integrate-with-mykey/integration-ios/transfer.md)
   * [Call contracts](integrate-with-mykey/integration-ios/call-contracts.md)
-* [Web application with scanning qrcode](integrate-with-mykey/scan/README.md)
-  * [SimpleWallet Protocol Compatible](integrate-with-mykey/scan/simplewallet.md)
+* [Web application with scanning qrcode](integrate-with-mykey/scan.md)
+* [SimpleWallet Protocol Compatible](integrate-with-mykey/simplewallet.md)
 * [Deeplink Protocol](integrate-with-mykey/deeplink.md)
 
 ## Dive into MYKEY

@@ -98,40 +98,6 @@ package name: **window.MyKey.Browser**
       <td style="text-align:left">None</td>
     </tr>
     <tr>
-      <td style="text-align:left">copyToClipboard</td>
-      <td style="text-align:left">Copy content to system clipboard</td>
-      <td style="text-align:left">message:(content to be copied in string)</td>
-      <td style="text-align:left">
-        <p>return promise object</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;}</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showOpenChain</td>
-      <td style="text-align:left">Show the page to open accounts with chains</td>
-      <td style="text-align:left">{&quot;chain&quot;:&quot;EOS|ETH&quot;}</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showLessNetworkFee</td>
-      <td style="text-align:left">Pop-up box showing insufficient network fee balance</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">checkAppVersion</td>
-      <td style="text-align:left">Check App version</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">printLog</td>
-      <td style="text-align:left">Print log(client can push logs to servers to help debug issues)</td>
-      <td
-      style="text-align:left">log:(log in string)</td>
-        <td style="text-align:left">None</td>
-    </tr>
-    <tr>
       <td style="text-align:left">encodeFunctionCall</td>
       <td style="text-align:left">serialize specified function call</td>
       <td style="text-align:left">
