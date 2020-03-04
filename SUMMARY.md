@@ -22,7 +22,7 @@
   * [签名](integrate-with-mykey/integration-ios/sign.md)
   * [转账](integrate-with-mykey/integration-ios/transfer.md)
   * [合约调用](integrate-with-mykey/integration-ios/call-contracts.md)
-* [Desktop Web扫码接入](integrate-with-mykey/scan/README.md)
+* [Web应用扫码接入](integrate-with-mykey/scan/README.md)
   * [SimpleWallet协议接入](integrate-with-mykey/scan/simplewallet.md)
 * [Deeplink协议接入](integrate-with-mykey/deeplink.md)
 
