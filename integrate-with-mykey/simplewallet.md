@@ -1,49 +1,33 @@
-# Web应用扫码接入
+# SimpleWallet协议接入
 
-### 登录
+### 使用SimpleWallet跳转MYKEY代码示例
 
-对于WEB应用，只要遵循SimpleWallet协议，即可通过MYKEY APP扫描二维码登录。
+**特别注意:** Android端SimpleWallet跳转MYKEY时请使用如下代码（设置MYKEY的包名）
 
-WEB应用通过二维码传递给MYKEY如下的数据，数据格式为json：
-
-```javascript
-// 签名调用数据格式
-{
-    protocol string     // 协议名，本协议默认 SimpleWallet
-    version string      // 协议版本信息，如1.0
-    dappName string     // dapp名称
-    dappIcon string     // dapp应用图标url
-    action string       // 操作类型，为 login
-    uuID string         // dapp服务器为本次登录产生的uuid
-    loginUrl string     // dapp服务器验证登录的url
-    expired number      // 仅Web二维码模式可用，过期时间，unix时间戳
-    loginMemo string    // 登录备注信息
+```java
+try {
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+    intent.setPackage("com.mykey.id");
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(intent);
+} catch (Exception e) {
+    e.printStackTrace();
 }
 ```
 
-MYKEY APP通过扫描二维码，请求用户授权登录，并把签名数据提交到WEB应用指定的loginUrl。
+### 登录和支付
 
-WEB应用收到的MYKEY如下的数据，格式为json:
+MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
-```javascript
-{
-    protocol string     // 协议名，本协议默认 SimpleWallet
-    version string      // 协议版本信息，如1.0
-    timestamp number    // 当前unix时间戳
-    sign string         // eos签名信息
-    uuID string         // dapp服务器为本次登录产生的uuid
-    Account string      // eos账户名
-    Ref string          // 钱包名
-}
-```
+[https://github.com/southex/SimpleWallet/blob/master/README\_en.md](https://github.com/southex/SimpleWallet/blob/master/README_en.md)
 
-WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要通过读取mykey合约获得，见[文档](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)。
+除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
 
-### 合约调用
+**特别注意:** [MYKEY的账号体系](../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥)
 
-#### Web扫码调用合约时序图
+### 移动端App调用合约时序图
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%281%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 
@@ -83,9 +67,7 @@ WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要
 
 ### 签名
 
-#### Web扫码调用签名时序图
-
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 

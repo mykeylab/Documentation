@@ -22,8 +22,8 @@
   * [签名](integrate-with-mykey/integration-ios/sign.md)
   * [转账](integrate-with-mykey/integration-ios/transfer.md)
   * [合约调用](integrate-with-mykey/integration-ios/call-contracts.md)
-* [Web应用扫码接入](integrate-with-mykey/scan/README.md)
-  * [SimpleWallet协议接入](integrate-with-mykey/scan/simplewallet.md)
+* [Web应用扫码接入](integrate-with-mykey/scan.md)
+* [SimpleWallet协议接入](integrate-with-mykey/simplewallet.md)
 * [Deeplink协议接入](integrate-with-mykey/deeplink.md)
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>

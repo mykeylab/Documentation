@@ -113,12 +113,12 @@ MYKEY接收并解析参数，向用户展示第三方应用的名称和动作。
     </tr>
     <tr>
       <td style="text-align:left">SimpleWallet&#x534F;&#x8BAE;</td>
-      <td style="text-align:left"><a href="integrate-with-mykey/scan/simplewallet.md#qian-ming">SimpleWallet</a>
+      <td style="text-align:left"><a href="integrate-with-mykey/simplewallet.md#qian-ming">SimpleWallet</a>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">PC Web&#x626B;&#x7801;</td>
-      <td style="text-align:left"><a href="integrate-with-mykey/scan/#qian-ming">&#x626B;&#x7801;</a>
+      <td style="text-align:left"><a href="integrate-with-mykey/scan.md#qian-ming">&#x626B;&#x7801;</a>
       </td>
     </tr>
     <tr>

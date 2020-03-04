@@ -6,6 +6,8 @@ JSBridge为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
 
 包名：**window.MyKey.Browser**
 
+\*\*\*\*
+
 <table>
   <thead>
     <tr>
@@ -102,45 +104,6 @@ JSBridge为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
       <td style="text-align:left">&#x53D6;&#x6D88;loading&#x52A8;&#x753B;</td>
       <td style="text-align:left">&#x65E0;</td>
       <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">copyToClipboard</td>
-      <td style="text-align:left">&#x590D;&#x5236;&#x5185;&#x5BB9;&#x5230;&#x7CFB;&#x7EDF;&#x526A;&#x8D34;&#x677F;</td>
-      <td
-      style="text-align:left">message:(&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8981;&#x590D;&#x5236;&#x7684;&#x5185;&#x5BB9;)</td>
-        <td
-        style="text-align:left">
-          <p>promise:&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;</p>
-          <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;}</p>
-          </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showOpenChain</td>
-      <td style="text-align:left">&#x6253;&#x5F00;&#x521B;&#x5EFA;&#x94FE;&#x7684;&#x9875;&#x9762;</td>
-      <td
-      style="text-align:left">{&quot;chain&quot;:&quot;EOS|ETH&quot;}</td>
-        <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showLessNetworkFee</td>
-      <td style="text-align:left">&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x8D39;&#x4F59;&#x989D;&#x4E0D;&#x8DB3;&#x5F39;&#x6846;</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-        <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">checkAppVersion</td>
-      <td style="text-align:left">&#x68C0;&#x6D4B;&#x5E94;&#x7528;&#x7248;&#x672C;</td>
-      <td style="text-align:left">&#x65E0;</td>
-      <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">printLog</td>
-      <td style="text-align:left">&#x6253;&#x5370;&#x65E5;&#x5FD7;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#x6709;&#x65E5;&#x5FD7;&#x4E0A;&#x62A5;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x534F;&#x52A9;&#x5206;&#x6790;&#x95EE;&#x9898;&#xFF09;</td>
-      <td
-      style="text-align:left">log:(&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x65E5;&#x5FD7;)</td>
-        <td
-        style="text-align:left">&#x65E0;</td>
     </tr>
     <tr>
       <td style="text-align:left">encodeFunctionCall</td>
