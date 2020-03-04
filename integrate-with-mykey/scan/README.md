@@ -1,4 +1,4 @@
-# Desktop web with scanning qrcode
+# Web application with scanning qrcode
 
 ### Login
 
