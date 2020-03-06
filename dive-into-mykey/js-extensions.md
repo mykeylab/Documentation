@@ -4,112 +4,251 @@ JSBridge is injected javascript code in MYKEY dapp browser enviroment by default
 
 In order to control the MYKEY application conveniently, MYKEY adds the following methods:
 
-package name: **window.MyKey.Browser**
+| Method | Description |
+| :--- | :--- |
+| [closeWindow](js-extensions.md#close-app-window) | Close App window and return to MYKEY |
+| [openFullScreen](js-extensions.md#open-full-screen) | Open full screen |
+| [closeFullScreen](js-extensions.md#close-full-screen) | Close full screen |
+| [forbidPhysicalBack](js-extensions.md#disable-physical-back-button) | Disable physical back button\(Android Only\) |
+| [allowPhysicalBack](js-extensions.md#allow-physical-back-button) | Allow physical back button\(Android Only\) |
+| [getAccountInfo](js-extensions.md#get-mykey-account-information) | Get MYKEY Account Information |
+| [getClientConfig](js-extensions.md#get-client-configuration) | Get client configuration |
+| [sendTransaction](js-extensions.md#send-transaction) | Send transaction |
+| [sign](js-extensions.md#sign) | Apply MYKEY sign transactions |
+| [setTitle](js-extensions.md#set-application-title) | Set application title |
+| [showLoading](js-extensions.md#show-loading-animation) | Show loading animation |
+| [hiddenLoading](js-extensions.md#hidden-loading-animation) | Hidden loading animation |
+| [encodeFunctionCall](js-extensions.md#serialize-specified-function-call) | serialize specified function call |
+
+
+
+### Close App window
+
+Close App window and return to MYKEY.
+
+```javascript
+window.MyKey.Browser.closeWindow
+```
+
+### 
+
+### Open full screen
+
+Open full screen
+
+```javascript
+window.MyKey.Browser.openFullScreen
+```
+
+#### Params
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Methods</th>
-      <th style="text-align:left">Method description</th>
-      <th style="text-align:left">Params</th>
-      <th style="text-align:left">Response</th>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">closeWindow</td>
-      <td style="text-align:left">Close App window and return to MYKEY</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">openFullScreen</td>
-      <td style="text-align:left">Open full screen</td>
-      <td style="text-align:left">isLandscape:true, fasle</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">closeFullScreen</td>
-      <td style="text-align:left">Close full screen</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">forbidPhysicalBack</td>
-      <td style="text-align:left">Disable physical back button(Android Only)</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">allowPhysicalBack</td>
-      <td style="text-align:left">Allow physical back button(Android Only)</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">getAccountInfo</td>
-      <td style="text-align:left">Get MYKEY Account Information</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">{&quot;id&quot;:&quot;MYKEY UUID&quot;,&quot;accountName&quot;:&quot;Nickname
-        in MYKEY&quot;,&quot;chainInfoList&quot;:[{&quot;chain&quot;:&quot;EOS&quot;,&quot;account&quot;:&quot;&quot;}],&quot;operationKeys&quot;:[&quot;Three
-        operation keys&quot;,&quot;&quot;,&quot;&quot;]}</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">getClientConfig</td>
-      <td style="text-align:left">Get client configuration</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">{&quot;currency&quot;:&quot;CNY|USD&quot;,&quot;locale&quot;:&quot;zh-CN|en-US|ko-KR|ja-JP&quot;,&quot;userAgent&quot;:&quot;&quot;,&quot;recaptchaUserKey&quot;:&quot;&quot;}</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">sendTransaction</td>
-      <td style="text-align:left">Send transaction</td>
-      <td style="text-align:left">{&quot;actions&quot;:[{&quot;account&quot;:&quot;eosio&quot;,&quot;name&quot;:&quot;buyram&quot;,&quot;data&quot;:{&quot;payer&quot;:&quot;&quot;,&quot;receiver&quot;:&quot;&quot;,&quot;quant&quot;:&quot;1.0000
-        EOS&quot;}}],&quot;chain&quot;:&quot;EOS&quot;}</td>
+      <td style="text-align:left">isLandscape</td>
+      <td style="text-align:left">boolean</td>
       <td style="text-align:left">
-        <p>return promise object</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;transactionId&quot;:&quot;&quot;,&quot;signature&quot;:&quot;&quot;}}</p>
+        <p>true(Landscape)</p>
+        <p>fasle</p>
+      </td>
+    </tr>
+  </tbody>
+</table>### \*\*\*\*
+
+### Close full screen
+
+Close full screen.
+
+```javascript
+window.MyKey.Browser.closeFullScreen
+```
+
+###  ****
+
+### Disable physical back button
+
+Disable physical back button, only for Android
+
+```javascript
+window.MyKey.Browser.forbidPhysicalBack
+```
+
+### 
+
+### Allow physical back button
+
+Allow physical back button, only for Android
+
+```javascript
+window.MyKey.Browser.allowPhysicalBack
+```
+
+### 
+
+### Get MYKEY Account Information
+
+Get MYKEY Account Information
+
+```javascript
+window.MyKey.Browser.getAccountInfo
+```
+
+#### Return
+
+{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Three operation keys","",""\]}
+
+
+
+### Get client configuration
+
+Get client configuration
+
+```javascript
+window.MyKey.Browser.getClientConfig
+```
+
+#### Return
+
+{"currency":"CNY\|USD","locale":"zh-CN\|en-US\|ko-KR\|ja-JP","userAgent":"","recaptchaUserKey":""}
+
+
+
+### Send transaction
+
+Send transaction
+
+```javascript
+window.MyKey.Browser.sendTransaction(transaction) => Promise
+```
+
+#### Return
+
+result:{"errorCode":0,"errorMsg":"","data":{"transactionId":"","signature":""}}
+
+#### Params
+
+| Param | Type | Description |
+| :--- | :--- | :--- |
+| transaction | string | Specify chain and actions |
+
+#### Example：
+
+Buy ram on EOS.
+
+```javascript
+window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS"}')
+```
+
+### 
+
+### Sign
+
+Apply MYKEY sign transactions
+
+```javascript
+window.MyKey.Browser.sign(message) => Promise
+```
+
+#### Return
+
+result:{"errorCode":0,"errorMsg":"","data":{"signature":""}}
+
+#### Params
+
+| Param | Type | Description |
+| :--- | :--- | :--- |
+| message | string | unsigned message |
+
+### 
+
+### Set application title
+
+Set application title
+
+```javascript
+window.MyKey.Browser.setTitle(title)
+```
+
+#### Params
+
+| Param | Type | Description |
+| :--- | :--- | :--- |
+| title | string | application title |
+
+### 
+
+### Show loading animation
+
+Show loading animation
+
+```javascript
+window.MyKey.Browser.showLoading
+```
+
+
+
+### Hidden loading animation
+
+hidden loading animation
+
+```javascript
+window.MyKey.Browser.hiddenLoading
+```
+
+### 
+
+### serialize specified function call
+
+serialize specified function call
+
+```javascript
+window.MyKey.Browser.encodeFunctionCall(abi, method, param) => Promise
+```
+
+#### Return
+
+result:{"errorCode":0,"errorMsg":"","data":"\[serialized data\]"}
+
+#### Params
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">abi</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>abi for the function, type string, eg:&quot;[{\&quot;constant\&quot;:false,\&quot;inputs\&quot;:[</p>
+        <p>{\&quot;name\&quot;:\&quot;_to\&quot;,\&quot;type\&quot;:\&quot;address\&quot;},{\&quot;name\&quot;:\&quot;_value\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;}],\&quot;name\&quot;:\&quot;transfer\&quot;,\&quot;outputs\&quot;:[{\&quot;name\&quot;:\&quot;\&quot;,\&quot;type\&quot;:\&quot;bool\&quot;}],\&quot;payable\&quot;:false,</p>
+        <p>\&quot;stateMutability\&quot;:\&quot;nonpayable\&quot;,\&quot;type\&quot;:\&quot;function\&quot;}]&quot;</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">sign</td>
-      <td style="text-align:left">Apply MYKEY sign transactions</td>
-      <td style="text-align:left">message:(unsignatured data in string)</td>
+      <td style="text-align:left">method</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">method name, type string, eg:transfer&#x3002;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">param</td>
+      <td style="text-align:left">string</td>
       <td style="text-align:left">
-        <p>return promise object</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;signature&quot;:&quot;&quot;}}</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">setTitle</td>
-      <td style="text-align:left">Set application title</td>
-      <td style="text-align:left">title:(title in string)</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showLoading</td>
-      <td style="text-align:left">Show loading animation</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">hiddenLoading</td>
-      <td style="text-align:left">hidden loading animation</td>
-      <td style="text-align:left">None</td>
-      <td style="text-align:left">None</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">encodeFunctionCall</td>
-      <td style="text-align:left">serialize specified function call</td>
-      <td style="text-align:left">
-        <p>abi: abi for the function, type string, eg:&quot;[{\&quot;constant\&quot;:false,\&quot;inputs\&quot;:[{\&quot;name\&quot;:\&quot;_to\&quot;,\&quot;type\&quot;:\&quot;address\&quot;},{\&quot;name\&quot;:\&quot;_value\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;}],\&quot;name\&quot;:\&quot;transfer\&quot;,\&quot;outputs\&quot;:[{\&quot;name\&quot;:\&quot;\&quot;,\&quot;type\&quot;:\&quot;bool\&quot;}],\&quot;payable\&quot;:false,\&quot;stateMutability\&quot;:\&quot;nonpayable\&quot;,\&quot;type\&quot;:\&quot;function\&quot;}]&quot;</p>
-        <p>method: method name, type string, eg:transfer&#x3002;</p>
-        <p>param&#xFF1A;params of method, eg:{_to:&quot;0xc4ED1B3f31acadbE3c14B20fA766B6C4B1FAB208&quot;,_value:&quot;20000000000000000000&quot;}</p>
-      </td>
-      <td style="text-align:left">
-        <p>return promise object</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:&quot;[serialized
-          string]&quot;}</p>
+        <p>params, eg:{_to:&quot;0xc4ED1B3f31acadbE3c14B20fA766B6C4B1FAB208&quot;,</p>
+        <p>_value:&quot;20000000000000000000&quot;}</p>
       </td>
     </tr>
   </tbody>
 </table>
+
