@@ -4,121 +4,255 @@ JSBridge为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
 
 为了方便控制MYKEY应用中心浏览器，MYKEY还增加了以下方法：
 
-包名：**window.MyKey.Browser**
+| 方法 | 描述 |
+| :--- | :--- |
+| [closeWindow](js-extensions.md#guan-bi-chuang-kou) | 关闭应用窗口回到MYKEY |
+| [openFullScreen](js-extensions.md#da-kai-quan-ping) | 打开全屏 |
+| [closeFullScreen](js-extensions.md#guan-bi-quan-ping) | 关闭全屏 |
+| [forbidPhysicalBack](js-extensions.md#jin-zhi-wu-li-fan-hui) | 禁止物理返回按钮（Android专属） |
+| [allowPhysicalBack](js-extensions.md#yun-xu-wu-li-fan-hui) | 允许物理返回按钮（Android专属） |
+| [getAccountInfo](js-extensions.md#huo-qu-mykey-zhang-hu-xin-xi) | 获取MYKEY账户信息 |
+| [getClientConfig](js-extensions.md#huo-qu-ke-hu-duan-bu-fen-pei-zhi) | 获取客户端部分配置 |
+| [sendTransaction](js-extensions.md#fa-song-jiao-yi) | 发送交易 |
+| [sign](js-extensions.md#qian-ming) | 申请MYKEY签名 |
+| [setTitle](js-extensions.md#she-zhi-ying-yong-ding-bu-biao-ti) | 设置应用顶部标题 |
+| [showLoading](js-extensions.md#xian-shi-loading-dong-hua) | 显示loading动画 |
+| [hiddenLoading](js-extensions.md#qu-xiao-loading-dong-hua) | 取消loading动画 |
+| [encodeFunctionCall](js-extensions.md#dui-fang-fa-jin-hang-xu-lie-hua) | 对方法进行序列化 |
 
-\*\*\*\*
+
+
+### 关闭窗口
+
+关闭应用窗口回到MYKEY。
+
+```javascript
+window.MyKey.Browser.closeWindow
+```
+
+### 
+
+### 打开全屏
+
+打开全屏**。**
+
+```javascript
+window.MyKey.Browser.openFullScreen
+```
+
+#### **参数**
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;</th>
-      <th style="text-align:left">&#x529F;&#x80FD;&#x8BF4;&#x660E;</th>
-      <th style="text-align:left">&#x53C2;&#x6570;&#x683C;&#x5F0F;</th>
-      <th style="text-align:left">&#x54CD;&#x5E94;&#x683C;&#x5F0F;</th>
+      <th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+      <th style="text-align:left">&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x63CF;&#x8FF0;</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">closeWindow</td>
-      <td style="text-align:left">&#x5173;&#x95ED;&#x5E94;&#x7528;&#x7A97;&#x53E3;&#x56DE;&#x5230;MYKEY</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-        <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">openFullScreen</td>
-      <td style="text-align:left">&#x6253;&#x5F00;&#x5168;&#x5C4F;</td>
-      <td style="text-align:left">isLandscape:true(&#x6A2A;&#x5C4F;)&#xFF0C;fasle(&#x7AD6;&#x5C4F;)</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">closeFullScreen</td>
-      <td style="text-align:left">&#x5173;&#x95ED;&#x5168;&#x5C4F;</td>
-      <td style="text-align:left">&#x65E0;</td>
-      <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">forbidPhysicalBack</td>
-      <td style="text-align:left">&#x7981;&#x6B62;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x6309;&#x94AE;&#xFF08;Android&#x4E13;&#x5C5E;&#xFF09;</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-        <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">allowPhysicalBack</td>
-      <td style="text-align:left">&#x5141;&#x8BB8;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x6309;&#x94AE;&#xFF08;Android&#x4E13;&#x5C5E;&#xFF09;</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-        <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">getAccountInfo</td>
-      <td style="text-align:left">&#x83B7;&#x53D6;MYKEY&#x8D26;&#x6237;&#x4FE1;&#x606F;</td>
-      <td style="text-align:left">&#x65E0;</td>
-      <td style="text-align:left">{&quot;id&quot;:&quot;MYKEY&#x552F;&#x4E00;ID&quot;,&quot;accountName&quot;:&quot;MYKEY&#x5185;&#x8BBE;&#x7F6E;&#x7684;&#x6635;&#x79F0;&quot;,&quot;chainInfoList&quot;:[{&quot;chain&quot;:&quot;EOS&quot;,&quot;account&quot;:&quot;&quot;}],&quot;operationKeys&quot;:[&quot;&#x4E09;&#x628A;&#x64CD;&#x4F5C;&#x79D8;&#x94A5;&#x516C;&#x94A5;&quot;,&quot;&quot;,&quot;&quot;]}</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">getClientConfig</td>
-      <td style="text-align:left">&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x90E8;&#x5206;&#x914D;&#x7F6E;</td>
-      <td
-      style="text-align:left">&#x65E0;</td>
-        <td style="text-align:left">{&quot;currency&quot;:&quot;CNY|USD&quot;,&quot;locale&quot;:&quot;zh-CN|en-US|ko-KR|ja-JP&quot;,&quot;userAgent&quot;:&quot;&quot;,&quot;recaptchaUserKey&quot;:&quot;&quot;}</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">sendTransaction</td>
-      <td style="text-align:left">&#x53D1;&#x9001;&#x4EA4;&#x6613;</td>
-      <td style="text-align:left">{&quot;actions&quot;:[{&quot;account&quot;:&quot;eosio&quot;,&quot;name&quot;:&quot;buyram&quot;,&quot;data&quot;:{&quot;payer&quot;:&quot;&quot;,&quot;receiver&quot;:&quot;&quot;,&quot;quant&quot;:&quot;1.0000
-        EOS&quot;}}],&quot;chain&quot;:&quot;EOS&quot;}</td>
+      <td style="text-align:left">isLandscape</td>
+      <td style="text-align:left">boolean</td>
       <td style="text-align:left">
-        <p>promise:&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;transactionId&quot;:&quot;&quot;,&quot;signature&quot;:&quot;&quot;}}</p>
+        <p>true(&#x6A2A;&#x5C4F;)</p>
+        <p>fasle(&#x7AD6;&#x5C4F;)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>### \*\*\*\*
+
+### **关闭全屏**
+
+关闭全屏。
+
+```javascript
+window.MyKey.Browser.closeFullScreen
+```
+
+###  ****
+
+### **禁止物理返回**
+
+禁止物理返回按钮，限Android
+
+```javascript
+window.MyKey.Browser.forbidPhysicalBack
+```
+
+### 
+
+### 允许物理返回
+
+允许物理返回按钮，限Android
+
+```javascript
+window.MyKey.Browser.allowPhysicalBack
+```
+
+### 
+
+### 获取MYKEY账户信息
+
+获取MYKEY账户信息
+
+```javascript
+window.MyKey.Browser.getAccountInfo
+```
+
+#### 返回
+
+{"id":"MYKEY唯一ID","accountName":"MYKEY内设置的昵称","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["三把操作秘钥公钥","",""\]}
+
+
+
+### 获取客户端部分配置
+
+获取客户端部分配置
+
+```javascript
+window.MyKey.Browser.getClientConfig
+```
+
+#### 返回
+
+{"currency":"CNY\|USD","locale":"zh-CN\|en-US\|ko-KR\|ja-JP","userAgent":"","recaptchaUserKey":""}
+
+
+
+### 发送交易
+
+发送交易
+
+```javascript
+window.MyKey.Browser.sendTransaction(transaction) => Promise
+```
+
+#### 返回
+
+result:{"errorCode":0,"errorMsg":"","data":{"transactionId":"","signature":""}}
+
+#### 参数
+
+| 参数名 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| transaction | string | 指定链以及交易的actions |
+
+#### 举例：
+
+EOS链上购买内存。
+
+```javascript
+window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS"}')
+```
+
+### 
+
+### 签名
+
+申请MYKEY签名
+
+```javascript
+window.MyKey.Browser.sign(message) => Promise
+```
+
+#### 返回
+
+result:{"errorCode":0,"errorMsg":"","data":{"signature":""}}
+
+#### 参数
+
+| 参数名 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| message | string | 待签名的数据 |
+
+### 
+
+### 设置应用顶部标题
+
+设置应用顶部标题
+
+```javascript
+window.MyKey.Browser.setTitle(title)
+```
+
+#### 参数
+
+| 参数名 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| title | string | 标题内容 |
+
+### 
+
+### 显示loading动画
+
+显示loading动画
+
+```javascript
+window.MyKey.Browser.showLoading
+```
+
+
+
+### 取消loading动画
+
+取消loading动画
+
+```javascript
+window.MyKey.Browser.hiddenLoading
+```
+
+### 
+
+### 对方法进行序列化
+
+对方法进行序列化
+
+```javascript
+window.MyKey.Browser.encodeFunctionCall(abi, method, param) => Promise
+```
+
+#### 返回
+
+result:{"errorCode":0,"errorMsg":"","data":"\[序列化后的值\]"}
+
+#### 参数
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+      <th style="text-align:left">&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x63CF;&#x8FF0;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">abi</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>&#x8BE5;&#x65B9;&#x6CD5;&#x7684;abi&#x63CF;&#x8FF0;,&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;,eg:&quot;[{\&quot;constant\&quot;:false,\&quot;inputs\&quot;:[</p>
+        <p>{\&quot;name\&quot;:\&quot;_to\&quot;,\&quot;type\&quot;:\&quot;address\&quot;},{\&quot;name\&quot;:\&quot;_value\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;}],\&quot;name\&quot;:\&quot;transfer\&quot;,\&quot;outputs\&quot;:[{\&quot;name\&quot;:\&quot;\&quot;,\&quot;type\&quot;:\&quot;bool\&quot;}],\&quot;payable\&quot;:false,</p>
+        <p>\&quot;stateMutability\&quot;:\&quot;nonpayable\&quot;,\&quot;type\&quot;:\&quot;function\&quot;}]&quot;</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">sign</td>
-      <td style="text-align:left">&#x7533;&#x8BF7;MYKEY&#x7B7E;&#x540D;</td>
-      <td style="text-align:left">message:(&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x7B7E;&#x540D;&#x6570;&#x636E;)</td>
-      <td
-      style="text-align:left">
-        <p>promise:&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;</p>
-        <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:{&quot;signature&quot;:&quot;&quot;}}</p>
-        </td>
+      <td style="text-align:left">method</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">&#x65B9;&#x6CD5;&#x540D;, &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;eg:transfer&#x3002;</td>
     </tr>
     <tr>
-      <td style="text-align:left">setTitle</td>
-      <td style="text-align:left">&#x8BBE;&#x7F6E;&#x5E94;&#x7528;&#x9876;&#x90E8;&#x6807;&#x9898;</td>
-      <td
-      style="text-align:left">title:(&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x6807;&#x9898;&#x5185;&#x5BB9;)</td>
-        <td
-        style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">showLoading</td>
-      <td style="text-align:left">&#x663E;&#x793A;loading&#x52A8;&#x753B;</td>
-      <td style="text-align:left">&#x65E0;</td>
-      <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">hiddenLoading</td>
-      <td style="text-align:left">&#x53D6;&#x6D88;loading&#x52A8;&#x753B;</td>
-      <td style="text-align:left">&#x65E0;</td>
-      <td style="text-align:left">&#x65E0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">encodeFunctionCall</td>
-      <td style="text-align:left">&#x5BF9;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;</td>
-      <td
-      style="text-align:left">
-        <p>abi:&#x8BE5;&#x65B9;&#x6CD5;&#x7684;abi&#x63CF;&#x8FF0;,&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;,eg:&quot;[{\&quot;constant\&quot;:false,\&quot;inputs\&quot;:[{\&quot;name\&quot;:\&quot;_to\&quot;,\&quot;type\&quot;:\&quot;address\&quot;},{\&quot;name\&quot;:\&quot;_value\&quot;,\&quot;type\&quot;:\&quot;uint256\&quot;}],\&quot;name\&quot;:\&quot;transfer\&quot;,\&quot;outputs\&quot;:[{\&quot;name\&quot;:\&quot;\&quot;,\&quot;type\&quot;:\&quot;bool\&quot;}],\&quot;payable\&quot;:false,\&quot;stateMutability\&quot;:\&quot;nonpayable\&quot;,\&quot;type\&quot;:\&quot;function\&quot;}]&quot;</p>
-        <p>method&#xFF1A;&#x65B9;&#x6CD5;&#x540D;, &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;eg:transfer&#x3002;</p>
-        <p>param&#xFF1A;&#x53C2;&#x6570;&#xFF0C;eg:{_to:&quot;0xc4ED1B3f31acadbE3c14B20fA766B6C4B1FAB208&quot;,_value:&quot;20000000000000000000&quot;}</p>
-        </td>
-        <td style="text-align:left">
-          <p>promise:&#x65B9;&#x5F0F;&#x8FD4;&#x56DE;</p>
-          <p>result:{&quot;errorCode&quot;:0,&quot;errorMsg&quot;:&quot;&quot;,&quot;data&quot;:&quot;[&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7684;&#x503C;]&quot;}</p>
-        </td>
+      <td style="text-align:left">param</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>&#x53C2;&#x6570;&#xFF0C;eg:{_to:&quot;0xc4ED1B3f31acadbE3c14B20fA766B6C4B1FAB208&quot;,</p>
+        <p>_value:&quot;20000000000000000000&quot;}</p>
+      </td>
     </tr>
   </tbody>
 </table>
+
+
+
+
 
