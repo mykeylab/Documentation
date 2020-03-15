@@ -6,7 +6,7 @@ WEB application, APP or DAPP, all can implement third-party login based on MYKEY
 
 This website will include:
 
-* [Third-Party Login based on MYKEY](third-party-login-based-on-mykey.md)  this will explain the technical principles and authorization process of the third-party login based on MYKEY.
+* [Third-Party Login based on MYKEY](third-party-login-based-on-mykey/)  this will explain the technical principles and authorization process of the third-party login based on MYKEY.
 * [Integrated with MYKEY](integrate-with-mykey/integration-android/) Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol, web3 protocol etc.
 * [Dive into MYKEY](dive-into-mykey/mykey-on-eos.md) Detailed design, extensions of MYKEY.
   * [Deposit with MYKEY](dive-into-mykey/contracts-deposit/)  how to identify MYKEY transactions and actions.

@@ -1,13 +1,12 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Third-Party Login based on MYKEY](third-party-login-based-on-mykey.md)
+* [Third-Party Login based on MYKEY](third-party-login-based-on-mykey/README.md)
+  * [Verify signature at backend server](third-party-login-based-on-mykey/verify-signature-on-server-backend.md)
 
 ## Integrate with MYKEY
 
-* [Mobile Dapp with H5 pages](integrate-with-mykey/h5/README.md)
-  * [EOS](integrate-with-mykey/h5/eos.md)
-  * [ETH](integrate-with-mykey/h5/eth.md)
+* [Mobile Dapp with H5 pages](integrate-with-mykey/h5.md)
 * [Integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
   * [Preconditions](integrate-with-mykey/integration-android/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
