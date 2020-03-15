@@ -1,13 +1,12 @@
 # Table of contents
 
 * [简介](README.md)
-* [基于MYKEY的第三方授权登录](third-party-login.md)
+* [基于MYKEY的第三方授权登录](third-party-login/README.md)
+  * [验签代码示例](third-party-login/verify-example.md)
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
-* [Mobile H5页面接入](integrate-with-mykey/h5/README.md)
-  * [EOS](integrate-with-mykey/h5/eos.md)
-  * [ETH](integrate-with-mykey/h5/eth.md)
+* [Mobile H5页面接入](integrate-with-mykey/h5.md)
 * [MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-android/initiate-sdk.md)

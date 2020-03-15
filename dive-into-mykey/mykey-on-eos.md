@@ -72,7 +72,7 @@ function isMYKEY(){
 }
 ```
 
-1. 使用scatter.getIdentity检查响应数据是否包含类型："MYKEY"
+2. 使用scatter.getIdentity检查响应数据是否包含类型："MYKEY"
 
 ```java
 {

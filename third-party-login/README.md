@@ -14,7 +14,7 @@ MYKEY登录依赖ECDSA-secp256k1的签名和验签方法。由第三方应用发
 
 ## MYKEY登录认证流程
 
-![](.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
 ### 1. 发起认证请求
 
@@ -96,29 +96,29 @@ MYKEY接收并解析参数，向用户展示第三方应用的名称和动作。
     <tr>
       <td style="text-align:left">MYKEY SDK</td>
       <td style="text-align:left">
-        <p><a href="integrate-with-mykey/integration-android/transfer.md">Android SDK</a>
+        <p><a href="../integrate-with-mykey/integration-android/transfer.md">Android SDK</a>
         </p>
-        <p><a href="integrate-with-mykey/integration-ios/transfer.md">iOS SDK</a>
+        <p><a href="../integrate-with-mykey/integration-ios/transfer.md">iOS SDK</a>
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">H5</td>
       <td style="text-align:left">
-        <p><a href="integrate-with-mykey/h5/eth.md#mykey-yan-qian-fang-shi">ETH Web3</a>
+        <p><a href>ETH Web3</a>
         </p>
-        <p><a href="integrate-with-mykey/h5/eos.md#mykey-yan-qian-fang-shi">EOS Scatter</a>
+        <p><a href>EOS Scatter</a>
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">SimpleWallet&#x534F;&#x8BAE;</td>
-      <td style="text-align:left"><a href="integrate-with-mykey/simplewallet.md#qian-ming">SimpleWallet</a>
+      <td style="text-align:left"><a href="../integrate-with-mykey/simplewallet.md#qian-ming">SimpleWallet</a>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">PC Web&#x626B;&#x7801;</td>
-      <td style="text-align:left"><a href="integrate-with-mykey/scan.md#qian-ming">&#x626B;&#x7801;</a>
+      <td style="text-align:left"><a href="../integrate-with-mykey/scan.md#qian-ming">&#x626B;&#x7801;</a>
       </td>
     </tr>
     <tr>
