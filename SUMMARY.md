@@ -7,6 +7,8 @@
 ## Integrate with MYKEY
 
 * [Mobile Dapp with H5 pages](integrate-with-mykey/h5/README.md)
+  * [ETH](integrate-with-mykey/h5/eth.md)
+  * [EOS](integrate-with-mykey/h5/eos.md)
   * [JS Extensions](integrate-with-mykey/h5/js-extensions.md)
 * [Integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
   * [Preconditions](integrate-with-mykey/integration-android/preconditions.md)

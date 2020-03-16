@@ -105,8 +105,10 @@ MYKEY supports the following signing methods:
     <tr>
       <td style="text-align:left">H5</td>
       <td style="text-align:left">
-        <p>&#x200B;<a href="https://app.gitbook.com/@mykey/s/mykey-docs/~/drafts/-M0YWbq9MRyudOOMs8Aw/v/English/integrate-with-mykey/h5/eth#verify-signing-with-mykey">ETH Web3</a>&#x200B;</p>
-        <p>&#x200B;<a href="https://app.gitbook.com/@mykey/s/mykey-docs/~/drafts/-M0YWbq9MRyudOOMs8Aw/v/English/integrate-with-mykey/h5/eos#verify-signing-with-mykey">EOS Scatter</a>&#x200B;</p>
+        <p><a href="../integrate-with-mykey/h5/eth.md#verify-signing-with-mykey">&#x200B;ETH Web3&#x200B;</a>
+        </p>
+        <p>&#x200B;<a href="../integrate-with-mykey/h5/eos.md#verify-signing-with-mykey">EOS Scatter&#x200B;</a>
+        </p>
       </td>
     </tr>
     <tr>
