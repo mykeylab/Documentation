@@ -7,6 +7,8 @@
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
 * [Mobile H5页面接入](integrate-with-mykey/h5/README.md)
+  * [ETH](integrate-with-mykey/h5/eth.md)
+  * [EOS](integrate-with-mykey/h5/eos.md)
   * [JS功能扩展](integrate-with-mykey/h5/js-extensions.md)
 * [MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)

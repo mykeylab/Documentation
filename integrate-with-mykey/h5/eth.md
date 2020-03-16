@@ -39,6 +39,6 @@ console.log("signature:", signed)
 msgParams.sig = signed 
 let recovered = sigUtil.recoverPersonalSignature(msgParams) 
 console.log("recovered:", recovered) 
-console.log(reservedKeyAddr.toLowerCase() === recovered.toLowerCase())
+console.log(reservedKeyAddr.toLowerCase() === recovered.toLowerCase()
 ```
 

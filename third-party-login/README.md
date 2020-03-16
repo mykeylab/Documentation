@@ -105,9 +105,9 @@ MYKEY接收并解析参数，向用户展示第三方应用的名称和动作。
     <tr>
       <td style="text-align:left">H5</td>
       <td style="text-align:left">
-        <p><a href>ETH Web3</a>
+        <p><a href="../integrate-with-mykey/h5/eth.md#mykey-yan-qian-fang-shi">ETH Web3</a>
         </p>
-        <p><a href>EOS Scatter</a>
+        <p><a href="../integrate-with-mykey/h5/eos.md#mykey-yan-qian-fang-shi">EOS Scatter</a>
         </p>
       </td>
     </tr>
