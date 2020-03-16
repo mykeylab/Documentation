@@ -128,7 +128,11 @@
 
 ## [↳](https://ethereum.org/zh/developers/#backend-apis) 后端 API <a id="backend-apis"></a>
 
-### [↳](https://ethereum.org/zh/developers/#infura-%E4%BB%A5%E5%A4%AA%E5%9D%8A-api-%E6%9C%8D%E5%8A%A1) Infura _以太坊 API 服务_ <a id="infura-&#x4EE5;&#x592A;&#x574A;-api-&#x670D;&#x52A1;"></a>
+### [↳](https://alchemyapi.io/developer-tools) Alchemy_以太坊 API 服务_ <a id="infura-&#x4EE5;&#x592A;&#x574A;-api-&#x670D;&#x52A1;"></a>
+
+* [alchemyapi.io](https://alchemyapi.io/)
+
+### [↳](https://ethereum.org/zh/developers/#infura-%E4%BB%A5%E5%A4%AA%E5%9D%8A-api-%E6%9C%8D%E5%8A%A1)Infura _以太坊 API 服务_ <a id="infura-&#x4EE5;&#x592A;&#x574A;-api-&#x670D;&#x52A1;"></a>
 
 * [infura.io](https://infura.io/)
 

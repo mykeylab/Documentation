@@ -6,7 +6,8 @@
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
-* [Mobile H5页面接入](integrate-with-mykey/h5.md)
+* [Mobile H5页面接入](integrate-with-mykey/h5/README.md)
+  * [JS功能扩展](integrate-with-mykey/h5/js-extensions.md)
 * [MYKEY Android SDK接入](integrate-with-mykey/integration-android/README.md)
   * [环境准备](integrate-with-mykey/integration-android/preconditions.md)
   * [初始化SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
@@ -28,7 +29,6 @@
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 
 * [EOS上的MYKEY](dive-into-mykey/mykey-on-eos.md)
-* [JS功能扩展](dive-into-mykey/js-extensions.md)
 * [类和方法定义](dive-into-mykey/classes-and-methods/README.md)
   * [Android类](dive-into-mykey/classes-and-methods/android-lei.md)
   * [iOS类](dive-into-mykey/classes-and-methods/ios.md)
@@ -47,8 +47,8 @@
 
 ## 开发资源 <a id="development-resources"></a>
 
-* [EOS](development-resources/eos.md)
 * [ETH](development-resources/eth.md)
+* [EOS](development-resources/eos.md)
 
 ## 加入我们 <a id="development-resources-1"></a>
 
