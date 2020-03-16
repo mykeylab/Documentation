@@ -6,7 +6,8 @@
 
 ## Integrate with MYKEY
 
-* [Mobile Dapp with H5 pages](integrate-with-mykey/h5.md)
+* [Mobile Dapp with H5 pages](integrate-with-mykey/h5/README.md)
+  * [JS Extensions](integrate-with-mykey/h5/js-extensions.md)
 * [Integration via MYKEY Android SDK](integrate-with-mykey/integration-android/README.md)
   * [Preconditions](integrate-with-mykey/integration-android/preconditions.md)
   * [Initiate SDK](integrate-with-mykey/integration-android/initiate-sdk.md)
@@ -28,7 +29,6 @@
 ## Dive into MYKEY
 
 * [MYKEY on EOS](dive-into-mykey/mykey-on-eos.md)
-* [JS Extensions](dive-into-mykey/js-extensions.md)
 * [Classes and methods](dive-into-mykey/classes-and-methods/README.md)
   * [Android Classes](dive-into-mykey/classes-and-methods/android.md)
   * [iOS Classes](dive-into-mykey/classes-and-methods/ios.md)

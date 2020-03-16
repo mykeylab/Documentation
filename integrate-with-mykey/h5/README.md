@@ -2,7 +2,7 @@
 
 JSBridge is injected javascript code in MYKEY dapp browser enviroment by default, which support Scatter protocol, and web3js protocol.
 
-Here we will show how to authorize with MYKEY.  For more methods of JSBridge, please check the [JS Extensions](../dive-into-mykey/js-extensions.md).
+Here we will show how to authorize with MYKEY.  For more methods of JSBridge, please check the [JS Extensions](js-extensions.md).
 
 You can directly develop H5 pages compatible with the web3 protocol and Scatter protocol,  then access them through the built-in browser of MYKEY.
 
@@ -10,7 +10,7 @@ For more information about the eth web3 protocol, please refer to: [https://web3
 
 For more information on the Scatter protocol, please refer to: [https://get-scatter.com/developers/settingupforwebapps](https://get-scatter.com/developers/settingupforwebapps)
 
-To verify the MYKEY signature, please refer to [verify signature at backend server.](../third-party-login-based-on-mykey/verify-signature-on-server-backend.md) JSBridge support more functions, please refer to [JSBridge extensions](../dive-into-mykey/js-extensions.md).
+To verify the MYKEY signature, please refer to [verify signature at backend server.](../../third-party-login-based-on-mykey/verify-signature-on-server-backend.md) JSBridge support more functions, please refer to [JSBridge extensions](js-extensions.md).
 
 ## How to identify the dapps that MYKEY opens
 

@@ -102,7 +102,7 @@ window.MyKey.Browser.getAccountInfo
 
 #### Return
 
-{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Three operation keys","",""\]}
+{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Three operation keys","",""\],"xpubOperationKeys":\[\]}
 
 
 
