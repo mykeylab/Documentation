@@ -17,7 +17,8 @@ The format of the data post to CallBackUrl:
     "sign":"",      // eos signature, sign data：timestamp + account + uuID + ref
     "ref":"",       // ref, mykey
     "timestamp":"", // UNIX timestamp, accurate to second
-    "account":""    // eos account name
+    "account":"",    // eos account name
+    "chain": ""      // value could be ANY, EOS, ETH，or not pass this param
 }
 ```
 
@@ -43,7 +44,7 @@ Sample:
 
 ```java
 AuthorizeRequest authorizeRequest = new AuthorizeRequest()
-    // EOS use ChainCons.EOS，ETH use ChainCons.ETH
+    // chain could be ANY, EOS, and ETH. EOS is the default value. If it's ANY, MYKEY will try EOS first, then ETH to return an account
     .setChain(ChainCons.EOS)      
     .setUserName("bobbobbobbob")
     // DApp CallbackUrl

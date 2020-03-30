@@ -18,70 +18,59 @@ MYKEY login relies on ECDSA-secp256k1's signature and verification methods. A th
 
 ### 1. Initiate an authentication request
 
-When a third-party application initiates an authentication request, it needs to pass five parameters: action, digest of action details, timestamp, application name / id, callback URL, designated blockchain \(optional\), and adopt different processing strategies according to the channel.
-
-For example: request={login, hash{login}, 1581410193, bihu.com, bihu\_callback\_url, ETH}
+A third-party application initiates an authentication request, MYKEY adopts different processing strategies according to the channel.
 
 （1）H5 Pages
 
-Communicate with MYKEY through JS Bridge.
+MYKEY is compatible with the scatter protocol and the web3 protocol. You can use the methods of the scatter and web3 JS libraries to obtain account information and complete login.
 
 （2）PC WEB
 
-Encode request parameters into QR Code and display.
+The third-party application encodes the request parameters into a QR Code and displays it according to the SimpleWallet protocol. The code is scanned and authorized using MYKEY, then the third-party application is called back to complete the login.
 
 （3）APP
 
-If you integrate with MYKEY SDK, you can directly call the relevant method to wake up MYKEY; otherwise, pass parameters through the API method.  
-
+After accessing the SDK, and the SDK is initialized, you can directly call the authority method to wake up MYKEY; otherwise, pass parameters through the api method.
 
 ### 2. Sign / return receipt
 
-MYKEY receives and parses parameters to show users the names and actions of third-party applications.
+MYKEY receives and parses parameters, and returns user account information based on the passed parameters.
 
-（1）Analyzing the accounts on chains 
+（1）parameter: chain
 
-If a third-party application specifies a blockchain and the user has not created an account on the chain, it will prompt to open an account. If not specified or activated, it will proceed to the next step.
+The value of parameter chain could be ANY, EOS or ETH.
 
-（2）Verify permissions and signatures
+If the parameter chain is ANY, or the chain parameter is not passed, MYKEY selects the chain for authorizing in the default order \(EOS first, then ETH\).
 
-The user enters the password or verifies the fingerprint / face, and calls the Reserved Key to sign the request.
+If the parameter chain is specified, MYKEY will query the account of the specified chain and return account information.
 
-（3）Return receipt
-
-In addition to the signature, the receipt also needs to contain the user UUID and user address information. If the third-party application does not specify a blockchain, all on-chain addresses are returned, which is convenient for the third-party application to identify the user.
-
-For example:
-
-ETH：receipt={sig, uuid:ETH:0xFFFF }
-
-No specific chains：receipt={sig, uuid:{EOS:null; ETH:0xFFFF...; Tron:0xEEEE}  }
+If the user does not have an account on the targeted chain, the account returned by MYKEY is empty, and the third-party application may prompt the user to open an account on the chain.
 
 ### 3. Parse receipt, request public key
 
-The third-party application parses the request to obtain the user uuid and user address.
+The third-party application parses the return receipt of MYKEY to obtain the user's mykey\_id and the user account.
 
-（1）Check if uuid is registered
+\(1\) Check if the mykey\_id is registered
 
-If the uuid has not been registered, register the uuid and the user address of the corresponding chain in the local database, and select a chain as the query address.
+If the mykey\_id has not been registered, then register mykey\_id and the user address of the corresponding chain in the local database, and select a chain to query the user account.
 
-If already registered, directly select the user address associated with the original uuid as the query address.
+If the mykey\_id already registered, then directly select the account associated with the original mykey\_id as the query address
 
-（2）Querying the Public Key
+\(2\) Query reserved key and its status
 
-Third-party applications can choose to directly query the user's public key through blockchain services, such as infura, or they can query the public key of the corresponding address through the API provided by MYKEY.
+Third-party applications can choose to directly query the user's ETH public key through blockchain services, such as infura, and dfuse to query the user's EOS public key. The index 3 of public key is the reserved key. For the query method, please refer to Obtaining the ReservedKey in the sample [Verify signature at backend server](verify-signature-on-server-backend.md).
 
-### 4. Returns the public key
+Third-party applications that do not have high security requirements can also directly trust the public key returned by MYKEY.
 
-The blockchain service provider or MYKEY returns the public key information of the corresponding address.
+### 4. Returns the reserved key and its status
 
-![\(warning\)](https://confluence.inner-bihu.com/s/en_US/7901/04c8b7bf0a5b4889210956b8230224e43d124b25/_/images/icons/emoticons/warning.svg)Note: Public keys may be frozen.
+Blockchain service provider or MYKEY returns the reserved key information of the corresponding address, and its status.
 
 ### 5. Verify signature
 
-If the status of the public key is not available, it will directly return failure.
+If the state of the reserved key is not available \(status != 0\), it will directly return failure. 
 
-If the public key is available, check \(1\) whether the signature corresponds to the user's public key; \(2\) whether the content of the signature is the same as the content of the request. If the verification passes, it returns success, otherwise it returns the signing failure.
+If the reserved key is available, check \(1\) whether the signature corresponds to the user's reserved key; \(2\) whether the content of the signature is the same as the content of the request. If the verification succeeds, it returns success, otherwise it returns the authorization failure. For the sample code of the third-party application server to verify the signature, refer to the sample [Verify signature at backend server](verify-signature-on-server-backend.md).
 
 ## Authentication methods for integration methods
 

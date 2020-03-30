@@ -4,7 +4,7 @@ Pull up MYKEY for contract calls, support multiple action combination calls, sup
 
 ```java
 ContractRequest contractRequest = new ContractRequest()
-        // EOS use ChainCons.EOS，ETH use ChainCons.ETH
+        // chain could be ANY, EOS, and ETH. EOS is the default value. If it's ANY, MYKEY will try EOS first, then ETH to return an account
         .setChain(ChainCons.EOS)
         .setInfo("Perform the mortgage REX operation")
         // order ID which come from dapp server
@@ -21,10 +21,19 @@ contractActionRequest.setAccount("eosio")
         .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
 contractRequest.addAction(contractActionRequest);
 
+
+/**
+For the call contracts of ETH, please pay attention to below items:
+a. Before sending data to MYKEY, determine if it is a contract action, the chain is ETH, and the binary is empty, then call the Go method ethJsonToBinary to generate a binary
+b. Before sending data to MYKEY, make sure that all actions have the chain field set (the original chain field should be on the outermost Contract object)
+c. ETH SDK does not support multi-action
+*/
 TransferAction transferActionRequest = new TransferAction();
 transferActionRequest.setAccount("eosio.token")
         .setName("transfer")
         .setInfo("transfer to alicealice11")
+        .setAbi("xxxxx")    // only use for ETH
+        .setBinary("xxxxx") // only use for ETH
         .setData(new TransferData().setFrom("bobbobbobbob").setTo("alicealice11").setQuantity("0.0001 EOS").setMemo("memo"));
 contractRequest.addAction(transferActionRequest);
 

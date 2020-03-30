@@ -8,7 +8,27 @@ You can also refer below link to get more details about eth web3 protocol:
 
 [https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html)
 
-## Verify signing with MYKEY
+## Login
+
+Use web3.eth.givenProvider method to get user account information.
+
+```javascript
+{
+      var Web3 = require('web3');
+      var web3;
+      if (typeof web3 !== 'undefined') {
+          web3 = new Web3(web3.currentProvider);
+      } else {
+      // set the provider you want from Web3.providers
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
+      }
+      var version = web3.version;
+      //Parse the return web3.eth.givenProvider and ETH address can be found
+      console.log(JSON.stringify(web3.eth.givenProvider));
+  }
+```
+
+## Verify the signature from MYKEY
 
 Due to the unique design of MYKEY, the client will use **Reserved Key** to sign messages, and the server backend should use **Reserved Key** to verify signatures. For example, we use web3 protocol to sign and verify a message:
 

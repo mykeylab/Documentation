@@ -8,11 +8,32 @@ You can also refer below link to get more details about Scatter protocol:
 
 [https://get-scatter.com/developers/settingupforwebapps](https://get-scatter.com/developers/settingupforwebapps)
 
-## Verify signing with MYKEY
+## Login
 
-\*\*\*\*[MYKEY account structure](../../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document](../../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey).
+Use scatter.connect method, then login method to get user account information.
 
-MYKEY uses the reserved key which index is 3 to sign through scatter.getArbitrarySignature. Server side of dapps need use the corresponding public key of reserved key to verify signature, it can be queried by backend code in table keydata of contract mykeymanager by scope ACCOUNT\_NAME.
+```javascript
+import ScatterJS from "@scatterjs/core";
+
+ScatterJS.connect("My DAPP", { network }).then(connected => {
+  if (!connected) return alert("no scatter");
+
+  const eos = ScatterJS.eos(network, Api, { rpc });
+  this.setState({ eos });
+
+  ScatterJS.login().then(id => {
+    if (!id) return alert("no identity");
+    const account = ScatterJS.account("eos");
+    this.setState({ account }, this.getVote);
+  });
+});
+```
+
+## Verify the signature from MYKEY
+
+\*\*\*\*[MYKEY account structure](../../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the ReservedKey, more details see this [Document](../../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey).
+
+The Reserved Key can be queried through the keydata table of the mykeymanager smart contract. When querying, the specified range is the MYKEY account and the index is 3.
 
 ```javascript
 /**
