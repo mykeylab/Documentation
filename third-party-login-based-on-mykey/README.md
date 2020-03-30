@@ -1,7 +1,5 @@
 # Third-Party Login based on MYKEY
 
-MYKEY provides SDKs and APIs to help third-party applications implement convenient user authentication and reduce the barriers to entry for users.
-
 MYKEY login allows the use of MYKEY account login to access third-party applications and send blockchain transactions, with the following characteristics:
 
 * Protected unmanaged blockchain account 
@@ -30,7 +28,7 @@ The third-party application encodes the request parameters into a QR Code and di
 
 （3）APP
 
-After accessing the SDK, and the SDK is initialized, you can directly call the authority method to wake up MYKEY; otherwise, pass parameters through the api method.
+After accessing the SDK, and the SDK is initialized, you can directly call the authority method to wake up MYKEY.
 
 ### 2. Sign / return receipt
 
@@ -48,13 +46,13 @@ If the user does not have an account on the targeted chain, the account returned
 
 ### 3. Parse receipt, request public key
 
-The third-party application parses the return receipt of MYKEY to obtain the user's mykey\_id and the user account.
+The third-party application parses the return receipt of MYKEY to obtain the user's mykeyId and the user account.
 
-\(1\) Check if the mykey\_id is registered
+\(1\) Check if the mykeyId is registered
 
-If the mykey\_id has not been registered, then register mykey\_id and the user address of the corresponding chain in the local database, and select a chain to query the user account.
+If the mykeyId has not been registered, then register mykeyId and the user address of the corresponding chain in the local database, and select a chain to query the user account.
 
-If the mykey\_id already registered, then directly select the account associated with the original mykey\_id as the query address
+If the mykeyId already registered, then directly select the account associated with the original mykeyId as the query address
 
 \(2\) Query reserved key and its status
 
