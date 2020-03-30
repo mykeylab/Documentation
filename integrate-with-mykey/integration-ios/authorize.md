@@ -17,7 +17,8 @@ MYKEY将签名后的数据POST到dapp提供的CallBackUrl，请求第三方应�
     "sign":"",      // eos签名, 签名数据：timestamp + account + uuID + ref
     "ref":"",       // 来源, mykey
     "timestamp":"", // 当前UNIX时间戳, 精确到秒
-    "account":""    // eos账户名
+    "account":"",    // eos账户名
+    "chain": ""      // 值为ANY, EOS, ETH，或者不传递该参数
 }
 ```
 

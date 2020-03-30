@@ -6,7 +6,27 @@ MYKEY兼容web3协议，您可以直接开发兼容web3协议的dapp，再通过
 
 [https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html](https://web3js.readthedocs.io/en/v1.2.0/web3-eth.html)
 
-## MYKEY验签方式
+## 登录
+
+使用web3.eth的givenProvider方法即可获得用户的账号信息。
+
+```javascript
+{
+      var Web3 = require('web3');
+      var web3;
+      if (typeof web3 !== 'undefined') {
+          web3 = new Web3(web3.currentProvider);
+      } else {
+// set the provider you want from Web3.providers
+          web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); //这一步是连接到以太坊节点
+      }
+      var version = web3.version;
+      //解析web3.eth.givenProvider的返回，即可获得用户的ETH地址
+      console.log(JSON.stringify(web3.eth.givenProvider));
+  }
+```
+
+## 验证MYKEY的签名
 
 因为mykey账号的独特设计，客户端会使用**Reserved公钥**签名，服务端需要使用**Reserved公钥**验证签名。比如我们使用web3协议进行签名和验签：
 

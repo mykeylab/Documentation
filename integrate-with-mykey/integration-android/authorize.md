@@ -17,7 +17,8 @@ MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第
     "sign":"",      // eos签名, 签名数据：timestamp + account + uuID + ref
     "ref":"",       // 来源, mykey
     "timestamp":"", // 当前UNIX时间戳, 精确到秒
-    "account":""    // eos账户名
+    "account":"",    // eos账户名
+    "chain": ""      // 值为ANY, EOS, ETH，或者不传递该参数
 }
 ```
 
@@ -43,7 +44,7 @@ dapp提供的CallBackUrl接口返回值：
 
 ```java
 AuthorizeRequest authorizeRequest = new AuthorizeRequest()
-    // EOS用 ChainCons.EOS，ETH用 ChainCons.ETH
+    // chain的值可以为EOS（默认）, ETH，或者ANY。如果是“ANY”，MYKEY任选一条可用的链签名并修改chain为可用链的值(例如：ETH或EOS)，并返回给SDK接入方
     .setChain(ChainCons.EOS)      
     .setUserName("bobbobbobbob")
     // DApp CallbackUrl

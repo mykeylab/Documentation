@@ -4,7 +4,7 @@
 
 ```java
 ContractRequest contractRequest = new ContractRequest()
-        // EOS用 ChainCons.EOS，ETH用 ChainCons.ETH
+        // chain的值可以为EOS（默认）, ETH，或者ANY。如果是“ANY”，MYKEY任选一条可用的链签名并修改chain为可用链的值(例如：ETH或EOS)，并返回给SDK接入方
         .setChain(ChainCons.EOS)
         .setInfo("Perform the mortgage REX operation")
         // order ID which come from dapp server
@@ -21,10 +21,19 @@ contractActionRequest.setAccount("eosio")
         .setData(new BuyRamDataEntity().setPayer("bobbobbobbob").setReceiver("alicealice11").setQuant("1.0000 EOS"));
 contractRequest.addAction(contractActionRequest);
 
+
+/**
+对于ETH的合约调用，请注意:
+a、发送数据到MYKEY之前，判断如果是合约action，且链为ETH，且binary为空，则调用Go方法ethJsonToBinary生成binary
+b、发送数据到MYKEY之前，确保所有action都设置了chain字段（原来的chain字段应该在最外层Contract对象上）
+c、ETH SDK暂时不支持多action
+*/
 TransferAction transferActionRequest = new TransferAction();
 transferActionRequest.setAccount("eosio.token")
         .setName("transfer")
         .setInfo("transfer to alicealice11")
+        .setAbi("xxxxx")    // ETH转账用
+        .setBinary("xxxxx") // ETH转账用
         .setData(new TransferData().setFrom("bobbobbobbob").setTo("alicealice11").setQuantity("0.0001 EOS").setMemo("memo"));
 contractRequest.addAction(transferActionRequest);
 

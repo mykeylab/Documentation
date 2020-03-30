@@ -6,11 +6,32 @@ MYKEY兼容Scatter协议，您可以直接开发兼容Scatter协议的dapp，再
 
 [https://get-scatter.com/developers/settingupforwebapps](https://get-scatter.com/developers/settingupforwebapps)
 
-## MYKEY验签方式
+## 登录
 
-[MYKEY的账号体系](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，需要在服务端验签时使用**Reserved公钥**进行验签。客户端使用MYKEY账号index为3的公钥，用scatter.getArbitrarySignature方法进行签名。
+先使用scatter.connect方法，再使用login方法即可获得用户的账号信息。
 
-Reserved Key的公钥，可以通过智能合约mykeymanager的表keydata查询到。查询时，指定范围为 MYKEY账号。
+```javascript
+import ScatterJS from "@scatterjs/core";
+
+ScatterJS.connect("My DAPP", { network }).then(connected => {
+  if (!connected) return alert("no scatter");
+
+  const eos = ScatterJS.eos(network, Api, { rpc });
+  this.setState({ eos });
+
+  ScatterJS.login().then(id => {
+    if (!id) return alert("no identity");
+    const account = ScatterJS.account("eos");
+    this.setState({ account }, this.getVote);
+  });
+});
+```
+
+## 验证MYKEY的签名
+
+[MYKEY的账号体系](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，验证MYKEY签名时，需要使用**Reserved公钥**。
+
+Reserved Key的公钥，可以通过智能合约mykeymanager的表keydata查询到。查询时，指定范围为MYKEY账号，index为3。
 
 ```javascript
 /**
