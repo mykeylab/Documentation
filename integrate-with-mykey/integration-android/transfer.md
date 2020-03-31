@@ -4,7 +4,7 @@
 
 ```java
 TransferRequest transferRequest =new TransferRequest()
-        // chain的值可以为EOS（默认）, ETH，或者ANY。如果是“ANY”，MYKEY任选一条可用的链签名并修改chain为可用链的值(例如：ETH或EOS)，并返回给SDK接入方
+        // chain的值可以为EOS（默认）, ETH
         .setChain(ChainCons.EOS)
         .setFrom("bobbobbobbob")
         .setTo("alicealice11")
