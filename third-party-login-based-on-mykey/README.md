@@ -24,7 +24,7 @@ MYKEY is compatible with the scatter protocol and the web3 protocol. You can use
 
 （2）PC WEB
 
-The third-party application encodes the request parameters into a QR Code and displays it according to the SimpleWallet protocol. The code is scanned and authorized using MYKEY, then the third-party application is called back to complete the login.
+The third-party application encodes the request parameters into a QR Code and displays it according to the SimpleWallet or WalletConnect protocol. The code is scanned and authorized using MYKEY, then the third-party application is called back to complete the login.
 
 （3）APP
 
