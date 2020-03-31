@@ -24,7 +24,7 @@ MYKEY兼容scatter协议和web3协议，使用scatter和web3 JS库的方法获�
 
 （2）PC WEB
 
-第三方应用按照SimpleWallet协议将请求参数编码成QR Code并展示，使用MYKEY扫码并授权，通过后MYKEY回调第三方应用以完成登录。
+第三方应用按照SimpleWallet或者WalletConnect协议将请求参数编码成QR Code并展示，使用MYKEY扫码并授权，通过后MYKEY回调第三方应用以完成登录。
 
 （3）APP
 
