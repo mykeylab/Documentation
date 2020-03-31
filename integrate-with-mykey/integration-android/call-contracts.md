@@ -4,7 +4,7 @@ Pull up MYKEY for contract calls, support multiple action combination calls, sup
 
 ```java
 ContractRequest contractRequest = new ContractRequest()
-        // chain could be ANY, EOS, and ETH. EOS is the default value. If it's ANY, MYKEY will try EOS first, then ETH to return an account
+        // chain could be EOS, and ETH.
         .setChain(ChainCons.EOS)
         .setInfo("Perform the mortgage REX operation")
         // order ID which come from dapp server

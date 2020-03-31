@@ -6,7 +6,7 @@ dapp server or client should query the user's ReserveKey from MYKEY SmartContrac
 
 ```java
 SignRequest signRequest = new SignRequest()
-    // chain could be ANY, EOS, and ETH. EOS is the default value. If it's ANY, MYKEY will try EOS first, then ETH to return an account
+    // chain could be EOS, and ETH. EOS is the default value.
     .setChain(ChainCons.EOS)
     // message should be a hex string start with 0x
     .setMessage("Messages that need to be signed, [it could be random which come from dapp server]")
