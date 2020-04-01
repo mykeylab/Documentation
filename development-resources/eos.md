@@ -26,7 +26,16 @@ EOS的开发商block.one公司，提供了非常丰富的文档。
 H5 Dapp开发必备，主流EOS钱包都会兼容以下这两个协议：
 
 * [Scatter](https://get-scatter.com/docs/getting-started)
-* [SimpleWallet](https://github.com/southex/SimpleWallet/blob/master/README.md)
+* [SimpleWalle](https://github.com/southex/SimpleWallet/blob/master/README.md)
+
+## EOS SDK <a id="getting-started"></a>
+
+Dapp开发必备，经验证可工作的EOS SDK有：
+
+* [EOSJS](https://github.com/EOSIO/eosjs)
+* [GO](https://github.com/eoscanada/eos-go)
+* [Java](https://github.com/TopiaCoin/EOSRPCAdapter-Java)
+* [Python](https://github.com/eosnewyork/eospy)
 
 ## EOS区块浏览器
 
