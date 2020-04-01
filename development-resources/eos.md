@@ -28,6 +28,15 @@ Major EOS wallets will be compatible with the following two protocols which are 
 * [Scatter](https://get-scatter.com/docs/getting-started)
 * [SimpleWallet](https://github.com/southex/SimpleWallet/blob/master/README.md)
 
+## EOS SDK <a id="getting-started"></a>
+
+Below EOS SDKs are verified and workable:
+
+* [EOSJS](https://github.com/EOSIO/eosjs)
+* [GO](https://github.com/eoscanada/eos-go)
+* [Java](https://github.com/TopiaCoin/EOSRPCAdapter-Java)
+* [Python](https://github.com/eosnewyork/eospy)
+
 ## **EOS Blockchain Browser**
 
 To query block transactions, a block browser is essential. Since the EOS mainnet was launched, until now, many excellent block browsers have emerged, and these top block browsers not only have their own characteristics, but have also withstood the impact of sudden increase in scale data from mining activities.
