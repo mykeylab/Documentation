@@ -31,12 +31,24 @@ let unsignedData = timestamp + account + uuID + ref
 ecc.verify(signature, unsignedData, pubkey) === true
 ```
 
-dapp should provide response of CallBackUrl call to MYKEY:
+Response format：
 
-```java
+```javascript
 {
-    "code":0,       // error code，=0 is success. >0, dapp should describe error in message.
-    "message":""    // message
+ "account": "MYKEY Account",  
+ "chain": "EOS",   //EOS or ETH
+ "dappKey": "xxxxxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
+ "dappUserId": "xxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
+ "mykeyId": "xxxxxxxxx",  //User's unique ID in MYKEY
+ //The signature of mykeyId, in order to ensure that mykeyId cannot be tampered with. The signature format is: unsignedData = timestamp + account + uuID + ref + mykeyId
+ "mykeyIdSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
+ "origin": "mykey",
+ "protocol": "MYKEYSimple",
+ "pubKey": "EOS7FDwQ3Jkxu4dCJnAMJ3Na2V4GYL9YcwGCkhCp6cvTjjtLW5ZGA",  //用户的ReservedKey
+ //Signature, the signature format is: unsignedData = timestamp + account + uuID + ref
+ "signature": "SIG_K1_KfD3MdkVRaShXCBvpi3ueLZwUZtUQyqyCS5V2EDhudfXxHvxvS7fSwZHo7aSs7WXLjfLezpThaEbFbk2yafUTzR53kwc2x",
+ "timestamp": 1585650292,
+ "version": "1.0"
 }
 ```
 

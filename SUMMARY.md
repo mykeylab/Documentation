@@ -49,8 +49,8 @@
 
 ## Development Resources
 
-* [EOS](development-resources/eos.md)
 * [Ethereum](development-resources/eth.md)
+* [EOS](development-resources/eos.md)
 
 ## Join Us
 

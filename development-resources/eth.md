@@ -64,6 +64,11 @@ Ethereum has a large and growing number of tools to help developers build, test,
 * [trufflesuite.com](https://www.trufflesuite.com/)
 * [GitHub](https://github.com/trufflesuite/truffle)
 
+_**Superblocks - Code, compile and deploy contract online.**_
+
+* [GitHub](https://github.com/SuperblocksHQ)
+* [Documentation](https://superblocks.com/docs)
+
 **Embark -** _**A development environment, testing framework, and other tools integrated with Ethereum, IPFS, and Whisper.**_
 
 * [Documentation](https://embark.status.im/docs/)
@@ -76,7 +81,7 @@ Ethereum has a large and growing number of tools to help developers build, test,
 
 **Etherlime -** _**Ethers.js based framework for dapp development \(Solidity & Vyper\), deployment, debugging, testing and more.**_
 
-* [Docs](https://etherlime.readthedocs.io/en/latest/)
+* [Documentation](https://etherlime.readthedocs.io/en/latest/)
 * [GitHub](https://github.com/LimeChain/etherlime)
 
 ### [↳](https://ethereum.org/developers/#other-tools) Other Tools <a id="other-tools"></a>
