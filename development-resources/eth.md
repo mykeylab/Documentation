@@ -46,6 +46,11 @@
 * [truffleframework.com](https://truffleframework.com/)
 * [GitHub](https://github.com/trufflesuite/truffle)
 
+### [↳](https://superblocks.com/) Superblocks 在线编写、编译与部署智能合约 <a id="other-tools"></a>
+
+* [GitHub](https://github.com/SuperblocksHQ)
+* [相关文档](https://superblocks.com/docs)
+
 ### [↳](https://ethereum.org/zh/developers/#other-tools) Embark _开发环境、测试框架以及与以太坊、IPFS 和 Whisper 集成的其他工具_ <a id="other-tools"></a>
 
 * [GitHub](https://github.com/embark-framework/embark)

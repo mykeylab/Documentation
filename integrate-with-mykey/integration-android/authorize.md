@@ -31,12 +31,24 @@ let unsignedData = timestamp + account + uuID + ref
 ecc.verify(signature, unsignedData, pubkey) === true
 ```
 
-dapp提供的CallBackUrl接口返回值：
+返回格式：
 
-```java
+```javascript
 {
-    "code":0, // 错误符，等于0是成功，大于0说明请求失败，dapp返回具体的错误码
-    "message":"" // 返回的提示信息
+ "account": "MYKEY账号",  
+ "chain": "EOS",   //EOS或者ETH
+ "dappKey": "xxxxxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
+ "dappUserId": "xxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
+ "mykeyId": "xxxxxxxxx",  //用户在MYKEY的唯一标记符
+ //mykeyId的签名，为了确保mykeyId不被篡改。签名格式为：unsignedData = timestamp + account + uuID + ref + mykeyId
+ "mykeyIdSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
+ "origin": "mykey",
+ "protocol": "MYKEYSimple",
+ "pubKey": "EOS7FDwQ3Jkxu4dCJnAMJ3Na2V4GYL9YcwGCkhCp6cvTjjtLW5ZGA",  //用户的ReservedKey
+ //签名，签名格式为：unsignedData = timestamp + account + uuID + ref
+ "signature": "SIG_K1_KfD3MdkVRaShXCBvpi3ueLZwUZtUQyqyCS5V2EDhudfXxHvxvS7fSwZHo7aSs7WXLjfLezpThaEbFbk2yafUTzR53kwc2x",
+ "timestamp": 1585650292,
+ "version": "1.0"
 }
 ```
 
