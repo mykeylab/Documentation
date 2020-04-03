@@ -24,12 +24,35 @@ MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第
 
 验签公式：
 
-```java
-// generate unsignedMessage
-let unsignedData = timestamp + account + uuID + ref
-// publicKey: ReserveKey of MYKEY，can be quired from SmartContract https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata
-ecc.verify(signature, unsignedData, pubkey) === true
+认证时，MYKEY会返回mykeyId和mykeyIdSignature字段给第三方应用。mykeyId是用户在MYKEY的唯一标识。
+
+{% tabs %}
+{% tab title="ETH" %}
+```javascript
+// 构造未签名数据
+let message = hex(timestamp + account + uuID + ref)
+let unsignedData =  "\x19Ethereum Signed Message:\n" + message.length + message
+
+// 构造mykeyId的未签名数据
+let messageForMykeyId = timestamp + account + uuID + ref + mykeyId
+let unsignedDataForMykeyId =  "\x19Ethereum Signed Message:\n" + messageForMykeyId.length + messageForMykeyId
 ```
+{% endtab %}
+
+{% tab title="EOS" %}
+```javascript
+// 构造未签名数据
+let unsignedData = timestamp + account + uuID + ref
+// 使用ReserveKey验证签名
+ecc.verify(signature, unsignedData, pubkey) === true
+
+// 构造mykeyId的未签名数据
+let unsignedDataForMykeyId = timestamp + account + uuID + ref + mykeyId
+// 使用ReserveKey验证mykeyId签名
+ecc.verify(signature, unsignedDataForMykeyId, pubkey) === true
+```
+{% endtab %}
+{% endtabs %}
 
 返回格式：
 
