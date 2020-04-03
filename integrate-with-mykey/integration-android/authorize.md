@@ -24,12 +24,35 @@ The format of the data post to CallBackUrl:
 
 Verify signature：
 
-```java
-// generate unsignedMessage
-let unsignedData = timestamp + account + uuID + ref
-// publicKey: ReserveKey of MYKEY，can be quired from SmartContract https://github.com/mykeylab/Documentation/blob/master/English/MYKEY%20on%20EOSIO.md#keys-in-table-keydata
-ecc.verify(signature, unsignedData, pubkey) === true
+MYKEY will return mykeyId and mykeyIdSignature fields.  mykeyId is the unique identifier for users in MYKEY. 
+
+{% tabs %}
+{% tab title="ETH" %}
+```javascript
+// generate unsigned data
+let message = hex(timestamp + account + uuID + ref)
+let unsignedData =  "\x19Ethereum Signed Message:\n" + message.length + message
+
+// generate unsigned data for mykeyId
+let messageForMykeyId = timestamp + account + uuID + ref + mykeyId
+let unsignedDataForMykeyId =  "\x19Ethereum Signed Message:\n" + messageForMykeyId.length + messageForMykeyId
 ```
+{% endtab %}
+
+{% tab title="EOS" %}
+```javascript
+// generate unsigned data
+let unsignedData = timestamp + account + uuID + ref
+// use ReserveKey to verify signature
+ecc.verify(signature, unsignedData, pubkey) === true
+
+// generate unsinged data for mykeyId
+let unsignedDataForMykeyId = timestamp + account + uuID + ref + mykeyId
+// use ReserveKey to verify mykeyId signature
+ecc.verify(signature, unsignedDataForMykeyId, pubkey) === true
+```
+{% endtab %}
+{% endtabs %}
 
 Response format：
 
