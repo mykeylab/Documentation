@@ -42,6 +42,11 @@
 
 ## KEY ID
 
+* [KEYID ETH合约介绍](key-id/keyid-eth-introduction/README.md)
+  * [创建账户模块](key-id/keyid-eth-introduction/create-account-module.md)
+  * [数据存储模块](key-id/keyid-eth-introduction/account-storage-module.md)
+  * [逻辑模块](key-id/keyid-eth-introduction/logical-module.md)
+  * [逻辑管理模块](key-id/keyid-eth-introduction/logic-management-module.md)
 * [KEYID合约升级流程](key-id/contract-upgrade-process.md)
 * [KEYID合约升级记录](key-id/keyid-upgrade-record/README.md)
   * [ETH](key-id/keyid-upgrade-record/eth-contract-upgrade/README.md)

@@ -27,7 +27,7 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
 ### 移动端App调用合约时序图
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%282%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 
@@ -67,7 +67,7 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
 ### 签名
 
-![](../.gitbook/assets/image%20%283%29.png)
+![](../.gitbook/assets/image%20%284%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 

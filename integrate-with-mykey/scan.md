@@ -43,7 +43,7 @@ WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要
 
 #### Web扫码调用合约时序图
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 
@@ -85,7 +85,7 @@ WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要
 
 #### Web扫码调用签名时序图
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 请传递给MYKEY如下的数据，数据格式为json：
 

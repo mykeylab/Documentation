@@ -14,9 +14,9 @@ MYKEY用户的交易，通过MYKEY服务端的Postman账户（携带用户签名
 
 1. 代码: [https://github.com/EOSIO/history-tools](https://github.com/EOSIO/history-tools) 注意: 当前版本\(0.2.0\)会写一些数据量很大但是我们又不需要的表\(action\_trace\_authorization和action\_trace\_auth\_sequence\),由于没有配置,所以只能在编译前修改源码,注释掉往这2个表的写入\(可以减少一半以上数据量\) [https://github.com/EOSIO/history-tools/blob/4859e331588676b5c45ef0b393ce9cdf72375b13/src/fill\_pg\_plugin.cpp\#L777-L782](https://github.com/EOSIO/history-tools/blob/4859e331588676b5c45ef0b393ce9cdf72375b13/src/fill_pg_plugin.cpp#L777-L782)
 2. 编译: 参考[https://eosio.github.io/history-tools/build-ubuntu-1804.html](https://eosio.github.io/history-tools/build-ubuntu-1804.html). 注意编译比较慢, 尽量8核16G内存
-3. 运行环境缺少.so 编译完成后可以把fill-pg复制到需要运行的环境,如果启动报缺少.so, 运行lddfill−pglddfill-pg看少什么, 从编译环境复制到相应目录就可以了
+3. 运行环境缺少.so 编译完成后把fill-pg复制到需要运行的环境，如果启动报缺少.so, 运行lddfill−pglddfill-pg查看缺少什么
 4. 启动: 第一次启动需要参数--fpg-create 创建数据库和表结构
-5. pg维护\(数据清理\) action\_trace表的数据量会很大, 按500aps算, 一天4000多W数据. 需要根据block\_num对action\_trace表做partition, 清理历史数据的时候drop掉最老的partition. 
+5. pg维护\(数据清理\) action\_trace表的数据量很大，按500aps算，一天超过4000万数据。因此需要根据block\_num对action\_trace表做partition，清理历史数据的时候drop掉最老的partition. 
 
 **在action\_trace表中，按照block\_num顺序处理，act\_account中过滤出关注的token，识别出目标地址是交易所充值地址的action。**
 
@@ -34,7 +34,7 @@ history-tool部署维护较重，DAPP方建议使用dfuse的graphql接口来查�
 
 识别出转账交易，从中提取出data就行：
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 
 

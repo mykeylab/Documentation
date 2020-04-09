@@ -12,7 +12,7 @@ MYKEY登录依赖ECDSA-secp256k1的签名和验签方法。由第三方应用发
 
 ## MYKEY登录认证流程
 
-![](../.gitbook/assets/image%20%284%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 ### 1. 发起认证请求
 
