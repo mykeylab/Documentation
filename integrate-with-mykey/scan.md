@@ -86,7 +86,7 @@ Please pass the data to MYKEY as follows, the data format is json:
 
 #### Sequence diagram for Web QR code scan
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 Please pass the data to MYKEY as follows, the data format is json:
 

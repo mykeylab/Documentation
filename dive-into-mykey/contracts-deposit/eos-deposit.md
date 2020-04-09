@@ -54,5 +54,5 @@ For example, account mykeyhulu511 transfer  0.2826 EOS to account nowwearegoin, 
 
 Identify the transaction action and extract the data:
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
