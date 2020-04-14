@@ -100,9 +100,41 @@ window.MyKey.Browser.allowPhysicalBack
 window.MyKey.Browser.getAccountInfo
 ```
 
-#### 返回
+#### 参数
 
-{"id":"MYKEY唯一ID","accountName":"MYKEY内设置的昵称","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["三把操作秘钥公钥","",""\]}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#x53C2;&#x6570;&#x540D;</th>
+      <th style="text-align:left">&#x7C7B;&#x578B;</th>
+      <th style="text-align:left">&#x63CF;&#x8FF0;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">openChain</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>true|fasle</p>
+        <p>true: &#x5982;&#x679C;&#x6CA1;&#x6709;&#x94FE;&#x4F1A;&#x6253;&#x5F00;&#x521B;&#x5EFA;&#x9875;&#x9762;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>#### 返回值
+
+```javascript
+返回格式：Promise
+{
+	"data": {
+		"accountName": "",     //MYKEY内设置的昵称
+		"chainInfoList": ["account": "", "chain": ""],
+		"id": "",    //MYKEY唯一ID
+		"operationKeys": ["","",""],   //三把操作权限的公钥
+		"xpubOperationKeys": ["","",""]  //三把操作秘钥公钥Xpub形式
+	},
+	"errorCode": 0
+}
+```
 
 
 
@@ -114,9 +146,22 @@ window.MyKey.Browser.getAccountInfo
 window.MyKey.Browser.getClientConfig
 ```
 
-#### 返回
+#### 返回值
 
-{"currency":"CNY\|USD","locale":"zh-CN\|en-US\|ko-KR\|ja-JP","userAgent":"","recaptchaUserKey":""}
+```javascript
+返回方式：Promise
+{
+	"data": {
+		"currency": "CNY",
+		"locale": "zh-CN",
+		"maxKycBindAccount": 1,
+		"regioin": "CN",
+		"userAgent": "",       //包含 channel:MYKEY
+		"recaptchaUserKey":""  //MYKEY红包用到
+	},
+	"errorCode": 0
+}
+```
 
 
 
@@ -125,12 +170,8 @@ window.MyKey.Browser.getClientConfig
 发送交易
 
 ```javascript
-window.MyKey.Browser.sendTransaction(transaction) => Promise
+window.MyKey.Browser.sendTransaction(transaction)
 ```
-
-#### 返回
-
-result:{"errorCode":0,"errorMsg":"","data":{"transactionId":"","signature":""}}
 
 #### 参数
 
@@ -138,27 +179,39 @@ result:{"errorCode":0,"errorMsg":"","data":{"transactionId":"","signature":""}}
 | :--- | :--- | :--- |
 | transaction | string | 指定链以及交易的actions |
 
+#### 返回值
+
+```javascript
+返回方式：Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"transactionId": "",
+		"signature": ""
+	}
+}
+```
+
 #### 举例：
 
 EOS链上购买内存。
 
 ```javascript
-window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS"}')
+window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS","extra":{"key":"value"}}')
 ```
 
-### 
+新增的extra字段，生效版本为：Android:2.5.0，IOS:2.5.0
+
+
 
 ### 签名
 
 申请MYKEY签名
 
 ```javascript
-window.MyKey.Browser.sign(message) => Promise
+window.MyKey.Browser.sign(message)
 ```
-
-#### 返回
-
-result:{"errorCode":0,"errorMsg":"","data":{"signature":""}}
 
 #### 参数
 
@@ -166,7 +219,52 @@ result:{"errorCode":0,"errorMsg":"","data":{"signature":""}}
 | :--- | :--- | :--- |
 | message | string | 待签名的数据 |
 
-### 
+#### 返回值
+
+```javascript
+返回格式：Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"signature": ""
+	}
+}
+```
+
+
+
+### 获取交易进度
+
+```javascript
+window.MyKey.Browser.getTransactionProgress
+```
+
+#### 参数
+
+| 参数名 | 类型 | 描述 |
+| :--- | :--- | :--- |
+| chain | string | EOS\|ETH |
+| transactionId | string |  |
+| blockNum | int | 当前交易的blockNum，非必填 |
+
+#### 返回值
+
+```javascript
+返回格式：Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"percent": ,   //[0 - 100]
+		"blockNum":    //[当前交易的blockNum]
+	}
+}
+```
+
+生效版本：Android:2.5.0，iOS:2.5.0
+
+
 
 ### 设置应用顶部标题
 
@@ -209,12 +307,8 @@ window.MyKey.Browser.hiddenLoading
 对方法进行序列化
 
 ```javascript
-window.MyKey.Browser.encodeFunctionCall(abi, method, param) => Promise
+window.MyKey.Browser.encodeFunctionCall(abi, method, param)
 ```
-
-#### 返回
-
-result:{"errorCode":0,"errorMsg":"","data":"\[序列化后的值\]"}
 
 #### 参数
 
@@ -250,7 +344,16 @@ result:{"errorCode":0,"errorMsg":"","data":"\[序列化后的值\]"}
       </td>
     </tr>
   </tbody>
-</table>
+</table>#### 返回值
+
+```javascript
+返回方式：Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": ""     //[序列化后的值]
+}
+```
 
 
 
