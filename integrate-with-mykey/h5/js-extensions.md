@@ -100,9 +100,41 @@ Get MYKEY Account Information
 window.MyKey.Browser.getAccountInfo
 ```
 
-#### Return
+#### Params
 
-{"id":"MYKEY UUID","accountName":"Nickname in MYKEY","chainInfoList":\[{"chain":"EOS","account":""}\],"operationKeys":\["Three operation keys","",""\],"xpubOperationKeys":\[\]}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Param</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">openChain</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">
+        <p>true|fasle</p>
+        <p>true: open creating page if no chains for an account</p>
+      </td>
+    </tr>
+  </tbody>
+</table>#### Return
+
+```javascript
+Return format: Promise
+{
+	"data": {
+		"accountName": "",     //Nickname in MYKEY
+		"chainInfoList": ["account": "", "chain": ""],
+		"id": "",    //unique id in MYKEY
+		"operationKeys": ["","",""],   //public keys of three operation keys
+		"xpubOperationKeys": ["","",""]  //public keys of three operation keys in Xpub format
+	},
+	"errorCode": 0
+}
+```
 
 
 
@@ -116,7 +148,20 @@ window.MyKey.Browser.getClientConfig
 
 #### Return
 
-{"currency":"CNY\|USD","locale":"zh-CN\|en-US\|ko-KR\|ja-JP","userAgent":"","recaptchaUserKey":""}
+```javascript
+Return format: Promise
+{
+	"data": {
+		"currency": "CNY",
+		"locale": "zh-CN",
+		"maxKycBindAccount": 1,
+		"regioin": "CN",
+		"userAgent": "",       //include field channel:MYKEY
+		"recaptchaUserKey":""  //only use for MYKEY redpackage
+	},
+	"errorCode": 0
+}
+```
 
 
 
@@ -128,25 +173,37 @@ Send transaction
 window.MyKey.Browser.sendTransaction(transaction) => Promise
 ```
 
-#### Return
-
-result:{"errorCode":0,"errorMsg":"","data":{"transactionId":"","signature":""}}
-
 #### Params
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
 | transaction | string | Specify chain and actions |
 
+#### Return
+
+```javascript
+Return format: Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"transactionId": "",
+		"signature": ""
+	}
+}
+```
+
 #### Example：
 
 Buy ram on EOS.
 
 ```javascript
-window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS"}')
+window.MyKey.Browser.sendTransaction('{"actions":[{"account":"eosio","name":"buyram","data":{"payer":"","receiver":"","quant":"1.0000 EOS"}}],"chain":"EOS"},"extra":{"key":"value"}}')
 ```
 
-### 
+New field extra will be effected from Android:2.5.0，IOS:2.5.0
+
+
 
 ### Sign
 
@@ -156,17 +213,58 @@ Apply MYKEY sign transactions
 window.MyKey.Browser.sign(message) => Promise
 ```
 
-#### Return
-
-result:{"errorCode":0,"errorMsg":"","data":{"signature":""}}
-
 #### Params
 
 | Param | Type | Description |
 | :--- | :--- | :--- |
 | message | string | unsigned message |
 
-### 
+#### Return
+
+```javascript
+Return format: Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"signature": ""
+	}
+}
+```
+
+
+
+### Get Transaction Progress
+
+```javascript
+window.MyKey.Browser.getTransactionProgress
+```
+
+#### Params
+
+| Param | Type | Description |
+| :--- | :--- | :--- |
+| chain | string | EOS\|ETH |
+| transactionId | string |  |
+| blockNum | int | blockNum, optional |
+
+#### Return
+
+```javascript
+Return format: Promise
+result: {
+	"errorCode": 0,
+	"errorMsg": "",
+	"data": {
+		"percent": ,   //[0 - 100]
+		"blockNum":    //[blockNum]
+	}
+}
+```
+
+Effective from: Android:2.5.0，iOS:2.5.0
+
+
 
 ### Set application title
 
