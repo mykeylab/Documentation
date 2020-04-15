@@ -24,7 +24,7 @@ MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第
 
 验签公式：
 
-认证时，MYKEY会返回mykeyId和mykeyIdSignature字段给第三方应用。mykeyId是用户在MYKEY的唯一标识。
+认证时，MYKEY会返回mykeyUID和mykeyUIDSignature字段给第三方应用。mykeyUID是用户在MYKEY的唯一标识。
 
 {% tabs %}
 {% tab title="ETH" %}
@@ -33,9 +33,9 @@ MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第
 let message = hex(timestamp + account + uuID + ref)
 let unsignedData =  "\x19Ethereum Signed Message:\n" + message.length + message
 
-// 构造mykeyId的未签名数据
-let messageForMykeyId = timestamp + account + uuID + ref + mykeyId
-let unsignedDataForMykeyId =  "\x19Ethereum Signed Message:\n" + messageForMykeyId.length + messageForMykeyId
+// 构造mykeyUID的未签名数据
+let messageForMykeyUID = timestamp + account + uuID + ref + mykeyUID
+let unsignedDataForMykeyUID =  "\x19Ethereum Signed Message:\n" + messageForMykeyUID.length + messageForMykeyUID
 ```
 {% endtab %}
 
@@ -62,9 +62,9 @@ ecc.verify(signature, unsignedDataForMykeyId, pubkey) === true
  "chain": "EOS",   //EOS或者ETH
  "dappKey": "xxxxxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
  "dappUserId": "xxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
- "mykeyId": "xxxxxxxxx",  //用户在MYKEY的唯一标记符
- //mykeyId的签名，为了确保mykeyId不被篡改。签名格式为：unsignedData = timestamp + account + uuID + ref + mykeyId
- "mykeyIdSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
+ "mykeyUID": "xxxxxxxxx",  //用户在MYKEY的唯一标记符
+ //mykeyUID的签名，为了确保mykeyUID不被篡改。签名格式为：unsignedData = timestamp + account + uuID + ref + mykeyUID
+ "mykeyUIDSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
  "origin": "mykey",
  "protocol": "MYKEYSimple",
  "pubKey": "EOS7FDwQ3Jkxu4dCJnAMJ3Na2V4GYL9YcwGCkhCp6cvTjjtLW5ZGA",  //用户的ReservedKey
