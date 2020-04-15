@@ -24,7 +24,7 @@ The format of the data post to CallBackUrl:
 
 Verify signature：
 
-MYKEY will return mykeyId and mykeyIdSignature fields.  mykeyId is the unique identifier for users in MYKEY. 
+MYKEY will return mykeyUID and mykeyUIDSignature fields.  mykeyUID is the unique identifier for users in MYKEY. 
 
 {% tabs %}
 {% tab title="ETH" %}
@@ -33,9 +33,9 @@ MYKEY will return mykeyId and mykeyIdSignature fields.  mykeyId is the unique id
 let message = hex(timestamp + account + uuID + ref)
 let unsignedData =  "\x19Ethereum Signed Message:\n" + message.length + message
 
-// generate unsigned data for mykeyId
-let messageForMykeyId = timestamp + account + uuID + ref + mykeyId
-let unsignedDataForMykeyId =  "\x19Ethereum Signed Message:\n" + messageForMykeyId.length + messageForMykeyId
+// generate unsigned data for mykeyUID
+let messageForMykeyUID = timestamp + account + uuID + ref + mykeyUID
+let unsignedDataForMykeyUID =  "\x19Ethereum Signed Message:\n" + messageForMykeyUID.length + messageForMykeyUID
 ```
 {% endtab %}
 
@@ -62,9 +62,9 @@ Response format：
  "chain": "EOS",   //EOS or ETH
  "dappKey": "xxxxxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
  "dappUserId": "xxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
- "mykeyId": "xxxxxxxxx",  //User's unique ID in MYKEY
- //The signature of mykeyId, in order to ensure that mykeyId cannot be tampered with. The signature format is: unsignedData = timestamp + account + uuID + ref + mykeyId
- "mykeyIdSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
+ "mykeyUID": "xxxxxxxxx",  //User's unique ID in MYKEY
+ //The signature of mykeyUID, in order to ensure that mykeyUID cannot be tampered with. The signature format is: unsignedData = timestamp + account + uuID + ref + mykeyUID
+ "mykeyUIDSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
  "origin": "mykey",
  "protocol": "MYKEYSimple",
  "pubKey": "EOS7FDwQ3Jkxu4dCJnAMJ3Na2V4GYL9YcwGCkhCp6cvTjjtLW5ZGA",  //用户的ReservedKey
