@@ -47,6 +47,7 @@
   * [Account Storage Module](key-id/keyid-eth-contracts-introduction/account-storage-module.md)
   * [Logic Management Module](key-id/keyid-eth-contracts-introduction/logic-management-module.md)
   * [Logic Module](key-id/keyid-eth-contracts-introduction/logic-module.md)
+* [Account recovery mechanism](key-id/account-recovery.md)
 * [KEYID contract upgrade process](key-id/keyid-contract-upgrade-process.md)
 * [KEYID contract upgrade records](key-id/keyid-contract-upgrade-records/README.md)
   * [ETH](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/README.md)
