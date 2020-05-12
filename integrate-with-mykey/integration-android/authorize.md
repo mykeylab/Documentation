@@ -63,6 +63,7 @@ ecc.verify(signature, unsignedDataForMykeyId, pubkey) === true
  "dappKey": "xxxxxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
  "dappUserId": "xxxxxx",  //MYKEY用于通信加密，DAPP方可忽略
  "mykeyUID": "xxxxxxxxx",  //用户在MYKEY的唯一标记符
+ "accountType": 1,  //1：有紧急联系人的账户，2：无紧急联系人的账户
  //mykeyUID的签名，为了确保mykeyUID不被篡改。签名格式为：unsignedData = timestamp + account + uuID + ref + mykeyUID
  "mykeyUIDSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
  "origin": "mykey",
