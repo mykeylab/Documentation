@@ -63,6 +63,7 @@ Response format：
  "dappKey": "xxxxxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
  "dappUserId": "xxxxxx",  //MYKEY is used for communication encryption, DAPP can ignore it
  "mykeyUID": "xxxxxxxxx",  //User's unique ID in MYKEY
+ "accountType": 1,  //1: Account with emergency contact, 2: Account without emergency contact
  //The signature of mykeyUID, in order to ensure that mykeyUID cannot be tampered with. The signature format is: unsignedData = timestamp + account + uuID + ref + mykeyUID
  "mykeyUIDSignature": "SIG_K1_K6AnPSrBfsmoTjo9Dec4QgZPKLHenhPm1rmrsNNN5sxhoa2ERQ7jySYb1NKqG5LrafTRBDe2fAEJkD1xMWYaUQYuygJbL3",  
  "origin": "mykey",
