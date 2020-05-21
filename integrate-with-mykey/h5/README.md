@@ -8,7 +8,7 @@ JSBridge 为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
 
 更多Scatter协议的内容请参考：[https://get-scatter.com/developers/settingupforwebapps](https://get-scatter.com/developers/settingupforwebapps)
 
-服务端验证MYKEY签名请参考 [验签代码示例](../../third-party-login/verify-example.md)。JSBridge支持的更多方法，请参考[JS功能扩展](js-extensions.md)。
+服务端验证MYKEY签名请参考 [验签代码示例](../../sign-in-with-mykey/verify-example.md)。JSBridge支持的更多方法，请参考[JS功能扩展](js-extensions.md)。
 
 ## 如何识别是MYKEY打开的应用
 
