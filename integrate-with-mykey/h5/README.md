@@ -10,7 +10,7 @@ For more information about the eth web3 protocol, please refer to: [https://web3
 
 For more information on the Scatter protocol, please refer to: [https://get-scatter.com/developers/settingupforwebapps](https://get-scatter.com/developers/settingupforwebapps)
 
-To verify the MYKEY signature, please refer to [verify signature at backend server.](../../third-party-login-based-on-mykey/verify-signature-on-server-backend.md) JSBridge support more functions, please refer to [JSBridge extensions](js-extensions.md).
+To verify the MYKEY signature, please refer to [verify signature at backend server.](../../sign-in-with-mykey/verify-signature-on-server-backend.md) JSBridge support more functions, please refer to [JSBridge extensions](js-extensions.md).
 
 ## How to identify the dapps that MYKEY opens
 
