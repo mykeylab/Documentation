@@ -82,7 +82,7 @@ Sample:
 AuthorizeRequest authorizeRequest = new AuthorizeRequest()
     // chain could be ANY, EOS, and ETH. EOS is the default value. If it's ANY, MYKEY will try EOS first, then ETH to return an account
     .setChain(ChainCons.EOS)      
-    .setUserName("bobbobbobbob")
+    .setUserName("bobbobbobbob")  //userName is Optional
     // DApp CallbackUrl
     // param：{"protocol": "", "version": "", "dapp_key": "", "uuID": "", "public_key": "", "sign": "", "ref": "", "timestamp": "", "account": ""}
     // return: same as SimpleWallet {"code": [0-2], "message": ""}

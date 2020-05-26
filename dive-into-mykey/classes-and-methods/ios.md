@@ -24,7 +24,7 @@
 
 | properties | Type | Description |
 | :--- | :--- | :--- |
-| userName | String | Custom user name |
+| userName | String | **Optional**, Custom user name |
 | callBackUrl | String | Optional, Callback endpoint url of dapp server，MYKEY will callback to dapp server after authorize request success at first, then wake up mobile client |
 | info | String | Info, Semantic description of MYKEY display to the user for authorization page |
 
