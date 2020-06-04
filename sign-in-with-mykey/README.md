@@ -76,6 +76,8 @@ iOS应用，集成[MYKEY iOS SDK](https://github.com/mykeylab/MYKEY-Client-SDK/t
 
 
 
+更多技术细节请参考：[更多MYKEY登录的技术原理和流程](geng-duo-mykey-deng-lu-de-ji-shu-yuan-li-he-liu-cheng.md)。
+
 
 
 

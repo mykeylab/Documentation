@@ -60,7 +60,9 @@ window.MyKey.Browser.openFullScreen
       </td>
     </tr>
   </tbody>
-</table>### \*\*\*\*
+</table>
+
+### \*\*\*\*
 
 ### **关闭全屏**
 
@@ -120,7 +122,9 @@ window.MyKey.Browser.getAccountInfo
       </td>
     </tr>
   </tbody>
-</table>#### 返回值
+</table>
+
+#### 返回值
 
 ```javascript
 返回格式：Promise
@@ -344,7 +348,9 @@ window.MyKey.Browser.encodeFunctionCall(abi, method, param)
       </td>
     </tr>
   </tbody>
-</table>#### 返回值
+</table>
+
+#### 返回值
 
 ```javascript
 返回方式：Promise

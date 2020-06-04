@@ -53,7 +53,9 @@
       </td>
     </tr>
   </tbody>
-</table>与EOS合约的主要不同点：
+</table>
+
+与EOS合约的主要不同点：
 
 1. **延时交易：** 只存储延时的动作哈希（EOS上存储了完整的动作数据）和对应的到期时间，MYKEY后端会monitor到期状态，自动trigger。
 2. **签名raw message**  

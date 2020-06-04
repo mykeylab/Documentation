@@ -3,9 +3,11 @@
 * [简介](README.md)
 * [基于MYKEY的第三方授权登录](sign-in-with-mykey/README.md)
   * [验签代码示例](sign-in-with-mykey/verify-example.md)
+  * [更多MYKEY登录的技术原理和流程](sign-in-with-mykey/geng-duo-mykey-deng-lu-de-ji-shu-yuan-li-he-liu-cheng.md)
 
 ## 接入MYKEY <a id="integrate-with-mykey"></a>
 
+* [多种方式接入MYKEY](integrate-with-mykey/duo-zhong-fang-shi-jie-ru-mykey.md)
 * [Mobile H5页面接入](integrate-with-mykey/h5/README.md)
   * [ETH](integrate-with-mykey/h5/h5-eth.md)
   * [EOS](integrate-with-mykey/h5/h5-eos.md)
