@@ -11,7 +11,7 @@ WEB application, APP or DAPP, all can implement third-party login based on MYKEY
 This website will include:
 
 * [Third-Party Login based on MYKEY](sign-in-with-mykey/#process-to-sign-in-with-mykey)  this will explain different applications to sign in with MYKEY.
-* [Integrated with MYKEY](integrate-with-mykey/integration-android/) Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol, web3 protocol etc.
+* [Integrated with MYKEY](integrate-with-mykey/multiple-ways-to-integration-with-mykey.md) Demo how to integrate with MYKEY by using MYKEY SDK，SimpleWallet, Scatter protocol, web3 protocol etc.
 * [Dive into MYKEY](dive-into-mykey/mykey-on-eos.md) Detailed design, extensions of MYKEY.
   * [Deposit with MYKEY](dive-into-mykey/contracts-deposit/)  how to identify MYKEY transactions and actions.
 * [Dev resources](development-resources/eos.md) The most practical EOS、ETH development resources.

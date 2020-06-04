@@ -3,9 +3,11 @@
 * [Introduction](README.md)
 * [Sign in with MYKEY](sign-in-with-mykey/README.md)
   * [Verify signature at backend server](sign-in-with-mykey/verify-signature-on-server-backend.md)
+  * [More detailed tech and process of  MYKEY login](sign-in-with-mykey/more-detailed-tech-and-process-of-mykey-login.md)
 
 ## Integrate with MYKEY
 
+* [Multiple ways to integration with MYKEY](integrate-with-mykey/multiple-ways-to-integration-with-mykey.md)
 * [Mobile Dapp with H5 pages](integrate-with-mykey/h5/README.md)
   * [ETH](integrate-with-mykey/h5/h5-eth.md)
   * [EOS](integrate-with-mykey/h5/h5-eos.md)

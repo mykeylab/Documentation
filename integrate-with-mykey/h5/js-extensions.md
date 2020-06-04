@@ -60,7 +60,9 @@ window.MyKey.Browser.openFullScreen
       </td>
     </tr>
   </tbody>
-</table>### \*\*\*\*
+</table>
+
+### \*\*\*\*
 
 ### Close full screen
 
@@ -120,7 +122,9 @@ window.MyKey.Browser.getAccountInfo
       </td>
     </tr>
   </tbody>
-</table>#### Return
+</table>
+
+#### Return
 
 ```javascript
 Return format: Promise
@@ -349,4 +353,6 @@ result:{"errorCode":0,"errorMsg":"","data":"\[serialized data\]"}
     </tr>
   </tbody>
 </table>
+
+
 
