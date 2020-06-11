@@ -23,7 +23,7 @@ MYKEY follows the SimpleWallet protocol implementation. See the following docume
 
 Beside support **login** and **transfer** of SimpleWallet specification，MYKEY also additionally supports **contract** and **signature** method.
 
-**Special Notice:** [MYKEY account structure](../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document](../dive-into-mykey/mykey-on-eos.md#2-for-dapps-compatible-with-scatter)
+**Special Notice:** [MYKEY account structure]() is different with other EOS account, if dapp verify signature in their server side, should use the public key of Reserved, more details see this [Document]()
 
 ### Call Contract
 

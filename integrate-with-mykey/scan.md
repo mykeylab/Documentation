@@ -37,7 +37,7 @@ WEB application will receive below JSON data from MYKEY:
 }
 ```
 
-The server side of WEB application should use the **Reserved public key** to verify the signature. Reserved public key could be acquired by reading MYKEY smart contract, please check [DOC](../dive-into-mykey/mykey-on-eos.md#keys-in-table-keydata).
+The server side of WEB application should use the **Reserved public key** to verify the signature. Reserved public key could be acquired by reading MYKEY smart contract, please check [DOC]().
 
 ### Call Contract
 

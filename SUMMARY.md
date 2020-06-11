@@ -32,7 +32,7 @@
 
 ## Dive into MYKEY
 
-* [MYKEY on EOS](dive-into-mykey/mykey-on-eos.md)
+* [Dive into MYKEY account](dive-into-mykey/dive-into-mykey-account.md)
 * [Classes and methods](dive-into-mykey/classes-and-methods/README.md)
   * [Android Classes](dive-into-mykey/classes-and-methods/android.md)
   * [iOS Classes](dive-into-mykey/classes-and-methods/ios.md)
@@ -62,6 +62,6 @@
 
 ## Join Us
 
-* [dapp submit](join-us/dapp-submit.md)
+* [DApp submit](join-us/dapp-submit.md)
 * [Developers Community](join-us/developers-community.md)
 

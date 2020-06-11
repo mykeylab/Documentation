@@ -2,7 +2,7 @@
 
 Pull up MYKEY for Signature operation. See the class definition for the parameters: [SignRequest](../../dive-into-mykey/classes-and-methods/#class-signrequest)
 
-dapp server or client should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) and [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey)
+Dapp server or client should query the user's ReserveKey from MYKEY SmartContract data to verify the signature, see detail in [KEYS in MYKEY](../../dive-into-mykey/dive-into-mykey-account.md#keydata表中的密钥).
 
 ```swift
 let signRequest = SignRequest()

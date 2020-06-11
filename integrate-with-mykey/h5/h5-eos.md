@@ -31,7 +31,7 @@ ScatterJS.connect("My DAPP", { network }).then(connected => {
 
 ## Verify the signature from MYKEY
 
-\*\*\*\*[MYKEY account structure](../../dive-into-mykey/mykey-on-eos.md#mykey-account-structure) is different with other EOS account, if dapp verify signature in their server side, should use the ReservedKey, more details see this [Document](../../dive-into-mykey/mykey-on-eos.md#integrate-eos-dapps-with-mykey).
+[MYKEY account structure](../../dive-into-mykey/dive-into-mykey-account.md#mykey有啥不同？) is different with other EOS account, if dapp verify signature in their server side, should use the ReservedKey, more details see this [Document.](../../dive-into-mykey/dive-into-mykey-account.md#keydata表中的密钥)
 
 The Reserved Key can be queried through the keydata table of the mykeymanager smart contract. When querying, the specified range is the MYKEY account and the index is 3.
 
