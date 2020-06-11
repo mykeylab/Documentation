@@ -8,7 +8,7 @@
 
 * [基于MYKEY的第三方授权登录](sign-in-with-mykey/#di-san-fang-shou-quan-deng-lu-liu-cheng) 介绍不同类型应用接入MYKEY的流程。
 * [接入MYKEY](integrate-with-mykey/duo-zhong-fang-shi-jie-ru-mykey.md) 说明使用MYKEY SDK，SimpleWallet，Scatter协议，web3协议等方式接入MYKEY。
-* [深入MYKEY](dive-into-mykey/mykey-on-eos.md) 详细说明MYKEY的设计原理、功能扩展等。
+* [深入MYKEY]() 详细说明MYKEY的设计原理、功能扩展等。
   * [合约充值](dive-into-mykey/contracts-deposit/) 介绍交易所和DAPP项目方如何识别MYKEY交易。
 * [开发资源](development-resources/eos.md) 最实用的EOS、ETH开发资源。
 

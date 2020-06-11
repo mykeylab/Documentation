@@ -32,7 +32,7 @@
 
 ## 深入MYKEY <a id="dive-into-mykey"></a>
 
-* [EOS上的MYKEY](dive-into-mykey/mykey-on-eos.md)
+* [深入MYKEY账户](dive-into-mykey/shen-ru-mykey-zhang-hu.md)
 * [类和方法定义](dive-into-mykey/classes-and-methods/README.md)
   * [Android类](dive-into-mykey/classes-and-methods/android-lei.md)
   * [iOS类](dive-into-mykey/classes-and-methods/ios.md)
@@ -49,7 +49,7 @@
   * [数据存储模块](key-id/keyid-eth-introduction/account-storage-module.md)
   * [逻辑模块](key-id/keyid-eth-introduction/logical-module.md)
   * [逻辑管理模块](key-id/keyid-eth-introduction/logic-management-module.md)
-* [账号恢复机制](key-id/account-recover.md)
+* [账户恢复机制](key-id/account-recover.md)
 * [KEYID合约升级流程](key-id/contract-upgrade-process.md)
 * [KEYID合约升级记录](key-id/keyid-upgrade-record/README.md)
   * [ETH](key-id/keyid-upgrade-record/eth-contract-upgrade/README.md)

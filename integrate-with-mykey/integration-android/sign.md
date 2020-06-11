@@ -2,7 +2,7 @@
 
 唤起MYKEY进行Sign签名操作。参数请详见类定义:[SignRequest](../../dive-into-mykey/classes-and-methods/#lei-signrequest)和[MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods/#lei-mykeywalletcallback)
 
-dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#如何检查dapps是否在mykey-webview中运行)
+dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考 [MYKEY链上数据](../../dive-into-mykey/shen-ru-mykey-zhang-hu.md#keydata表中的密钥)。
 
 ```java
 SignRequest signRequest = new SignRequest()

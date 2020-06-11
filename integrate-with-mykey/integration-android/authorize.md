@@ -4,7 +4,7 @@
 
 第三方应用唤起MYKEY进行认证绑定。参数请详见类定义:[AuthorizeRequest](../../dive-into-mykey/classes-and-methods/#lei-authorizerequest) 和 [MYKEYWalletCallback](../../dive-into-mykey/classes-and-methods/#lei-mykeywalletcallback)。（为了更强的安全性，可以设置CallBackUrl进行服务端验签。）
 
-MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第三方应用服务端验证，第三方应用服务端需要从合约数据中获取该用户MYKEY账号的Reserve Key进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#如何检查dapps是否在mykey-webview中运行)
+MYKEY将签名后的数据POST到第三方应用提供的CallBackUrl，请求第三方应用服务端验证，第三方应用服务端需要从合约数据中获取该用户MYKEY账号的Reserve Key进行验签，获取方式参考 [MYKEY链上数据](../../dive-into-mykey/shen-ru-mykey-zhang-hu.md#keydata表中的密钥)。
 
 第三方应用提供的CallBackUrl接口参数：
 

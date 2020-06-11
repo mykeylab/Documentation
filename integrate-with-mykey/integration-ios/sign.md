@@ -2,7 +2,7 @@
 
 唤起MYKEY进行Sign签名操作。参数请详见类定义:[SignRequest](../../dive-into-mykey/classes-and-methods/#lei-signrequest)
 
-dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考[KEYS in MYKEY](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构) 和 [MYKEY Verify Sign](../../dive-into-mykey/mykey-on-eos.md#2-dui-yu-yu-scatter-jian-rong-de-dapp)
+dapp服务端或者客户端需要从合约数据中获取该用户在MYKEY的ReserveKey进行验签，获取方式参考 [MYKEY链上数据](../../dive-into-mykey/shen-ru-mykey-zhang-hu.md#keydata表中的密钥)。
 
 ```swift
 let signRequest = SignRequest()

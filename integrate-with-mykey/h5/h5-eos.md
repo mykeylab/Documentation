@@ -29,7 +29,7 @@ ScatterJS.connect("My DAPP", { network }).then(connected => {
 
 ## 验证MYKEY的签名
 
-[MYKEY的账号体系](../../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，验证MYKEY签名时，需要使用**Reserved公钥**。
+[MYKEY的账号体系](../../dive-into-mykey/shen-ru-mykey-zhang-hu.md#mykey有啥不同？)与其他的EOS账号有所差异，验证MYKEY签名时，需要使用**Reserved公钥**。
 
 Reserved Key的公钥，可以通过智能合约mykeymanager的表keydata查询到。查询时，指定范围为MYKEY账号，index为3。
 

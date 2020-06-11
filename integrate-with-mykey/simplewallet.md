@@ -23,7 +23,7 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
 
 除了支持SimpleWallet规范的**登录**和**支付**，MYKEY还额外增强支持了**合约**和**签名**的调用。
 
-**特别注意:** [MYKEY的账号体系](../dive-into-mykey/mykey-on-eos.md#mykey帐户结构)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签，详细请查阅[文档](../dive-into-mykey/mykey-on-eos.md#keydata表中的密钥)
+**特别注意:** [MYKEY的账号体系](../dive-into-mykey/shen-ru-mykey-zhang-hu.md#mykey有啥不同？)与其他的EOS账号有所差异，需要在服务端验签时使用Reserved公钥进行验签。
 
 ### 移动端App调用合约时序图
 

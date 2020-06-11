@@ -1,4 +1,4 @@
-# 账号恢复机制
+# 账户恢复机制
 
 ### MYKEY账号的密钥序号和功能定义
 
@@ -17,7 +17,7 @@
 
 ### **多签提案**
 
-多签提案分两种：一，client\(当事人\)想要在backup的帮助下加速某一延时操作\(如修改admin key/operation key等\)，此种提案需要由client和某一backup共同签名发起，再由其他backup响应，且此种提案不可取消（但可覆盖），对应下表**③-快速提案**；二，client在丢失recovery code的情况下请求backup帮助重置admin key，此种提案由某一backup发起，再由其他backup响应，此种提案可以被client的admin key取消\(防止backup联合作恶的情况\)，对应下表**②-紧急提案**。
+多签提案分两种：一，client\(当事人\)想要在backup\(紧急联系人\)的帮助下加速某一延时操作\(如修改admin key/operation key等\)，此种提案需要由client和某一backup共同签名发起，再由其他backup响应，且此种提案不可取消（但可覆盖），对应下表**③-快速提案**；二，client在丢失recovery code的情况下请求backup帮助重置admin key，此种提案由某一backup发起，再由其他backup响应，此种提案可以被client的admin key取消\(防止backup联合作恶的情况\)，对应下表**②-紧急提案**。
 
 | 修改管理密钥 | 方式 | 签名密钥 | 提案期\(proposal period\) | 等待期\(deferred tx period\) |  |  |  |  |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
