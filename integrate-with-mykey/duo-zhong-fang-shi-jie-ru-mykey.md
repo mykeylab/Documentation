@@ -39,3 +39,11 @@ MYKEY支持H5, APP应用，Web应用等通过不同的方式接入。
   </tbody>
 </table>
 
+## MYKEY开发环境
+
+EOS Kylin测试网，合约为：tuboshuismgr
+
+ETH Ropsten测试网，合约为：0x6185Dd4709982c03750e03FA8b3fF30D042585b9
+
+
+
