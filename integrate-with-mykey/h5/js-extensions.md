@@ -6,6 +6,7 @@ JSBridge为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
 
 | 方法 | 描述 |
 | :--- | :--- |
+| [isMYKEY](js-extensions.md#jian-cha-dang-qian-qian-bao-shi-fou-wei-mykey) | 检查当前钱包是否为MYKEY |
 | [closeWindow](js-extensions.md#guan-bi-chuang-kou) | 关闭应用窗口回到MYKEY |
 | [openFullScreen](js-extensions.md#da-kai-quan-ping) | 打开全屏 |
 | [closeFullScreen](js-extensions.md#guan-bi-quan-ping) | 关闭全屏 |
@@ -20,7 +21,11 @@ JSBridge为MYKEY应用中心内嵌的浏览器环境中默认支持的JS注入�
 | [hiddenLoading](js-extensions.md#qu-xiao-loading-dong-hua) | 取消loading动画 |
 | [encodeFunctionCall](js-extensions.md#dui-fang-fa-jin-hang-xu-lie-hua) | 对方法进行序列化 |
 
+### 检查当前钱包是否为MYKEY
 
+```javascript
+window.ethereum.isMYKEY
+```
 
 ### 关闭窗口
 
