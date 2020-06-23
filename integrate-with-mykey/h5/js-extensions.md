@@ -6,6 +6,7 @@ In order to control the MYKEY application conveniently, MYKEY adds the following
 
 | Method | Description |
 | :--- | :--- |
+| [isMYKEY](js-extensions.md#check-whether-the-current-wallet-is-mykey) | Check whether the current wallet is MYKEY |
 | [closeWindow](js-extensions.md#close-app-window) | Close App window and return to MYKEY |
 | [openFullScreen](js-extensions.md#open-full-screen) | Open full screen |
 | [closeFullScreen](js-extensions.md#close-full-screen) | Close full screen |
@@ -20,7 +21,11 @@ In order to control the MYKEY application conveniently, MYKEY adds the following
 | [hiddenLoading](js-extensions.md#hidden-loading-animation) | Hidden loading animation |
 | [encodeFunctionCall](js-extensions.md#serialize-specified-function-call) | serialize specified function call |
 
+### Check whether the current wallet is MYKEY
 
+```javascript
+window.ethereum.isMYKEY
+```
 
 ### Close App window
 
