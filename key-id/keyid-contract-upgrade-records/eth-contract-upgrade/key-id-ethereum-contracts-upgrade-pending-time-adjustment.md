@@ -1,5 +1,5 @@
 ---
-description: 'Time of upgrade trigger 2020–07–08 20:00 (UTC+8)'
+description: 'Time of upgrade trigger 2020–07–08 16:30 (UTC+8)'
 ---
 
 # KEY ID Ethereum Contracts Upgrade Pending Time Adjustment
@@ -24,12 +24,12 @@ None
 
 **Time of upgrade trigger**
 
-2020-07-08 20:00 UTC+8  
+2020-07-08 16:30 UTC+8  
 
 
 **Time-Lock effective time**
 
-2020-07-12 20:00 UTC+8 \(4days delay\)
+2020-07-12 16:30 UTC+8 \(4days delay\)
 
 If you have any questions about the upgrade announcement, you can contact us: [service@mykey.org](mailto:service@mykey.org) or leave messages on GitHub. thank you.  
 
