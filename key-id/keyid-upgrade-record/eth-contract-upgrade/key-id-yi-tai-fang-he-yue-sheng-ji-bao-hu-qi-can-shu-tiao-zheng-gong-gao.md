@@ -16,5 +16,7 @@ MYKEY团队正在邀请新的审计团队，进行新一轮的智能合约第三
 
 2020-07-12 16:30 UTC+8 （延时4天）
 
+**交易**[https://ethtx.info/mainnet/0x2ed9be599fd653f3b509016c8b198f78857813b9ebad84c66a367980e5f4811c](https://ethtx.info/mainnet/0x2ed9be599fd653f3b509016c8b198f78857813b9ebad84c66a367980e5f4811c)
+
 有任何升级公告疑问，可通过 [service@mykey.org](mailto:service@mykey.org) 进行反馈, 也可在github中进行留言。谢谢
 
