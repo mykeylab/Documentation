@@ -31,6 +31,9 @@ None
 
 2020-07-12 16:30 UTC+8 \(4days delay\)
 
+**Transaction**  
+[https://ethtx.info/mainnet/0x2ed9be599fd653f3b509016c8b198f78857813b9ebad84c66a367980e5f4811c](https://ethtx.info/mainnet/0x2ed9be599fd653f3b509016c8b198f78857813b9ebad84c66a367980e5f4811c)
+
 If you have any questions about the upgrade announcement, you can contact us: [service@mykey.org](mailto:service@mykey.org) or leave messages on GitHub. thank you.  
 
 
