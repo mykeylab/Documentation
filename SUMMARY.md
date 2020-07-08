@@ -53,6 +53,7 @@
 * [KEYID contract upgrade process](key-id/keyid-contract-upgrade-process.md)
 * [KEYID contract upgrade records](key-id/keyid-contract-upgrade-records/README.md)
   * [ETH](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/README.md)
+    * [KEY ID Ethereum Contracts Upgrade Pending Time Adjustment](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-contracts-upgrade-pending-time-adjustment.md)
     * [KEY ID Ethereum AccountLogic/DualsigsLogic Contracts Upgrade](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-accountlogic-dualsigslogic-contracts-upgrade.md)
     * [KEY ID Ethereum DappLogic Contract Upgrade](key-id/keyid-contract-upgrade-records/eth-contract-upgrade/key-id-ethereum-dapplogic-contract-upgrade.md)
 
