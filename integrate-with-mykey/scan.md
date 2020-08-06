@@ -37,7 +37,7 @@ WEB应用收到的MYKEY如下的数据，格式为json:
 }
 ```
 
-WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要通过读取mykey合约获得，见[文档]()。
+WEB端使用签名账号的**Reserved公钥**进行验签。Reserved公钥需要通过读取mykey合约获得，见[文档](../dive-into-mykey/shen-ru-mykey-zhang-hu.md#mykey有啥不同？)。
 
 ### 合约调用
 
