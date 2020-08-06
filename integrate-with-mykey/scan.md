@@ -33,11 +33,11 @@ WEB application will receive below JSON data from MYKEY:
     sign string         // eos signature
     uuID string         // dapp server generated for the unique identity in this login verification
     Account string      // eos account name
-    Ref string          // source, such as the wallet name
+    Ref string          // source, such as the wallet name mykey
 }
 ```
 
-The server side of WEB application should use the **Reserved public key** to verify the signature. Reserved public key could be acquired by reading MYKEY smart contract, please check [DOC]().
+The server side of WEB application should use the **Reserved public key** to verify the signature. Reserved public key could be acquired by reading MYKEY smart contract, please check [DOC](../dive-into-mykey/dive-into-mykey-account.md#mykey有啥不同？).
 
 ### Call Contract
 
