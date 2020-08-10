@@ -74,7 +74,7 @@ iOS应用，集成[MYKEY iOS SDK](https://github.com/mykeylab/MYKEY-Client-SDK/t
 {% endtab %}
 {% endtabs %}
 
-
+MYKEY账户有自主账户和受保障账户两种类型，自主账户有丢失不可找回的风险，因此**不建议第三方应用允许MYKEY自主账户来授权登录**。第三方可根据MYKEY的返回的来判断账户类型。
 
 更多技术细节请参考：[更多MYKEY登录的技术原理和流程](geng-duo-mykey-deng-lu-de-ji-shu-yuan-li-he-liu-cheng.md)。
 
