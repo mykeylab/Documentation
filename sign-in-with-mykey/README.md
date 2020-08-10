@@ -70,7 +70,7 @@ Steps:
 {% endtab %}
 {% endtabs %}
 
-
+There are two types of MYKEY accounts: self-service accounts and assisted accounts. The self-service accounts are at risk of irretrievable loss. Therefore, it is **not recommended that third-party applications allow MYKEY autonomous accounts to authorize login**. The third party can judge the account type based on the return of MYKEY.
 
 
 
