@@ -53,6 +53,7 @@
 * [KEYID合约升级流程](key-id/contract-upgrade-process.md)
 * [KEYID合约升级记录](key-id/keyid-upgrade-record/README.md)
   * [ETH](key-id/keyid-upgrade-record/eth-contract-upgrade/README.md)
+    * [KEY ID以太坊逻辑合约模块升级公告](key-id/keyid-upgrade-record/eth-contract-upgrade/key-id-yi-tai-fang-luo-ji-he-yue-mo-kuai-sheng-ji-gong-gao.md)
     * [KEY ID以太坊合约升级保护期参数调整公告](key-id/keyid-upgrade-record/eth-contract-upgrade/key-id-yi-tai-fang-he-yue-sheng-ji-bao-hu-qi-can-shu-tiao-zheng-gong-gao.md)
     * [KEY ID以太坊 AccountLogic/DualsigsLogic 合约升级公告](key-id/keyid-upgrade-record/eth-contract-upgrade/key-id-yi-tai-fang-accountlogicdualsigslogic-he-yue-sheng-ji-gong-gao.md)
     * [KEY ID以太坊 DappLogic 合约升级公示](key-id/keyid-upgrade-record/eth-contract-upgrade/key-id-yi-tai-fang-dapplogic-he-yue-sheng-ji-gong-shi.md)
