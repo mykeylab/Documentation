@@ -18,6 +18,7 @@ WEB应用通过二维码传递给MYKEY如下的数据，数据格式为json：
     loginUrl string     // dapp服务器验证登录的url
     expired number      // 仅Web二维码模式可用，过期时间，unix时间戳
     loginMemo string    // 登录备注信息
+    chain string        // 可以是EOS,ETH或者Any(Any默认用EOS账号签名）
 }
 ```
 
