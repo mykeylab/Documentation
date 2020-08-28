@@ -18,6 +18,7 @@ WEB application should pass below JSON data to MYKEY:
     loginUrl string     // The url on dapp server to accept the login validation information
     expired number      // Qr code expiration time, unix timestamp
     loginMemo string    // Login note information, wallet for display, optional
+    chain     string    // EOS, ETH or ANY(EOS will be used for ANY if EOS account exists)
 }
 ```
 
