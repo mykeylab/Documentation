@@ -45,7 +45,7 @@ Please pass the data to MYKEY as follows, the data format is json:
     desc        string   // Semantic description of MYKEY display to the user contract call
     callback    string   // Deeplink MYKEY callback to DApp, e.g. custom://custom.com/contract
     notifyUrl   string   // The callback URL endpoint of DAppServer for receive success notification from MYKEY
-    ContractRequest [  // Arrary of contact actions, include transfer and non-transfer actions
+    actions [  // Arrary of contact actions, include transfer and non-transfer actions
       { // non-transfer
           account   string // contract code name
           name      string // contract action name
