@@ -42,7 +42,7 @@ MYKEY遵循SimpleWallet协议实现，详细请见以下文档:
     desc        string   // MYKEY显示给用户合约调用语义描述
     callback    string   // MYKEY回调DApp的深度链接，e.g. custom://custom.com/contract
     notifyUrl   string   // 合约调用成功通知DAppServer的回调URL接口
-    ContractRequest [  //合约操作数组，包含转账与非转账合约操作
+    actions [  //合约操作数组，包含转账与非转账合约操作
       { //非转账
           account   string // 合约名
           name      string // 合约方法
