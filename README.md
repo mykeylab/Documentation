@@ -12,7 +12,7 @@
   * [合约充值](dive-into-mykey/contracts-deposit/) 介绍交易所和DAPP项目方如何识别MYKEY交易。
 * [开发资源](development-resources/eos.md) 最实用的EOS、ETH开发资源。
 
-MYKEY作为多链钱包，支持多种智能合约平台，目前已支持**EOS**和**ETH**。由于MYKEY账户在每一条区块链上均以智能合约的方式管理，因此MYKEY的钱包功能暂时不支持非智能合约平台。
+MYKEY作为多链钱包，支持多种智能合约平台，目前已支持**EOS、ETH**和**TRON**。由于MYKEY账户在每一条区块链上均以智能合约的方式管理，因此MYKEY的钱包功能暂时不支持非智能合约平台。
 
 
 
